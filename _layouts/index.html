@@ -6,25 +6,27 @@
 <meta name="description" content="{{ page.description }}" />
 <title>{{ page.title }}</title>
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
-<script src="/js/popout-z.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://use.typekit.com/kgy1lcx.js"></script>
+
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<style>
+#content {
+  background: white;
+}
+</style>
 </head>
 <body id="main">
   <div id="wrapper">
     <header>
-      <h1 class="pop tk-adelle" id="title"><a href="/">Princess Anne<br> Automotive Center</a></h1>
+      <h1 class="pop" id="title"><a href="/">Princess Anne<br> Automotive Center</a></h1>
       <nav>
-        <ul class="menuitem tk-adelle" id="navbar">
+        <ul class="menuitem" id="navbar">
           <li><a class="pop" id="about" href="/about/">About</a></li>
           <li><a class="pop" id="services" href="/services/">Services</a></li>
           <li><a class="pop" id="promotions" href="/promotions/">Promotions</a></li>
         </ul>
       </nav>
     </header>
-    <div id="content" class="tk-myriad-pro">
+    <div id="content" class="">
       {{ content }}
     </div>
     <footer>
@@ -37,5 +39,28 @@
       </ul>
       <p>Princess Anne Automotive Center<span> | </span>5333 East Princess Anne Road<span> | </span>Norfolk, VA 23502<span> | </span>1(757)858-0744</p>
     </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"></script>
+        <script>
+    var POPOUT_cfg = {
+
+  'canvasID': 'depth',                //ID to apply to injected canvas
+  'popSelector': '.pop',              //Selector to use for targeting elements to be "popped".
+
+  'gradientStop': 60,                 //Color stop adjustment.
+  'stroke': true,                     //Apply stroke effect?
+  'noSides': true,                    //Should we draw all faces or just the top/bottom?
+
+  //Unsupported properties
+  'height': 225, //Declare a height other than full page.
+  'vanishingPoint': {
+      'x': Math.round($(document).width() / 2),
+      'y': 900,
+      'recalc': true
+    }
+
+}
+  </script>
+    <script src="/js/popout-z_unminified.js" type="text/javascript"></script>
+
   </div>
 </html>
