@@ -11,15 +11,67 @@ Home
 Home
 -----
 
-Intro
+Recent News
 
-Location
-Hours
-Payment Options
-Associations
-Social Media Links
-Newsletter signup?
+	Sidebar
+	-------
+
+	Intro
+	%include%
+	Location
+	Hours
+	Payment Options
+	Associations
+	Social Media Links
+	Newsletter signup?
+
 
 Services
 --------
 
+List of services
+
+	Sidebar
+	-------
+
+	%include%
+
+About Us
+--------
+
+History, philosophy
+
+	Sidebar
+	-------
+
+	%include
+
+Promotions
+----------
+
+Coupons, special discounts
+
+	Sidebar
+	-------
+
+	%include%
+
+Contact
+-------
+
+Contact form
+
+	Sidebar
+	-------
+
+	%include%
+
+Appointments
+------------
+
+Appointment Form
+
+	Sidebar
+	-------
+
+	%include%

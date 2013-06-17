@@ -4,21 +4,15 @@ title: Princess Anne Automotive Center | Service beyond the ordinary
 description: Princess Anne Automotive Center has been providing extraordinary servicee for Norfolk's automotive diagnostic, maintenance and repair needs for decades.
 ---
 
-{% for post in site.posts limit: 4 %}
-<article>
-  <header>
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <time datetime="{{ post.date }}">{{ post.date | date: "%b, %d, %Y"}}</time>
-  </header>
-  <section class="entry">
-    {{ post.content }}
-  </section>
-</article>
-{% endfor %}
-<aside>
-  <section class="blurb">
+<div class="hero-unit">
+  <h1>Beating the Hampton Roads Summer Heat</h1>
+  <p>Summer is here! Time for some seasonal maintenance. Check out our Summer Special!</p>
+  <p><a href="/2013/05/24/summer-news.html" class="btn btn-primary btn-large">Learn more</a></p>
+</div>
+<div class="row">
+  <div class="span7">
     <h1>About Us</h1>
-    <p>At Princess Anne Automotive Center, we are dedicated to providing our customers with the best automotive service and repair experience. Together, we have over 100 years of experience repairing cars and trucks in the Norfolk area. Whether you need to renew your state inspection or replace your transmission, we are here to service you!</p>
+    <p class="lead">At Princess Anne Automotive Center, we are dedicated to providing our customers with the best automotive service and repair experience. Together, we have over 100 years of experience repairing cars and trucks in the Norfolk area. Whether you need to renew your state inspection or replace your transmission, we are here to service you!</p>
     <p>Some of our auto repair <a href="/services/">services</a> include:</p>
     <ul>
       <li>Cooling &amp; Heating</li>
@@ -35,24 +29,28 @@ description: Princess Anne Automotive Center has been providing extraordinary se
     <p>...and much more! And, yes &emdash; we do <strong>State Inspections</strong> and <strong>Scheduled Maintenance</strong>.</p>
     <p>We offer military and senior citizen discounts, but we don't want any of our visitors to our website to feel left out, so we've got some great online-only <a href="/promotions">specials</a>.</p>
     <p>Swing on by, or feel free to <a href="/contact/">shoot us a message</a> if you have any questions. Or, avoid the wait and request a service <a href="/appointment/">appointment</a>.</p>
-    <section class="info">
-      <h2 id="our-location">Our Location</h2>
-      <p>5333 East Princess Anne Road
-      Norfolk, VA 23502</p>
-      <h2 id="contact-us">Contact Us</h2>
-      <p>1(757)858-0744
-      <a href="/contact/">Email</a></p>
-      <h2 id="hours">Hours</h2>
-      <p>Monday-Friday, 8AM-6PM
-      Saturday, 8AM-12PM</p>
-      <h2 id="we-accept">We Accept</h2>
-      <ul>
-        <li>Cash</li>
-        <li>Check </li>
-        <li>Credit/Debit</li>
-        <li>PayPal</li>
-        <li>Financing Available</li>
-      </ul>
-      <p>Follow us on <a href="http://facebook.com/princessanneauto">Facebook</a>!</p>
-  </section>
-</aside>
+  </div>
+  <div class="span5 info">
+    <h2>Our Location:</h2>
+    <address>
+      <strong id="our-location"></strong><br>
+      5333 East Princess Anne Road<br>
+      Norfolk, VA 23502
+    </address>
+    <h2 id="contact-us">Contact Us</h2>
+    <p>1(757)858-0744
+    <a href="/contact/">Email</a></p>
+    <h2 id="hours">Hours</h2>
+    <p>Monday-Friday, 8AM-6PM<br>
+    Saturday, 8AM-12PM</p>
+    <h2 id="we-accept">We Accept</h2>
+    <ul>
+      <li>Cash</li>
+      <li>Check </li>
+      <li>Credit/Debit</li>
+      <li>PayPal</li>
+      <li>Financing Available</li>
+    </ul>
+    <p>Follow us on <a href="http://facebook.com/princessanneauto">Facebook</a>!</p>
+  </div>
+</div>
