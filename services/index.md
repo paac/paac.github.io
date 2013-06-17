@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Princess Anne Automotive Center | Services
 description: Princess Anne Automotive Center offers a wide range of services to help ensure that your vehicle runs safely, smoothly and fuel-efficiently. Don't be afraid to call or email if you have any questions regarding any of our services(even if you don't see them here!)
 ---
