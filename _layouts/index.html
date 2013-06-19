@@ -4,9 +4,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ page.description }}" />
-<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 <title>{{ page.title }}</title>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<style>
+  .navbar .brand {font-size: 30px;}
+  .content { margin-top:60px; margin-bottom: 100px}
+  .footer {color:#999999;}
+  .footer p {line-height:20px;}
+  .info h2 {text-align:center;}
+  .info .inner { width: 80%; margin: 0 auto;}
+  .coupon {outline:1px solid;height:450px;}
+  .coupon h1 { width:100%; background:#999;padding-top:10px;padding-bottom:10px;margin-top:0;}
+  .coupon img {display:none;}
+  .content ol { list-style: inline-block;}
+  .colophon p { padding-top: 10px;}
+  @media (max-width: 979px) { .hero-unit {margin-top:0;} }
+</style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,31 +32,60 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="/">Princess Anne Automotive Center</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#promotions">Promotions</a></li>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/promotions">Promotions</a></li>
+              <li><a href="/services">Services</a></li>
+             <!--  <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="/services">Services <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/services/general-service/">General Automotive Services</a></li>
+                  <li><a href="/services/diagnostics/">Computer Diagnostics</a></li>
+                  <li><a href="/services/tune-ups/">Tune-Ups</a></li>
+                  <li><a href="/services/air-conditioning/">Air Conditioning Service and Repair</a></li>
+                  <li><a href="/services/oil-changes/">Oil Changes</a></li>
+                  <li><a href="/services/steering-suspension/">Steering and Suspension</a></li>
+                  <li><a href="/services/transmission-service/">Transmission Service and Repair</a></li>
+                  <li><a href="/services/radiator-service/">Radiator Service and Repair</a></li>
+                  <li><a href="/services/fuel-injection-service/">Fuel Injection Service</a></li>
+                  <li><a href="/services/electrical-service/">Electrical Auto Repair</a></li>
+                  <li><a href="/services/cooling-and-heating/">Cooling and Heating System Repair</a></li>
+                  <li><a href="/services/brake-system-service/">Brake System Service and Repair</a></li>
+                </ul>
+              </li> -->
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container -->
       </div><!--/.navbar-inner -->
     </div><!--/.navbar -->
-    <div class="container">
+    <div class="content container">
       {{ content }}
     </div>
-    <div>
-      <ul class="sitemap">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/promotions/">Promotions</a></li>
-        <li><a href="/about/">About Us</a></li>
-        <li><a href="/contact/">Contact Us</a></li>
-      </ul>
-      <p>Princess Anne Automotive Center<span> | </span>5333 East Princess Anne Road<span> | </span>Norfolk, VA 23502<span> | </span>1(757)858-0744</p>
-    </div>
+    <div class="footer navbar navbar-inverse navbar-fixed-bottom hidden-phone">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="row">
+            <ul class="nav span5">
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/promotions/">Promotions</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <div class="colophon pull-right">
+              <p>Princess Anne Automotive Center<span> | </span>5333 East Princess Anne Road<span> | </span>Norfolk, VA 23502<span> | </span>1(757)858-0744</p>
+              <p>Follow us on <a href="http://facebook.com/princessanneauto">Facebook</a>!</p>
+            </div><!--/.pull-right-->
+          </div><!--/.row-->
+        </div><!--/.container-->
+      </div><!--/.navbar-inner -->
+  </div><!--/.footer -->
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap-transition.js"></script>
   <script src="/js/bootstrap-dropdown.js"></script>
