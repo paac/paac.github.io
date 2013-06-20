@@ -23,7 +23,16 @@
   .navstack { border-radius: 5px;}
   .nav-stacked i {float:right;}
   .affix { top: 80px;}
+  .info > div { border-left:1px solid #eee; }
+  .info > div.first {border-left:none;}
+  .hero-unit { background-color:rgba(192,192,192,.8);}
+  .hero-unit .page-header { border-bottom-color: #bbbbbb}
+  .wrapper {width:100%; background-image:url(/images/slideshow2.jpg); background-size:1600px ;padding-top:60px;}
+  
+  @media (max-width:767px) { .wrapper {background-image:none; } }
+  @media (max-width: 767px) { .info > div { border-top:1px solid #eee; border-left:none;} .info > div.first {border-top:none;border-left:none;}}
   @media (max-width: 979px) { .hero-unit {margin-top:0;} }
+  @media (max-width: 767px) { .img-polaroid {display:none;} }
 </style>
 </head>
 <body data-spy="scroll" data-offset="125" data-target="#navBarScroll">
@@ -66,9 +75,9 @@
         </div><!--/.container -->
       </div><!--/.navbar-inner -->
     </div><!--/.navbar -->
-    <div class="content container">
+    
       {{ content }}
-    </div>
+    
     <div class="footer navbar navbar-inverse navbar-fixed-bottom hidden-phone">
       <div class="navbar-inner">
         <div class="container">
