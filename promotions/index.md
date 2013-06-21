@@ -1,6 +1,6 @@
 ---
 layout: index
-title: Current Promotions
+title: Princess Anne Automotive Center | Current Promotions
 description: Princess Anne Automotive Center understands that automotive repairs aren't exactly a welcome expense. To help, we offer several online-only coupons and promotions for our visitors.
 ---
 <div class="container content">
