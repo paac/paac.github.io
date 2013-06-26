@@ -227,7 +227,7 @@ description: Princess Anne Automotive Center offers a wide range of services to 
 
 			<p>If you have other questions about our services, please don't hesistate to <a href="/contact">Message</a> us, or give us a call at <strong>1(757)858-0744</strong>.</p>
 		</div>
-	</div><!--/.span9-->
-</div><!--/.row-->
-</div><!--/.container-->
+	</div>
+</div>
+</div>
 
