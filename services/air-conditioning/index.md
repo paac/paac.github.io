@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page
 title: Air Conditioning | Services
 description: Princess Anne Automotive Center specializes in Air Conditioning Service and Repair. Don't let hot weather keep you off of the road - let us help!
 ---

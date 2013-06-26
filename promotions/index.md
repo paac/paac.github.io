@@ -1,9 +1,9 @@
 ---
-layout: index
+layout: page
 title: Princess Anne Automotive Center | Current Promotions
 description: Princess Anne Automotive Center understands that automotive repairs aren't exactly a welcome expense. To help, we offer several online-only coupons and promotions for our visitors.
 ---
-<div class="container content">
+
 <div class="hero-unit">
 	<h1 class="page-header">Promotions</h1>
 	<p>Princess Anne Automotive Center offers competitive rates to begin with, but we would like to extend some *special* offers to our website's visitors(hint: that's you!)</p>
@@ -44,4 +44,3 @@ description: Princess Anne Automotive Center understands that automotive repairs
 	</li>
 	</div>
 </ul>
-</div>
