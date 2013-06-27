@@ -95,10 +95,13 @@ border-left:none;
     position:relative;
     top:0;
   }
-  .hero-unit h1 {
-  	font-size:24px;
+  .hero-unit {
+  	padding:20px;
   }
-  .brand {
+  .hero-unit h1 {
+  	font-size:28px;
+  }
+  .navbar .brand {
   	font-size: 16px;
   }
 }
