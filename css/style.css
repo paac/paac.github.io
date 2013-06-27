@@ -95,6 +95,12 @@ border-left:none;
     position:relative;
     top:0;
   }
+  .hero-unit h1 {
+  	font-size:24px;
+  }
+  .brand {
+  	font-size: 16px;
+  }
 }
 .dl-horizontal dt {
 width:auto;
