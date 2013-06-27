@@ -1,4 +1,5 @@
 ---
+name: about
 layout: page
 title: Princess Anne Automotive Center | About
 description: Princess Anne Automotive Center is fittingly located on Princess Anne Road in Norfolk, VA. Our knowledgeable technicians are committed to offering a fast, friendly and thorough experience for all our customers.

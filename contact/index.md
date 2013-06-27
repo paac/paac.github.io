@@ -1,4 +1,5 @@
 ---
+name: contact
 layout: index
 title: Princess Anne Automotive Center | Contact Us
 description: Shoot us an email with any questions or service requests you may have, and we'll get back to you as soon as we can.
