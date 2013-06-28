@@ -49,6 +49,10 @@ border-radius: 5px;
 }
 .nav-stacked i {
 float:right;
+display:none;
+}
+.nav-stacked a:hover i, .nav-stacked .active a i {
+  display:inline-block;
 }
 .affix {
 top: 80px;
@@ -69,6 +73,10 @@ width:100%;
 background-image:url(/images/slideshow2.jpg);
 background-size:1600px;
 padding-top:60px;
+}
+.nav-stacked > .active > a, .nav-stacked > .active > a:hover {
+  background-color: #dc4e00;
+  color:#FFFFFF;
 }
 @media (max-width:767px) {
 .wrapper {background-image:none;

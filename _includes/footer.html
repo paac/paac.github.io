@@ -3,12 +3,11 @@
     <div class="container">
       <div class="row">
         <ul class="nav span5">
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/promotions/">Promotions</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li{% if page.name == 'home' %} class="active"{% endif %}><a href="/">Home</a></li>
+          <li{% if page.name == 'services' %} class="active"{% endif %}><a href="/services">Services</a></li>
+          <li{% if page.name == 'about' %} class="active"{% endif %}><a href="/about">About</a></li>
+          <li{% if page.name == 'promotions' %} class="active"{% endif %}><a href="/promotions">Promotions</a></li>
+          <li{% if page.name == 'contact' %} class="active"{% endif %}><a href="/contact">Contact</a></li>
         </ul>
         <div class="colophon pull-right span7">
           <p>Princess Anne Automotive Center<span> | </span>5333 East Princess Anne Road<span> | </span>Norfolk, VA 23502<span> | </span>1(757)858-0744</p>
