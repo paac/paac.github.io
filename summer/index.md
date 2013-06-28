@@ -20,7 +20,7 @@ title: "Beating the Hampton Roads Summer Heat"
 			<li>People tend to drive more in the summer, so it's important that your vehicle is prepared for some heavy driving. To help ensure this, we'll change your oil and oil filter, top off the rest of your fluids, and lubricate your chassis.</li>
 			<li>Excessive heat is an engine's worst enemy, so we'll make sure that your car or truck is well-equipped to resist overheating. Something as minor as a loose clamp can make all the difference, so we'll inspect all of your hoses and belts and check to make sure your vehicle's engine cooling system is in prime condition.</li>
 		</ul>
-		<p class="lead">All of this for low price of <strong>$85.95</strong>!</p>
+		<p class="lead">All of this for the low price of <strong>$85.95</strong>!</p>
 		<p>And don't forget to check out our other promotions!</p>
 		<p><a href="/promotions" class="btn btn-primary">Learn more <i class="icon-arrow-right icon-white"></i></a></p>
 	</div>

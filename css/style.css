@@ -1,3 +1,6 @@
+body {
+  background-image: url(/images/background.png);
+}
 form li.focused {
   background-color: rgb(255, 184, 145);
 }
@@ -90,6 +93,17 @@ border-left:none;
 .info > div.first {
 border-top:none;
 border-left:none;
+}
+}
+@media
+
+(-webkit-min-device-pixel-ratio: 2),
+
+(min-resolution: 192dpi) {
+
+/* Retina graphics */
+body {
+  background-image:url(/images/background_@2x.png);
 }
 }
 @media (max-width: 979px) {
