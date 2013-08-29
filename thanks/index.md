@@ -1,5 +1,6 @@
 ---
 name: thanks
+layout: page
 title: Princess Anne Automotive Center | Thanks!
 ---
 
