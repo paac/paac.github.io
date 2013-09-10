@@ -1,7 +1,7 @@
 ---
 layout: page
 date: 2013-09-03 09:36:30
-title: ""
+title: "Fall is coming!"
 ---
 <div class="hero-unit">
 	<h1 class="page-header">Fall is coming!</h1>
