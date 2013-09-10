@@ -4,6 +4,7 @@ $(window).load(function() {
 	directionNav:true
 	});
 });
+
 function testWidth() {
 	if ($(document).width() > 1170) {
 		$("body").addClass("wide");
