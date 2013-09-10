@@ -22,4 +22,4 @@ title: ""
 		<p>And don't forget to check out our other promotions!</p>
 		<p><a href="/promotions" class="btn btn-primary">Learn more <i class="icon-arrow-right icon-white"></i></a></p>
 	</div>
-</div>s
+</div>
