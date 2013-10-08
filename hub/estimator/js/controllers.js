@@ -114,8 +114,7 @@ angular.module('estimator.controllers', []).
 
 		$scope.addToHistory = function(parts) {
 			order = {};
-			$scope.name = parts.name
-			order.name = $scope.name;
+			order.name = parts.name;
 			order.date = Date.now();
 			order.total = parts.total;
 			order.parts = parts;
