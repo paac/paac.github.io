@@ -85,13 +85,14 @@ angular.module('estimator.controllers', []).
 					part.salePrice = calcPrice(part.costPrice, part.quantity); 
 				}
 			} else {
-				salePrice = parseInt(item.salePrice);
+				salePrice = parseFloat(item.salePrice);
 				part.salePrice = salePrice * part.quantity;
 			}
 			
 			part.totalPrice = part.salePrice + part.laborPrice;
 			
 			$scope.parts.push(part);
+			console.log($scope.parts);
 			//clear current form values by resetting item
 			$scope.item = {};
 			totalOrder();
