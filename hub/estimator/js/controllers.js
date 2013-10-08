@@ -59,7 +59,6 @@ angular.module('estimator.controllers', []).
 		$scope.edit = function (idx) {
 
 			$scope.item = $scope.parts[idx];
-			$scope.item.salePrice = undefined;
 			$scope.parts.splice(idx, 1);
 			totalOrder();
 
@@ -75,24 +74,25 @@ angular.module('estimator.controllers', []).
 			part.dealer = item.dealer;
 			part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
 			part.quantity = (!item.quantity) ? 1 : item.quantity;
-			part.laborHours = (!item.laborHours) ? 0 : item.laborHours;
-			part.laborPrice = part.laborHours * 89;
-
+			part.laborHours = item.laborHours;
+			part.laborPrice = (!part.laborHours) ? 0 : part.laborHours * 89;
+			
 			if (!item.salePrice) {
 				if (item.dealer) {
-					part.salePrice = calcPrice(part.costPrice, part.quantity, true); 
+					part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true); 
 				} else { 
-					part.salePrice = calcPrice(part.costPrice, part.quantity); 
+					part.salePriceTotal = calcPrice(part.costPrice, part.quantity); 
 				}
 			} else {
 				salePrice = parseFloat(item.salePrice);
-				part.salePrice = salePrice * part.quantity;
+				console.log(salePrice);
+				part.salePriceTotal = salePrice * part.quantity;
+				part.salePrice = salePrice.toString();
 			}
-			
-			part.totalPrice = part.salePrice + part.laborPrice;
+			part.manualSale = item.manualSale;
+			part.totalPrice = part.salePriceTotal + part.laborPrice;
 			
 			$scope.parts.push(part);
-			console.log($scope.parts);
 			//clear current form values by resetting item
 			$scope.item = {};
 			totalOrder();
@@ -101,10 +101,13 @@ angular.module('estimator.controllers', []).
 		$scope.editOrder = function(idx) {
 			
 			$scope.orders = JSON.parse(localStorage.getItem('history'));
-			$scope.parts = $scope.orders[idx].parts;
-			$scope.parts.name = $scope.name;
-			console.log($scope.parts);
-			$scope.orders.splice(idx, 1);
+			
+			console.log()
+			$scope.parts = $scope.orders[$scope.orders.length - idx - 1].parts;
+			$scope.parts.name = $scope.orders[$scope.orders.length - idx - 1].name;
+			// $scope.parts.name = order.name;
+			
+			$scope.orders.splice($scope.orders.length - idx -1, 1);
 			localStorage.setItem('history', JSON.stringify($scope.orders));
 			totalOrder();
 		}
@@ -112,7 +115,7 @@ angular.module('estimator.controllers', []).
 		$scope.addToHistory = function(parts) {
 			order = {};
 			$scope.name = parts.name
-			order.name = parts.name;
+			order.name = $scope.name;
 			order.date = Date.now();
 			order.total = parts.total;
 			order.parts = parts;
