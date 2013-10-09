@@ -4,7 +4,23 @@ angular.module('estimator.controllers', []).
 		$scope.parts = [];
 		$scope.orders = (!localStorage.getItem('history')) ? [] : JSON.parse(localStorage.getItem('history'));
 		$scope.predicate = "-date";
-		
+		$scope.vendors = [
+			{name: 'Pep Boys'},
+			{name: 'Prime'},
+			{name: 'Quality'},
+			{name: 'Bap Geon'},
+			{name: 'API'},
+			{name: 'American Tire', tires: true},
+			{name: 'Atlantic Tire', tires: true},
+			{name: 'Checkered Flag', dealer: true},
+			{name: 'Colonial', dealer: true},
+			{name: 'Interstate Battery', manualSale: true},
+			{name: 'LKQ'},
+			{name: 'Perry', dealer: true},
+			{name: 'Priority', dealer: true},
+			{name: 'Southern', dealer: true}
+		];
+
 		function totalOrder() {
 			var total = 0,
 				length = $scope.parts.length,
@@ -56,22 +72,32 @@ angular.module('estimator.controllers', []).
 			$scope.parts.splice(idx, 1);
 			totalOrder();
 		}
+		
+		$scope.optionSelected = function(item) {
+			item.dealer = item.vendor.dealer;
+			item.manualSale = item.vendor.manualSale;
+			item.tires = item.vendor.tires;
+		}
 
 		$scope.addToParts = function(item) {
 			part = {};
 			part = item;
+
 			part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
 			part.quantity = (!item.quantity) ? 1 : item.quantity;
-			if (!item.manualLabor) {
+			if (!part.manualLabor) {
 				part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
 			} else {
 				part.laborPrice = ((part.laborPrice) && (part.laborPrice != 0)) ? parseFloat(part.laborPrice) : 0;
 				part.laborHours = (part.laborPrice != 0) ? part.laborPrice / 89 : 0;
 			}
-			if (item.salePrice) {
+			if (part.manualSale) {
 				part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
-			} else if (item.dealer) {
+			} else if (part.dealer) {
 				part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
+			} else if (part.tires) {
+				part.salePrice = part.costPrice * 1.25;
+				part.salePriceTotal = part.salePrice * part.quantity;
 			} else { 
 				part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
 			}

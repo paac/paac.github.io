@@ -23,7 +23,7 @@
     <div class="container">
         <div class="content">
             <div ng-controller="EstimateCtrl" class="row">
-                <div class="well col-lg-6">
+                <div class="well col-lg-5">
                     <div>
                         <form ng-submit="addToParts(item)" class="form-horizontal">
                             <fieldset>
@@ -37,7 +37,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Part Cost</label>
                                     <div class="row controls">
-                                        <div class="input-group col-lg-8">
+                                        <div class="input-group col-lg-9">
                                             <span class="input-group-addon">$</span>
                                             <input placeholder="Cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
                                             <span class="input-group-addon">
@@ -49,9 +49,9 @@
                                                 Manual
                                             </span>
                                         </div>
-                                        <div class="input-group col-lg-4">
+                                        <div class="input-group col-lg-3">
                                             <span class="input-group-addon">x</span>
-                                            <input type="text" placeholder="Quantity" ng-model="item.quantity" class="form-control input-lg">
+                                            <input type="text" placeholder="#" ng-model="item.quantity" class="form-control input-lg">
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                     <label class="control-label">Sale Price</label>
                                     <div class="input-group">
                                         <span class="input-group-addon">$</span>
-                                        <input type="text" placeholder="Sale Price" ng-model="item.salePrice" class="form-control input-lg">
+                                        <input type="text" placeholder="Sale Price" ng-required="item.manualSale" ng-model="item.salePrice" class="form-control input-lg">
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -73,8 +73,13 @@
                                             <span ng-show="item.manualLabor" class="input-group-addon">$</span>
                                             <input type="text" placeholder="Hours" ng-show="!item.manualLabor" ng-model="item.laborHours" class="form-control input-lg">
                                             <input type="text" placeholder="Labor Price" ng-show="item.manualLabor" ng-model="item.laborPrice" class="form-control input-lg">
-                                            
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <label class="control-label">Vendor</label>
+                                        <select class="form-control" ng-model="item.vendor" ng-change="optionSelected(item)" ng-options="v.name for v in vendors"></select>
                                     </div>
                                 </div>
                                 <hr>
@@ -83,7 +88,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Work Order</h3>
@@ -93,11 +98,13 @@
                                 <tr>
                                     <td>Item</td>
                                     <td>Cost</td>
-                                    <td>Dealer</td>
-                                    <td>Sale Price</td>
+                                    <td>Vendor</td>
+                                    <td>Dealer?</td>
+                                    <td>Tire?</td>
+                                    <td>Price</td>
                                     <td>Labor Hours</td>
                                     <td>Labor Price</td>
-                                    <td>Total Price</td>
+                                    <td>Total</td>
                                     <td>Remove</td>
                                 </tr>
                             </thead>
@@ -110,13 +117,17 @@
                                         <br>
                                         <span class="pull-right text-muted">x{{part.quantity}}</span>
                                     </td>
+                                    <td>{{part.vendor.name}}</td>
                                     <td class="text-center">
                                         <span ng-show="part.dealer" class="glyphicon glyphicon-ok"></span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span ng-show="part.tires" class="glyphicon glyphicon-ok"></span>
                                     </td>
                                     <td>{{part.salePriceTotal | currency}}</td>
                                     <td>{{part.laborHours | number:2 }}
                                         <ng-pluralize
-                                            count="part.labor" 
+                                            count="part.laborHours" 
                                             when="{ 'one': 'Hour', 'other' : 'Hours'}">
                                         </ng-pluralize></td>
                                     <td>{{part.laborPrice | currency}}</td>
@@ -128,7 +139,7 @@
                             </tbody>
                             <tfooter>
                                 <tr>
-                                    <td colspan="6" class="text-right">Total</td>
+                                    <td colspan="8" class="text-right">Total</td>
                                     <td colspan="2" class="text-right">{{parts.total | currency}}</td>
                                 </tr>
                             </tfooter>
