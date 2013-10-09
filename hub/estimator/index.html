@@ -41,25 +41,19 @@
                                             <span class="input-group-addon">$</span>
                                             <input placeholder="Cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
                                             <span class="input-group-addon">
-                                                <input type="checkbox" ng-model="item.dealer">Dealer?</span>
+                                                <input type="checkbox" ng-model="item.dealer">
+                                                Dealer
+                                            </span>
+                                            <span class="input-group-addon">
+                                                <input type="checkbox" ng-model="item.manualSale">
+                                                Manual
+                                            </span>
                                         </div>
                                         <div class="input-group col-lg-4">
                                             <span class="input-group-addon">x</span>
                                             <input type="text" placeholder="Quantity" ng-model="item.quantity" class="form-control input-lg">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">Labor Hours</label>
-                                    <div class="controls">
-                                        <input type="text" placeholder="Hours" ng-model="item.laborHours" class="form-control input-lg">
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" ng-model="item.manualSale">
-                                        </label>Override Sale Price?</div>
                                 </div>
                                 <div ng-show="item.manualSale" class="control-group">
                                     <label class="control-label">Sale Price</label>
@@ -68,6 +62,21 @@
                                         <input type="text" placeholder="Sale Price" ng-model="item.salePrice" class="form-control input-lg">
                                     </div>
                                 </div>
+                                <div class="control-group">
+                                    <label class="control-label">Labor</label>
+                                    <div class="controls">
+                                        <div class="input-group">
+                                            <span ng-show="item.manualLabor" class="input-group-addon">$</span>
+                                            <input type="text" placeholder="Hours" ng-show="!item.manualLabor" ng-model="item.laborHours" class="form-control input-lg">
+                                            <input type="text" placeholder="Labor Price" ng-show="item.manualLabor" ng-model="item.laborPrice" class="form-control input-lg">
+                                            <span class="input-group-addon">
+                                                <input type="checkbox" ng-model="item.manualLabor">
+                                                Fixed Labor Price?
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
                                 <button type="submit" class="pull-right clearfix btn btn-lg btn-primary">Add</button>
                             </fieldset>
                         </form>
@@ -81,7 +90,7 @@
                         <table ng-show="parts.total" class="table table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <td>Part</td>
+                                    <td>Item</td>
                                     <td>Cost</td>
                                     <td>Dealer</td>
                                     <td>Sale Price</td>
@@ -104,7 +113,11 @@
                                         <span ng-show="part.dealer" class="glyphicon glyphicon-ok"></span>
                                     </td>
                                     <td>{{part.salePriceTotal | currency}}</td>
-                                    <td>{{part.laborHours}}H</td>
+                                    <td>{{part.laborHours | number:2 }}
+                                        <ng-pluralize
+                                            count="part.labor" 
+                                            when="{ 'one': 'Hour', 'other' : 'Hours'}">
+                                        </ng-pluralize></td>
                                     <td>{{part.laborPrice | currency}}</td>
                                     <td>{{part.totalPrice | currency}}</td>
                                     <td>
