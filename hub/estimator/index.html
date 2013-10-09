@@ -71,14 +71,14 @@
                                             <input type="text" placeholder="Quantity" ng-model="item.quantity" class="form-control input-lg">
                                         </div>
                                         <div class="input-group col-lg-7">
-                                            
+                                            <span class="input-group-addon">
+                                                <input type="checkbox" ng-model="item.manualLabor">
+                                                Price
+                                            </span> 
                                             <span ng-show="item.manualLabor" class="input-group-addon">$</span>
                                             <input type="text" placeholder="Labor Hours" ng-show="!item.manualLabor" ng-model="item.laborHours" class="form-control input-lg">
                                             <input type="text" placeholder="Labor Price" ng-show="item.manualLabor" ng-model="item.laborPrice" class="form-control input-lg">
-                                            <span class="input-group-addon">
-                                                <input type="checkbox" ng-model="item.manualLabor">
-                                                Override
-                                            </span> 
+
                                         </div>
                                     </div>
                                 </div>
