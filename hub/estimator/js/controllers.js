@@ -65,7 +65,7 @@ angular.module('estimator.controllers', []).
 			if (!item.manualLabor) {
 				part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
 			} else {
-				part.laborPrice = (part.laborPrice != 0) ? parseFloat(part.laborPrice) : 0;
+				part.laborPrice = ((part.laborPrice) && (part.laborPrice != 0)) ? parseFloat(part.laborPrice) : 0;
 				part.laborHours = (part.laborPrice != 0) ? part.laborPrice / 89 : 0;
 			}
 			if (item.salePrice) {
@@ -76,7 +76,6 @@ angular.module('estimator.controllers', []).
 				part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
 			}
 			part.totalPrice = part.salePriceTotal + part.laborPrice;
-			console.log(typeof(part.totalPrice) + part.totalPrice);
 			$scope.parts.push(part);
 			$scope.item = {};
 			totalOrder();

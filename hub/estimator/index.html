@@ -66,13 +66,14 @@
                                     <label class="control-label">Labor</label>
                                     <div class="controls">
                                         <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <input type="checkbox" ng-model="item.manualLabor">
+                                                Set Price
+                                            </span> 
                                             <span ng-show="item.manualLabor" class="input-group-addon">$</span>
                                             <input type="text" placeholder="Hours" ng-show="!item.manualLabor" ng-model="item.laborHours" class="form-control input-lg">
                                             <input type="text" placeholder="Labor Price" ng-show="item.manualLabor" ng-model="item.laborPrice" class="form-control input-lg">
-                                            <span class="input-group-addon">
-                                                <input type="checkbox" ng-model="item.manualLabor">
-                                                Fixed Labor Price?
-                                            </span>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +88,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Work Order</h3>
                         </div>
-                        <table ng-show="parts.total" class="table table-hover table-bordered">
+                        <table ng-show="parts.total != undefined" class="table table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <td>Item</td>
