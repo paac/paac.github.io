@@ -108,7 +108,7 @@
                                     <td>Labor Hours</td>
                                     <td>Labor Price</td>
                                     <td>Total</td>
-                                    <td>Remove</td>
+                                    <td class="no_print">Remove</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -134,7 +134,7 @@
                                     </td>
                                     <td>{{part.laborPrice | currency}}</td>
                                     <td>{{part.totalPrice | currency}}</td>
-                                    <td>
+                                    <td class="no_print">
                                         <button ng-click="deletePart($index)" class="btn btn-xs btn-danger">X</button>
                                     </td>
                                 </tr>
