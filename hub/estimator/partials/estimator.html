@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="estimator">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Estimate Calculator</title>
-    </script>
-    <script src="js/angular.js"></script>
-    <script src="js/angular-ui-router.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/routes.js"></script>
-    <script src="js/app.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/print.css">
-</head>
-
-<body>
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <h1 class="text-muted">Estimator</h1>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="content">
-            <div ng-controller="EstimateCtrl" class="row">
+ <div ng-controller="EstimateCtrl" class="row">
                 <div class="well col-lg-5">
-                    <div class="part_form">
+                    <div>
                         <form name="partForm" ng-submit="addToParts(item)" class="form-horizontal">
                             <fieldset>
                                 <legend>Item</legend>
@@ -147,7 +120,7 @@
                             </tfooter>
                         </table>
                     </div>
-                    <div class="order_form">
+                    <div>
                         <form ng-submit="addToHistory(parts)">
                             <div class="input-group">
                                 <input type="text" placeholder="Order Name" required ng-model="parts.name" class="form-control">
@@ -159,7 +132,7 @@
                     </div>
                 </div>
                 <div class="row"></div>
-                <div class="panel panel-default order_table">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Order History</h3>
                     </div>
@@ -185,8 +158,3 @@
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
-
-</html>

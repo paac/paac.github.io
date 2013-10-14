@@ -1,0 +1,47 @@
+<h1>Scheduler</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>Time</td>
+			<td>Name</td>
+			<td>Vehicle</td>
+			<td>Phone Number</td>
+			<td>Service</td>
+			<td>Status</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="{{appointment.status.value}}" ng-repeat="appointment in appointments | orderBy:predicate">
+			<td>{{appointment.time.hours.name}}:{{appointment.time.minutes.name}}</td>
+			<td>{{appointment.name}}</td>
+			<td>{{appointment.vehicle}}</td>
+			<td>{{appointment.phoneNumber}}</td>
+			<td>{{appointment.service}}</td>
+			<td>{{appointment.status.name}}</td>
+			<td><button ng-click="deleteAppointment()">Delete</button></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<form name="appointment-entry" class="form" ng-submit="addAppointment(submission)">
+		<tr>
+			
+			<td>
+				<select ng-options="hour.name for hour in hours" ng-model="submission.time.hours"></select>
+				<select ng-options="minute.name for minute in minutes" ng-model="submission.time.minutes"></select>
+			</td>
+			<td><input type="text" ng-model="submission.name" placeholder="Name"/></td>
+			<td><input type="text" ng-model="submission.vehicle" placeholder="Vehicle"/></td>
+			<td><input type="text" ng-model="submission.phoneNumber" placeholder="Phone #"/></td>
+			<td><input type="text" ng-model="submission.service" placeholder="Service"/></td>
+			<td><select ng-options="status.name for status in statuses" ng-model="submission.status"></select>
+			
+		</tr>
+		<tr>
+			<td colspan="5"></td>
+			<td><button type="submit">Add</button></td>
+		</tr>
+		</form>
+	</tfoot>
+
+</table>
