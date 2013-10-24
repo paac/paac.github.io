@@ -1,36 +1,19 @@
 angular.module('scheduler.controllers', []).
-	controller('ScheduleCtrl', ['$scope', 'VehicleFactory', function($scope, VehicleFactory) {
+	controller('ScheduleCtrl', ['$scope', 'Vehicle', 'Statuses', 'Hours', 'Minutes', function($scope, Vehicle, Statuses, Hours, Minutes) {
 		
 		$scope.date = new Date();
 		$scope.date.setHours(0,0,0,0);
+		$scope.predicate = "date";
 
-		$scope.statuses = [
-			{ name: 'Drop-off', value: 'dropoff' },
-			{ name: 'Waiting', value: 'waiting' },
-			{ name: 'Late', value: 'warning' },
-			{ name: 'No Show', value: 'danger' },
-			{ name: 'Complete', value: 'success' },
-			{ name: 'In Progress', value: 'active' }
-		];
+		$scope.statuses = Statuses;
+		$scope.hours = Hours;
+		$scope.minutes = Minutes;
 
-		$scope.hours = [
-			{hour: 8, name: '8'},
-			{hour: 9, name: '9'},
-			{hour: 10, name: '10'},
-			{hour: 11, name: '11'},
-			{hour: 12, name: '12'},
-			{hour: 13, name: '1'},
-			{hour: 14, name: '2'},
-			{hour: 15, name: '3'},
-			{hour: 16, name: '4'}
-		];
-		
-		$scope.minutes = [
-			{minute: 0, name: '00'}, 
-			{minute: 15, name: '15'}, 
-			{minute: 30, name: '30'}, 
-			{minute: 45, name: '45'}
-		];
+		Vehicle.async().then(function(d) {
+			$scope.vehicles = d.data.makes;
+		});
+
+		$scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
 
 		$scope.appointment = {
 			status : $scope.statuses[0].value,
@@ -41,14 +24,6 @@ angular.module('scheduler.controllers', []).
 			}
 		};
 
-		VehicleFactory.async().then(function(d) {
-			$scope.vehicles = d.data.makes;
-		});
-
-		$scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
-				
-		$scope.predicate = "date";
-		
 		$scope.incDate = function() {
 			today = $scope.date.getDate();
 			$scope.date.setDate(today + 1);
@@ -85,6 +60,7 @@ angular.module('scheduler.controllers', []).
 				}
 			};
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+			$scope.appointments = JSON.parse(localStorage.getItem('schedule'));
 		}
 
 		$scope.editAppointment = function(idx) {
@@ -103,4 +79,6 @@ angular.module('scheduler.controllers', []).
 		}
 
 		// $scope.appointments.push(appointment);
+		console.log($scope.appointments[0].name);
+		console.log($scope.appointments[1].name);
 	}]);
