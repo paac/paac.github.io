@@ -62,15 +62,15 @@
                     </thead>
                     <tbody>
                         <tr class="{{appointment.status}}" ng-repeat="appointment in appointments  | listByDate:date | orderBy:predicate track by $index">
-                            <td>{{$index}}</td>
+                            <td>{{$index}}, {{appointment.index}}</td>
                             <td>{{appointment.date | date:'hh:mm a'}}</td>
                             <td>{{appointment.name}}</td>
                             <td>{{appointment.contact.phone}}</td>
                             <td>{{appointment.vehicle.year.year}} {{appointment.vehicle.make.name}} {{appointment.vehicle.model.name}}</td>
 							<td>{{appointment.service}}</td>
 							<td><select class="form-control" ng-model="appointment.status" ng-change="updateAppointment(appointment)" ng-options="status.value as status.name for status in statuses"></td>
-                            <td><button class="btn btn-warning btn-sm" ng-click="editAppointment($index)">Edit</button></td>
-                            <td><button class="btn btn-danger btn-sm" ng-click="deleteAppointment($index)">X</button></td>
+                            <td><button class="btn btn-warning btn-sm" ng-click="editAppointment(appointment)">Edit</button></td>
+                            <td><button class="btn btn-danger btn-sm" ng-click="deleteAppointment(appointment)">X</button></td>
                         </tr>
                     </tbody>
                 </table>

@@ -14,8 +14,10 @@ angular.module('scheduler.controllers', []).
 		});
 
 		$scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
-
+		// $scope.appointments = [];
+		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		$scope.appointment = {
+			index: $scope.appointments.length,
 			status : $scope.statuses[0].value,
 			date: new Date(), 
 			time: {
@@ -47,11 +49,19 @@ angular.module('scheduler.controllers', []).
 			// appointment.timeString = appointment.time.hour.hour + ':' + appointment.time.minute.minute;
 			hour = appointment.time.hour;
 			minute = appointment.time.minute;
-			appointment.date.setHours(hour,minute,0,0);
+			if (appointment.date.setHours) {
+				console.log('if');
+				appointment.date.setHours(hour,minute,0,0);
+			} else {
+				console.log('else');
+				appointment.date = new Date(appointment.date);
+				appointment.date.setHours(hour, minute,0,0);
+			}
 			console.log(appointment);
 			$scope.appointments.push(appointment);
 			console.log($scope.appointments);
 			$scope.appointment = {
+				index: $scope.appointments.length,
 				status : $scope.statuses[0].value,
 				date: new Date(), 
 				time: {
@@ -63,22 +73,31 @@ angular.module('scheduler.controllers', []).
 			$scope.appointments = JSON.parse(localStorage.getItem('schedule'));
 		}
 
-		$scope.editAppointment = function(idx) {
-			$scope.appointment = $scope.appointments[idx];
-			$scope.appointments.splice(idx, 1);
+		$scope.editAppointment = function(appointment) {
+			console.log(appointment.index);
+			$scope.appointment = $scope.appointments[appointment.index];
+			
+			console.log($scope.appointment.index);
+			$scope.appointment.date = new Date($scope.appointment.date);
+
+			$scope.appointments.splice(appointment.index, 1);
+			$scope.appointment.index = $scope.appointments.length;
+			for (var i=0; i < $scope.appointments.length; i++) {
+				$scope.appointments[i].index = i;
+			}
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
+
 		$scope.updateAppointment = function(appointment) {
 			console.log(appointment.status);
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 
 		}
-		$scope.deleteAppointment = function(idx) {
-			$scope.appointments.splice(idx, 1);
+		$scope.deleteAppointment = function(appointment) {
+			$scope.appointments.splice(appointment.index, 1);
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
 		// $scope.appointments.push(appointment);
-		console.log($scope.appointments[0].name);
-		console.log($scope.appointments[1].name);
+		
 	}]);
