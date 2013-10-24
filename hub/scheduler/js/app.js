@@ -1,0 +1,1 @@
+angular.module('scheduler', ['scheduler.controllers', 'scheduler.services', 'scheduler.filters', 'ui.date']);
