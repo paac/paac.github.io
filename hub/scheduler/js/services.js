@@ -22,9 +22,10 @@ angular.module('scheduler.services', [])
 		return [
 			{ name: 'Drop-off', value: 'dropoff' },
 			{ name: 'Waiting', value: 'waiting' },
+			{ name: 'Arrived', value: 'active' },
 			{ name: 'Late', value: 'warning' },
 			{ name: 'No Show', value: 'danger' },
-			{ name: 'Complete', value: 'success' },
+			{ name: 'Complete', value: 'no-show' },
 			{ name: 'In Progress', value: 'active' }
 		];
 	})

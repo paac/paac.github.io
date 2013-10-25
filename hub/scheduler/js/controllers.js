@@ -1,5 +1,5 @@
 angular.module('scheduler.controllers', []).
-	controller('ScheduleCtrl', ['$scope', 'Vehicle', 'Statuses', 'Hours', 'Minutes', function($scope, Vehicle, Statuses, Hours, Minutes) {
+	controller('ScheduleCtrl', ['$scope', '$timeout', 'Vehicle', 'Statuses', 'Hours', 'Minutes', function($scope, $timeout, Vehicle, Statuses, Hours, Minutes) {
 		
 		$scope.date = new Date();
 		$scope.date.setHours(0,0,0,0);
@@ -57,9 +57,7 @@ angular.module('scheduler.controllers', []).
 				appointment.date = new Date(appointment.date);
 				appointment.date.setHours(hour, minute,0,0);
 			}
-			console.log(appointment);
 			$scope.appointments.push(appointment);
-			console.log($scope.appointments);
 			$scope.appointment = {
 				index: $scope.appointments.length,
 				status : $scope.statuses[0].value,
@@ -89,15 +87,36 @@ angular.module('scheduler.controllers', []).
 		}
 
 		$scope.updateAppointment = function(appointment) {
-			console.log(appointment.status);
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-
 		}
 		$scope.deleteAppointment = function(appointment) {
 			$scope.appointments.splice(appointment.index, 1);
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
+		$scope.updateStatus = function(){
+			d = new Date();
+
+    		for (var i = 0; i < $scope.appointments.length; i++) {
+    			
+    			cd = new Date($scope.appointments[i].date);
+    			if ((cd < d) && (($scope.appointments[i].status == 'dropoff') || ($scope.appointments[i].status == 'waiting'))) {
+    				$scope.appointments[i].status = 'warning';
+    			}
+    		}
+    		localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+  		};
+
+  		// Function to replicate setInterval using $timeout service.
+  		$scope.intervalFunction = function(){
+    		$timeout(function() {
+      			$scope.updateStatus();
+      			$scope.intervalFunction();
+    		}, 300000)
+  		};
+
+  		// Kick off the interval
+  		$scope.intervalFunction();
 		// $scope.appointments.push(appointment);
 		
 	}]);

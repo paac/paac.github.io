@@ -7,6 +7,7 @@
     <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
 	<script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 	<script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
@@ -14,6 +15,7 @@
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/print.css">
 </head>
 
@@ -49,11 +51,11 @@
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr>
-                            <td>Index</td>
                             <td>Time</td>
                             <td>Name</td>
                             <td>Contact</td>
                             <td>Vehicle</td>
+                            <td>Mileage</td>
                             <td>Service</td>
                             <td>Status</td>
                             <td>Edit</td>
@@ -61,12 +63,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="{{appointment.status}}" ng-repeat="appointment in appointments  | listByDate:date | orderBy:predicate track by $index">
-                            <td>{{$index}}, {{appointment.index}}</td>
+                        <tr class="{{appointment.status}} table-item" ng-repeat="appointment in appointments  | listByDate:date | orderBy:predicate track by $index">
                             <td>{{appointment.date | date:'hh:mm a'}}</td>
                             <td>{{appointment.name}}</td>
                             <td>{{appointment.contact.phone}}</td>
                             <td>{{appointment.vehicle.year.year}} {{appointment.vehicle.make.name}} {{appointment.vehicle.model.name}}</td>
+                            <td>{{appointment.vehicle.mileage}}</td>
 							<td>{{appointment.service}}</td>
 							<td><select class="form-control" ng-model="appointment.status" ng-change="updateAppointment(appointment)" ng-options="status.value as status.name for status in statuses"></td>
                             <td><button class="btn btn-warning btn-sm" ng-click="editAppointment(appointment)">Edit</button></td>
@@ -115,17 +117,21 @@
                             <div class="col-sm-12">
                                 <h3>Vehicle</h3>
                                 <hr>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>Make</label>
                                     <select class="form-control" required ng-change="getModels()" ng-model="appointment.vehicle.make" ng-options="v.name for v in vehicles"></select>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>Model</label>
                                     <select class="form-control" required ng-change="getYears()" ng-disabled="!appointment.vehicle.make" ng-model="appointment.vehicle.model" ng-options="m.name for m in models"></select>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <label>Year</label>
                                     <select class="form-control" ng-disabled="!appointment.vehicle.model" ng-model="appointment.vehicle.year" ng-options="y.year for y in years"></select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Mileage</label>
+                                    <input class="form-control" placeholder="mileage" ng-model="appointment.vehicle.mileage">
                                 </div>
                             </div>
                         </div>

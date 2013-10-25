@@ -1,0 +1,21 @@
+.table-item.ng-enter,
+.table-item.ng-leave {
+  -webkit-transition:3s linear all;
+  -moz-transition:3s linear all;
+  -o-transition:3s linear all;
+  transition:3s linear all;
+}
+
+.table-item.ng-enter,
+.table-item.ng-leave.ng-leave-active {
+  opacity:0;
+  width:0;
+}
+.table-item.ng-leave,
+.table-item.ng-enter.ng-enter-active {
+  opacity:1;
+  width:100%;
+}
+.no-show {
+	display:none;
+}
