@@ -1,9 +1,9 @@
 .table-item.ng-enter,
 .table-item.ng-leave {
-  -webkit-transition:3s linear all;
-  -moz-transition:3s linear all;
-  -o-transition:3s linear all;
-  transition:3s linear all;
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
 }
 
 .table-item.ng-enter,
