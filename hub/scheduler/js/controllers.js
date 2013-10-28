@@ -1,31 +1,48 @@
 angular.module('scheduler.controllers', []).
-	controller('ScheduleCtrl', ['$scope', '$timeout', 'Vehicle', 'Statuses', 'Hours', 'Minutes', function($scope, $timeout, Vehicle, Statuses, Hours, Minutes) {
+	controller('ScheduleCtrl', ['$scope', '$timeout', 'Vehicle', 'Statuses', 'Time',  function($scope, $timeout, Vehicle, Statuses, Time) {
 		
+		//Get today's date and reset the time to midnight
 		$scope.date = new Date();
 		$scope.date.setHours(0,0,0,0);
+
+		//declare our sort order
 		$scope.predicate = "date";
 
+		//Get our list of statuses
 		$scope.statuses = Statuses;
-		$scope.hours = Hours;
-		$scope.minutes = Minutes;
+		//Get our list of valid time choices
+		//TODO: Refactor this so that already-chosen time options are removed
+		$scope.time = Time;
 
+		//Get our vehicles array
 		Vehicle.async().then(function(d) {
 			$scope.vehicles = d.data.makes;
 		});
 
+		//If no appointments, create a new array. Else, load our appointments from localStorage
+		//TODO: move away from localStorage, get and store our data with a proper database
 		$scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
+		// This code is here in case our database gets corrupted and I need to reset it.
 		// $scope.appointments = [];
 		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-		$scope.appointment = {
-			index: $scope.appointments.length,
-			status : $scope.statuses[0].value,
-			date: new Date(), 
-			time: {
-				hour: $scope.hours[0].hour, 
-				minute: $scope.minutes[0].minute
+		
+		
+		//returns an object that populates our form with appropriate defaults
+		newAppointment = function() {
+			return {
+				index: $scope.appointments.length,
+				status: $scope.statuses[0].value,
+				date: new Date(),
+				time: {
+					hour: $scope.time.hours[0].hour,
+					minute: $scope.time.minutes[0].minute
+				}
 			}
-		};
+		}
 
+		//Set up our first appointment object of the day.
+		$scope.appointment = newAppointment();
+		
 		$scope.incDate = function() {
 			today = $scope.date.getDate();
 			$scope.date.setDate(today + 1);
@@ -44,9 +61,10 @@ angular.module('scheduler.controllers', []).
 			$scope.years = $scope.appointment.vehicle.model.years;
 		}
 
+		//Add appointment to schedule
 		$scope.addAppointment = function(appointment) {
 			appointment = $scope.appointment
-			// appointment.timeString = appointment.time.hour.hour + ':' + appointment.time.minute.minute;
+			//Get our selected time values and make it a date object(if it isn't already)
 			hour = appointment.time.hour;
 			minute = appointment.time.minute;
 			if (appointment.date.setHours) {
@@ -57,43 +75,50 @@ angular.module('scheduler.controllers', []).
 				appointment.date = new Date(appointment.date);
 				appointment.date.setHours(hour, minute,0,0);
 			}
+			//Add it to the schedule
 			$scope.appointments.push(appointment);
-			$scope.appointment = {
-				index: $scope.appointments.length,
-				status : $scope.statuses[0].value,
-				date: new Date(), 
-				time: {
-					hour: $scope.hours[0].hour, 
-					minute: $scope.minutes[0].minute
-				}
-			};
+			
+			//Set up our next appointment
+			$scope.appointment = newAppointment();
+			//store our appointment in localStorage & reload
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 			$scope.appointments = JSON.parse(localStorage.getItem('schedule'));
 		}
 
+		//edit an existing appointment
 		$scope.editAppointment = function(appointment) {
-			console.log(appointment.index);
-			$scope.appointment = $scope.appointments[appointment.index];
 			
-			console.log($scope.appointment.index);
+			//Get the apppriate appointment
+			$scope.appointment = $scope.appointments[appointment.index];
+			//storing our object as JSON casts our Date object to a string.
+			//Make it an object again.
 			$scope.appointment.date = new Date($scope.appointment.date);
 
+			//Yank it our of array
 			$scope.appointments.splice(appointment.index, 1);
+
+			//recalculate our index
 			$scope.appointment.index = $scope.appointments.length;
 			for (var i=0; i < $scope.appointments.length; i++) {
 				$scope.appointments[i].index = i;
 			}
+			//store it in localStorage.
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
+		//Probably should call this "updateStatus", since it's not as used as generically as this would imply.
+		//Then again, it may prove useful for "quick-edits" of other fields.
 		$scope.updateAppointment = function(appointment) {
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
+
+		//Yank an appointment out of our array and update our schedue in localStorage
 		$scope.deleteAppointment = function(appointment) {
 			$scope.appointments.splice(appointment.index, 1);
 			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
+		//Check to see if any existing appointments are late and update their status accordingly.
 		$scope.updateStatus = function(){
 			d = new Date();
 
@@ -107,16 +132,13 @@ angular.module('scheduler.controllers', []).
     		localStorage.setItem('schedule', JSON.stringify($scope.appointments));
   		};
 
-  		// Function to replicate setInterval using $timeout service.
+  		//Run our updateStatus every five minutes
   		$scope.intervalFunction = function(){
     		$timeout(function() {
       			$scope.updateStatus();
       			$scope.intervalFunction();
-    		}, 300000)
+    		}, 1000 * 60 * 5)
   		};
-
-  		// Kick off the interval
   		$scope.intervalFunction();
-		// $scope.appointments.push(appointment);
 		
 	}]);

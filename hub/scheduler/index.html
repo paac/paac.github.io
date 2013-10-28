@@ -86,12 +86,12 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="row">
-                                        <select class="form-control" required ng-model="appointment.time.hour" ng-options="hour.hour as hour.name for hour in hours"></select>
+                                        <select class="form-control" required ng-model="appointment.time.hour" ng-options="hour.hour as hour.name for hour in time.hours"></select>
                                     </div>    
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="row">
-                                        <select class="form-control" required ng-model="appointment.time.minute" ng-options="minute.minute as minute.name for minute in minutes"></select>
+                                        <select class="form-control" required ng-model="appointment.time.minute" ng-options="minute.minute as minute.name for minute in time.minutes"></select>
                                     </div>    
                                 </div>
                             </div>
