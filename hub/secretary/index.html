@@ -49,7 +49,6 @@
                     <ul class="list-unstyled">
                         <li ng-repeat="todo in todos" ng-hide="todo.complete"><input type="checkbox" ng-change="updateTodo($index)" ng-model="todo.complete"> {{todo.task}} </li>
                     </ul>
-                    <hr>
                     <ul class="list-unstyled">
                         <li class="text-muted" ng-repeat="todo in todos" ng-hide="!todo.complete"><input type="checkbox" ng-change="delTodo($index)" ng-model="todo.delete"> <del>{{todo.task}}</del></li>
                     </ul>
