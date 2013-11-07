@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Estimate Calculator</title>
-    </script>
     <script src="js/angular.js"></script>
-    <script src="js/angular-ui-router.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/routes.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/print.css">
@@ -101,7 +97,7 @@
                                 <tr>
                                     <td>Item</td>
                                     <td class="no_print">Cost</td>
-                                    <td>Vendor</td>
+                                    <td class="no_print">Vendor</td>
                                     <td class="no_print">Dealer?</td>
                                     <td class="no_print">Tire?</td>
                                     <td>Price</td>
@@ -120,12 +116,12 @@
                                         <br>
                                         <span class="pull-right text-muted">x{{part.quantity}}</span>
                                     </td>
-                                    <td>{{part.vendor.name}}</td>
-                                    <td class="text-center">
-                                        <span ng-show="part.dealer" class="no_print glyphicon glyphicon-ok"></span>
+                                    <td class="no_print">{{part.vendor.name}}</td>
+                                    <td class="no_print text-center">
+                                        <span ng-show="part.dealer" class="glyphicon glyphicon-ok"></span>
                                     </td>
-                                    <td class="text-center">
-                                        <span ng-show="part.tires" class="no_print glyphicon glyphicon-ok"></span>
+                                    <td class="no_print text-center">
+                                        <span ng-show="part.tires" class="glyphicon glyphicon-ok"></span>
                                     </td>
                                     <td>{{part.salePriceTotal | currency}}</td>
                                     <td>{{part.laborHours | number:2 }}
@@ -178,8 +174,7 @@
                                 <td>{{order.date | date:'hh:mma' }}</td>
                                 <td>{{order.date | date:'shortDate'}}
                                     <td>{{order.total | currency}}</td>
-                                    <td> <a ng-click="editOrder($index)">Edit</a>
-                                    </td>
+                                    <td> <a ng-click="editOrder($index)">Edit</a></td>
                             </tr>
                         </tbody>
                     </table>
