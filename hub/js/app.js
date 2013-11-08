@@ -3,13 +3,13 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
   		$routeProvider
   			.when('/', 
   				{	
-  					templateUrl: './partials/dashboard.html',
+  					templateUrl: '/hub/partials/dashboard.html',
   				}
  			);
  		$routeProvider
  			.when('/estimator',
  				{	
- 					templateUrl: './partials/estimator.html',
+ 					templateUrl: '/hub/partials/estimator.html',
  					controller: 'EstimateCtrl'		
  				}
 
@@ -17,19 +17,19 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
  		$routeProvider
  			.when('/scheduler',
  				{	
- 					templateUrl: './partials/scheduler.html',
+ 					templateUrl: '/hub/partials/scheduler.html',
  					controller: 'ScheduleCtrl'
  				}
  			);
  		$routeProvider
  			.when('/secretary',
  				{
- 					templateUrl: './partials/secretary.html'
+ 					templateUrl: '/hub/partials/secretary.html'
  				}
  			);
  		$routeProvider
   			.otherwise(
-  				{	redirectTo: './'}
+  				{	redirectTo: '/hub/'}
   			);
 
   		$locationProvider.html5Mode(true);
