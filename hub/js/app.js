@@ -1,13 +1,13 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   		$routeProvider
-  			.when('/', 
+  			.when('/hub/', 
   				{	
   					templateUrl: '/hub/partials/dashboard.html',
   				}
  			);
  		$routeProvider
- 			.when('/estimator',
+ 			.when('/hub/estimator',
  				{	
  					templateUrl: '/hub/partials/estimator.html',
  					controller: 'EstimateCtrl'		
@@ -15,14 +15,14 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 
  			);
  		$routeProvider
- 			.when('/scheduler',
+ 			.when('/hub/scheduler',
  				{	
  					templateUrl: '/hub/partials/scheduler.html',
  					controller: 'ScheduleCtrl'
  				}
  			);
  		$routeProvider
- 			.when('/secretary',
+ 			.when('/hub/secretary',
  				{
  					templateUrl: '/hub/partials/secretary.html'
  				}
