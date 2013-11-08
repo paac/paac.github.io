@@ -1,8 +1,9 @@
 angular.module('estimator.controllers', []).
-	controller('EstimateCtrl', ['$scope', function($scope) {
-		
+	controller('EstimateCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
+		var ref = new Firebase("https://hooptie.firebaseio.com");
 		$scope.parts = [];
-		$scope.orders = (!localStorage.getItem('history')) ? [] : JSON.parse(localStorage.getItem('history'));
+		$scope.orders = [];
+		angularFire(ref, $scope, "orders");
 		$scope.predicate = "-date";
 		$scope.vendors = [
 			{name: 'Pep Boys'},

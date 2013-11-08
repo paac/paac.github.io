@@ -1,1 +1,1 @@
-angular.module('estimator', ['estimator.controllers']);
+angular.module('estimator', ['estimator.controllers', 'firebase']);
