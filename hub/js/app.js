@@ -27,10 +27,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
  					templateUrl: '/hub/partials/secretary.html'
  				}
  			);
- 		$routeProvider
-  			.otherwise(
-  				{	redirectTo: '/hub/'}
-  			);
 
   		$locationProvider.html5Mode(true);
   	}]);
