@@ -21,7 +21,7 @@ angular.module('scheduler.controllers', []).
 		
 		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		
-		var ref = new Firebase("https://hooptie-scheduler.firebaseio.com");
+		var ref = new Firebase("https://hooptie.firebaseio.com/scheduler");
 		$scope.appointments = [];
 		angularFire(ref, $scope, "appointments");
 

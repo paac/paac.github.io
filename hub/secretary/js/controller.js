@@ -6,9 +6,12 @@ angular.module('secretary.controller', [])
         }
     ])
 //To-do list
-    .controller('TodoCtrl', ['$scope', 
-        function($scope) {
-            $scope.todos = (!localStorage.getItem('todos')) ? [] : JSON.parse(localStorage.getItem('todos'));
+    .controller('TodoCtrl', ['$scope', 'angularFire',
+        function($scope, angularFire) {
+            var ref = new Firebase("https://hooptie.firebaseio.com/secretary");
+            $scope.todos = [];
+            angularFire(ref, $scope, "todos");
+            
             $scope.addTodo = function(task) {
                 todo = angular.copy(task);
                 task.complete = false;

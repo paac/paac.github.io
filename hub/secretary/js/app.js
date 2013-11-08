@@ -1,1 +1,1 @@
-angular.module('secretary', ['secretary.controller', 'secretary.service']);
+angular.module('secretary', ['secretary.controller', 'secretary.service', 'firebase']);
