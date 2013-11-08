@@ -1,5 +1,5 @@
 angular.module('scheduler.controllers', []).
-	controller('ScheduleCtrl', ['$scope', '$timeout', 'Vehicle', 'Statuses', 'Time',  function($scope, $timeout, Vehicle, Statuses, Time) {
+	controller('ScheduleCtrl', ['$scope', '$timeout', 'Statuses', 'Time', 'angularFire', function($scope, $timeout, Statuses, Time, angularFire) {
 		
 		//Get today's date and reset the time to midnight
 		$scope.date = new Date();
@@ -14,19 +14,17 @@ angular.module('scheduler.controllers', []).
 		//TODO: Refactor this so that already-chosen time options are removed
 		$scope.time = Time;
 
-		//Get our vehicles array
-		Vehicle.async().then(function(d) {
-			$scope.vehicles = d.data.makes;
-		});
-
 		//If no appointments, create a new array. Else, load our appointments from localStorage
 		//TODO: move away from localStorage, get and store our data with a proper database
-		$scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
+		// $scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
 		// This code is here in case our database gets corrupted and I need to reset it.
-		// $scope.appointments = [];
+		
 		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		
-		
+		var ref = new Firebase("https://hooptie-scheduler.firebaseio.com");
+		$scope.appointments = [];
+		angularFire(ref, $scope, "appointments");
+
 		//returns an object that populates our form with appropriate defaults
 		newAppointment = function() {
 			return {
@@ -76,13 +74,15 @@ angular.module('scheduler.controllers', []).
 				appointment.date.setHours(hour, minute,0,0);
 			}
 			//Add it to the schedule
+
+	
 			$scope.appointments.push(appointment);
 			
 			//Set up our next appointment
 			$scope.appointment = newAppointment();
 			//store our appointment in localStorage & reload
-			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-			$scope.appointments = JSON.parse(localStorage.getItem('schedule'));
+			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+			// $scope.appointments = JSON.parse(localStorage.getItem('schedule'));
 		}
 
 		//edit an existing appointment
@@ -103,19 +103,19 @@ angular.module('scheduler.controllers', []).
 				$scope.appointments[i].index = i;
 			}
 			//store it in localStorage.
-			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
 		//Probably should call this "updateStatus", since it's not as used as generically as this would imply.
 		//Then again, it may prove useful for "quick-edits" of other fields.
 		$scope.updateAppointment = function(appointment) {
-			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
 		//Yank an appointment out of our array and update our schedue in localStorage
 		$scope.deleteAppointment = function(appointment) {
 			$scope.appointments.splice(appointment.index, 1);
-			localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		}
 
 		//Check to see if any existing appointments are late and update their status accordingly.
@@ -129,7 +129,7 @@ angular.module('scheduler.controllers', []).
     				$scope.appointments[i].status = 'warning';
     			}
     		}
-    		localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+    		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
   		};
 
   		//Run our updateStatus every five minutes

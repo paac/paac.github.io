@@ -9,6 +9,8 @@
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 	<script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/filters.js"></script>
@@ -67,7 +69,7 @@
                             <td>{{appointment.date | date:'hh:mm a'}}</td>
                             <td>{{appointment.name}}</td>
                             <td>{{appointment.contact.phone}}</td>
-                            <td>{{appointment.vehicle.year.year}} {{appointment.vehicle.make.name}} {{appointment.vehicle.model.name}}</td>
+                            <td>{{appointment.vehicle.year}} {{appointment.vehicle.make}} {{appointment.vehicle.model}}</td>
                             <td>{{appointment.vehicle.mileage}}</td>
 							<td>{{appointment.service}}</td>
 							<td><select class="form-control" ng-model="appointment.status" ng-change="updateAppointment(appointment)" ng-options="status.value as status.name for status in statuses"></td>
@@ -119,15 +121,18 @@
                                 <hr>
                                 <div class="col-sm-3">
                                     <label>Make</label>
-                                    <select class="form-control" required ng-change="getModels()" ng-model="appointment.vehicle.make" ng-options="v.name for v in vehicles"></select>
+                                    <input class="form-control" ng-model="appointment.vehicle.make">
+                                    <!-- <select class="form-control" ng-change="getModels()" ng-model="<appointment class="vehicle make"></appointment>" ng-options="v.name for v in vehicles"></select> -->
                                 </div>
                                 <div class="col-sm-3">
                                     <label>Model</label>
-                                    <select class="form-control" required ng-change="getYears()" ng-disabled="!appointment.vehicle.make" ng-model="appointment.vehicle.model" ng-options="m.name for m in models"></select>
+                                    <input class="form-control" ng-model="appointment.vehicle.model">
+                                    <!-- <select class="form-control" required ng-change="getYears()" ng-disabled="!appointment.vehicle.make" ng-model="appointment.vehicle.model" ng-options="m.name for m in models"></select> -->
                                 </div>
                                 <div class="col-sm-3">
                                     <label>Year</label>
-                                    <select class="form-control" ng-disabled="!appointment.vehicle.model" ng-model="appointment.vehicle.year" ng-options="y.year for y in years"></select>
+                                    <input class="form-control" ng-model="appointment.vehicle.year">
+                                    <!-- <select class="form-control" ng-disabled="!appointment.vehicle.model" ng-model="appointment.vehicle.year" ng-options="y.year for y in years"></select> -->
                                 </div>
                                 <div class="col-sm-3">
                                     <label>Mileage</label>
