@@ -12,7 +12,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="appointment in appointments">
+						<tr ng-repeat="appointment in appointments | listByDate:date | orderBy:predicate">
 							<td>{{appointment.date | date:'hh:mm a'}}</td>
 	                        <td>{{appointment.name}}</td>
 	                        <td>{{appointment.vehicle.year}} {{appointment.vehicle.make}} {{appointment.vehicle.model}}</td>
