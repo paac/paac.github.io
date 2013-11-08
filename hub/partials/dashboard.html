@@ -1,1 +1,26 @@
-dashboard.html
+<div class="container">
+	<div class="content">
+		<div class="row">
+			<div class="col-md-12" ng-controller="ScheduleCtrl">
+				<table>
+					<thead>
+						<tr>
+							<td>Time</td>
+							<td>Name</td>
+							<td>Vehicle</td>
+							<td>Service</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="appointment in appointments">
+							<td>{{appointment.date | date:'hh:mm a'}}</td>
+	                        <td>{{appointment.name}}</td>
+	                        <td>{{appointment.vehicle.year}} {{appointment.vehicle.make}} {{appointment.vehicle.model}}</td>
+							<td>{{appointment.service}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
