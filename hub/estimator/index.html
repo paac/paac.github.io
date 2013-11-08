@@ -168,6 +168,8 @@
                                 <td>Time</td>
                                 <td>Date</td>
                                 <td>Total</td>
+                                <td>Edit</td>
+                                <td>Remove</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -175,8 +177,10 @@
                                 <td>{{order.name}}</td>
                                 <td>{{order.date | date:'hh:mma' }}</td>
                                 <td>{{order.date | date:'shortDate'}}
-                                    <td>{{order.total | currency}}</td>
-                                    <td> <a ng-click="editOrder($index)">Edit</a></td>
+                                <td>{{order.total | currency}}</td>
+                                <td><a ng-click="editOrder($index)">Edit</a></td>
+                                <td><a ng-click="deleteOrder($index)">Remove</a></td>
+
                             </tr>
                         </tbody>
                     </table>

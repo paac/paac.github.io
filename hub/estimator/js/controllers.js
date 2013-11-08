@@ -107,18 +107,23 @@ angular.module('estimator.controllers', []).
 			$scope.item = {};
 			totalOrder();
 		};
-
+		$scope.deleteOrder = function(idx) {
+			$scope.orders.splice($scope.orders.length - idx - 1, 1);
+		}
 		$scope.editOrder = function(idx) {
-			orders = JSON.parse(localStorage.getItem('history'));
+			orders = $scope.orders;
 			reversedIndex = orders.length - idx - 1;
+			$scope.reversedIndex = reversedIndex;
 			$scope.parts = orders[reversedIndex].parts;
 			$scope.parts.name = orders[reversedIndex].name;
-			$scope.orders.splice(reversedIndex, 1);
-			localStorage.setItem('history', JSON.stringify($scope.orders));
+			
+			// localStorage.setItem('history', JSON.stringify($scope.orders));
 			totalOrder();
 		}
 
 		$scope.addToHistory = function(parts) {
+			if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
+			$scope.reversedIndex = undefined;
 			order = {};
 			order.name = parts.name;
 			order.date = Date.now();
@@ -126,6 +131,6 @@ angular.module('estimator.controllers', []).
 			order.parts = parts;
 			$scope.orders.push(order);
 			$scope.parts = [];
-			localStorage.setItem('history', JSON.stringify($scope.orders));
+			// localStorage.setItem('history', JSON.stringify($scope.orders));
 		};
 	}]);
