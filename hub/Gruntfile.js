@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['js/**/*.js'],
+				src: ['assets/**/*.js'],
 				dest: 'public/<%= pkg.name %>.js'
 			}
 		},
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'public/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
