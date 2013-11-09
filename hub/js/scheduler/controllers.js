@@ -35,8 +35,8 @@ angular.module('scheduler.controller', []).
 					hour: $scope.time.hours[0].hour,
 					minute: $scope.time.minutes[0].minute
 				}
-			}
-		}
+			};
+		};
 
 		//Set up our first appointment object of the day.
 		$scope.appointment = newAppointment();
@@ -44,24 +44,24 @@ angular.module('scheduler.controller', []).
 		$scope.incDate = function() {
 			today = $scope.date.getDate();
 			$scope.date.setDate(today + 1);
-		}
+		};
 
 		$scope.decDate = function() {
 			today = $scope.date.getDate();
 			$scope.date.setDate(today - 1);
-		}
+		};
 
 		$scope.getModels = function() {
 			$scope.models = $scope.appointment.vehicle.make.models;
-		}
+		};
 
 		$scope.getYears = function() {
 			$scope.years = $scope.appointment.vehicle.model.years;
-		}
+		};
 
 		//Add appointment to schedule
 		$scope.addAppointment = function(appointment) {
-			appointment = $scope.appointment
+			appointment = $scope.appointment;
 			//Get our selected time values and make it a date object(if it isn't already)
 			hour = appointment.time.hour;
 			minute = appointment.time.minute;
@@ -83,7 +83,7 @@ angular.module('scheduler.controller', []).
 			//store our appointment in localStorage & reload
 			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 			// $scope.appointments = JSON.parse(localStorage.getItem('schedule'));
-		}
+		};
 
 		//edit an existing appointment
 		$scope.editAppointment = function(appointment) {
@@ -104,41 +104,39 @@ angular.module('scheduler.controller', []).
 			}
 			//store it in localStorage.
 			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-		}
+		};
 
 		//Probably should call this "updateStatus", since it's not as used as generically as this would imply.
 		//Then again, it may prove useful for "quick-edits" of other fields.
 		$scope.updateAppointment = function(appointment) {
 			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-		}
+		};
 
 		//Yank an appointment out of our array and update our schedue in localStorage
 		$scope.deleteAppointment = function(appointment) {
 			$scope.appointments.splice(appointment.index, 1);
 			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-		}
+		};
 
 		//Check to see if any existing appointments are late and update their status accordingly.
 		$scope.updateStatus = function(){
 			d = new Date();
 
-    		for (var i = 0; i < $scope.appointments.length; i++) {
-    			
-    			cd = new Date($scope.appointments[i].date);
-    			if ((cd < d) && (($scope.appointments[i].status == 'dropoff') || ($scope.appointments[i].status == 'waiting'))) {
-    				$scope.appointments[i].status = 'warning';
-    			}
-    		}
-    		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-  		};
+			for (var i = 0; i < $scope.appointments.length; i++) {
+				cd = new Date($scope.appointments[i].date);
+				if ((cd < d) && (($scope.appointments[i].status == 'dropoff') || ($scope.appointments[i].status == 'waiting'))) {
+					$scope.appointments[i].status = 'warning';
+				}
+			}
+			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
+		};
 
-  		//Run our updateStatus every five minutes
-  		$scope.intervalFunction = function(){
-    		$timeout(function() {
-      			$scope.updateStatus();
-      			$scope.intervalFunction();
-    		}, 1000 * 60 * 5)
-  		};
-  		$scope.intervalFunction();
-		
+		//Run our updateStatus every five minutes
+		$scope.intervalFunction = function(){
+			$timeout(function() {
+				$scope.updateStatus();
+				$scope.intervalFunction();
+			}, 1000 * 60 * 5);
+		};
+		$scope.intervalFunction();
 	}]);

@@ -72,13 +72,13 @@ angular.module('estimator.controller', []).
 			$scope.item = $scope.parts[idx];
 			$scope.parts.splice(idx, 1);
 			totalOrder();
-		}
+		};
 		
 		$scope.optionSelected = function(item) {
 			item.dealer = item.vendor.dealer;
 			item.manualSale = item.vendor.manualSale;
 			item.tires = item.vendor.tires;
-		}
+		};
 
 		$scope.addToParts = function(item) {
 			part = {};
@@ -89,8 +89,8 @@ angular.module('estimator.controller', []).
 			if (!part.manualLabor) {
 				part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
 			} else {
-				part.laborPrice = ((part.laborPrice) && (part.laborPrice != 0)) ? parseFloat(part.laborPrice) : 0;
-				part.laborHours = (part.laborPrice != 0) ? part.laborPrice / 89 : 0;
+				part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
+				part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
 			}
 			if (part.manualSale) {
 				part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
@@ -109,7 +109,7 @@ angular.module('estimator.controller', []).
 		};
 		$scope.deleteOrder = function(idx) {
 			$scope.orders.splice($scope.orders.length - idx - 1, 1);
-		}
+		};
 		$scope.editOrder = function(idx) {
 			orders = $scope.orders;
 			reversedIndex = orders.length - idx - 1;
@@ -119,7 +119,7 @@ angular.module('estimator.controller', []).
 			
 			// localStorage.setItem('history', JSON.stringify($scope.orders));
 			totalOrder();
-		}
+		};
 
 		$scope.addToHistory = function(parts) {
 			if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);

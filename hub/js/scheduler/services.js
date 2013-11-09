@@ -28,7 +28,7 @@ angular.module('scheduler.service', [])
 					{minute: 30, name: '30'}, 
 					{minute: 45, name: '45'}
 				]
-		}
+		};
 	})
 	.factory('Hours', function() {
 		return [
