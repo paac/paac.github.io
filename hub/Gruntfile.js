@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['assets/**/*.js'],
+				src: ['assets/js/**/*.js'],
 				dest: 'public/<%= pkg.name %>.js'
 			}
 		},
