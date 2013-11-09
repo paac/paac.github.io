@@ -1,1 +1,0 @@
-angular.module('estimator', ['estimator.controllers', 'firebase']);

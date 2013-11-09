@@ -1,6 +1,0 @@
-@media print
-{
-	.part_form, .order_table, .order_form, .no_print {
-		display:none;
-	}
-}

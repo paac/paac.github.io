@@ -1,1 +1,0 @@
-angular.module('secretary', ['secretary.controller', 'secretary.service', 'firebase']);
