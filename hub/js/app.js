@@ -26,5 +26,5 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
           templateUrl: '/hub/partials/secretary.html'
         }
       );
-      $locationProvider.html5Mode(true);
+      // $locationProvider.html5Mode(true);
     }]);
