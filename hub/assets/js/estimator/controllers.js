@@ -1,26 +1,13 @@
 angular.module('estimator.controller', []).
-	controller('EstimateCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
+	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors'
+		function($scope, angularFire, 'Vendors') {
 		var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
-		$scope.parts = [];
 		$scope.orders = [];
 		angularFire(ref, $scope, "orders");
+
+		$scope.parts = [];
 		$scope.predicate = "-date";
-		$scope.vendors = [
-			{name: 'Pep Boys'},
-			{name: 'Prime'},
-			{name: 'Quality'},
-			{name: 'Bap Geon'},
-			{name: 'API'},
-			{name: 'American Tire', tires: true},
-			{name: 'Atlantic Tire', tires: true},
-			{name: 'Checkered Flag', dealer: true},
-			{name: 'Colonial', dealer: true},
-			{name: 'Interstate Battery', manualSale: true},
-			{name: 'LKQ'},
-			{name: 'Perry', dealer: true},
-			{name: 'Priority', dealer: true},
-			{name: 'Southern', dealer: true}
-		];
+		$scope.vendors = Vendors;
 
 		function totalOrder() {
 			var total = 0,
