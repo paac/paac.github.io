@@ -1,0 +1,12 @@
+@media print {
+	.no_print {
+		display:none;
+	}
+}
+
+@media screen {
+	.partial {
+		height:200px;
+		overflow-y: scroll;
+	}
+}
