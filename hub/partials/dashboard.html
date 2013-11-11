@@ -26,24 +26,26 @@
 			<div class="col-md-5" ng-controller="PhoneCtrl">
                 <h3>Phone Directory</h3>
                 <input class="form-control" placeholder="search" ng-model="searchTxt">
-                <table class="table table-hover table-bordered partial">
-                    <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td>Number</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="phonenumber in phoneDirectory | filter:searchTxt">
-                            <td>{{phonenumber.name}}</td>
-                            <td>
-                                <ul>
-                                    <li ng-repeat="number in phonenumber.numbers">{{number}}</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="partial">
+	                <table class="table table-hover table-bordered partial">
+	                    <thead>
+	                        <tr>
+	                            <td>Name</td>
+	                            <td>Number</td>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr ng-repeat="phonenumber in phoneDirectory | filter:searchTxt">
+	                            <td>{{phonenumber.name}}</td>
+	                            <td>
+	                                <ul>
+	                                    <li ng-repeat="number in phonenumber.numbers">{{number}}</li>
+	                                </ul>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+				</div>
             </div>
 		</div>
 		<div class="row">
