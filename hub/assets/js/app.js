@@ -2,9 +2,9 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/hub/', 
-          {	
-            templateUrl: '/hub/partials/dashboard.html',
-          }
+        {	
+          templateUrl: '/hub/partials/dashboard.html',
+        }
       );
     $routeProvider
       .when('/hub/estimator',
@@ -27,4 +27,4 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
         }
       );
       // $locationProvider.html5Mode(true);
-    }]);
+    }]);       

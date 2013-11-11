@@ -5,20 +5,20 @@
                 <div class="part_form">
                     <form name="partForm" ng-submit="addToParts(item)" class="form-horizontal">
                         <fieldset>
-                            <legend>Item</legend>
+                            <legend>Job</legend>
                             <div class="control-group">
-                                <label class="control-label">Item Name</label>
+                                <label class="control-label">Part Name</label>
                                 <div class="controls">
                                     <input type="text" placeholder="Name" required ng-model="item.name" class="form-control input-lg">
                                 </div>
                             </div>
                             <hr>
                             <div class="control-group">
-                                <label class="control-label">Part Cost</label>
+                                
                                 <div class="row controls">
                                     <div class="input-group col-lg-12">
                                         <span class="input-group-addon">$</span>
-                                        <input placeholder="Cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
+                                        <input placeholder="Part cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
                                         <span class="input-group-addon">
                                             <input type="checkbox" ng-model="item.dealer">Dealer
                                         </span>
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" ng-disabled="!partForm.$valid" class="pull-right clearfix btn btn-lg btn-primary">Add</button>
+                            <button type="submit" ng-disabled="!partForm.$valid" class="pull-right clearfix btn btn-lg btn-primary">Add <span class="glyphicon glyphicon-arrow-right"></span></button>
                         </fieldset>
                     </form>
                 </div>
@@ -83,13 +83,14 @@
                                 <td>Labor Hours</td>
                                 <td>Labor Price</td>
                                 <td>Total</td>
+                                <td class="no_print">Edit</td>
                                 <td class="no_print">Remove</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="part in parts">
                                 <td>{{part.name}}
-                                    <br><a ng-click="edit($index)">Edit</a>
+                                    <br>
                                 </td>
                                 <td class="no_print">{{part.costPrice | currency}}
                                     <br>
@@ -110,7 +111,9 @@
                                 <td>{{part.laborPrice | currency}}</td>
                                 <td>{{part.totalPrice | currency}}</td>
                                 <td class="no_print">
-                                    <button ng-click="deletePart($index)" class="btn btn-xs btn-danger">X</button>
+                                    <button class="btn btn-xs btn-primary" ng-click="edit($index)"><span class="glyphicon glyphicon-arrow-left"></span> Edit</button></td>
+                                <td class="no_print">
+                                    <button ng-click="deletePart($index)" class="btn btn-xs btn-danger">Delete</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -150,7 +153,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'30'">
+                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'15'">
                             <td>{{order.name}}</td>
                             <td>{{order.date | date:'hh:mma' }}</td>
                             <td>{{order.date | date:'shortDate'}}
