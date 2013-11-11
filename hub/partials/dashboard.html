@@ -23,5 +23,30 @@
 				</table>
 			</div>
 		</div>
+		<div class="row">
+			<div class="panel panel-default order_table" ng-controller="EstimateCtrl">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Recent Estimates</h3>
+                </div>
+                <table class="table table-bordered table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Time</td>
+                            <td>Date</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'5'">
+                            <td>{{order.name}}</td>
+                            <td>{{order.date | date:'hh:mma' }}</td>
+                            <td>{{order.date | date:'shortDate'}}
+                            <td>{{order.total | currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+		</div>
 	</div>
 </div>
