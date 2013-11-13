@@ -40,7 +40,7 @@
                         <td>{{appointment.vehicle.year}} {{appointment.vehicle.make}} {{appointment.vehicle.model}}</td>
                         <td>{{appointment.vehicle.mileage}}</td>
 						<td>{{appointment.service}}</td>
-						<td><select class="form-control" ng-model="appointment.status" ng-change="updateAppointment(appointment)" ng-options="status.value as status.name for status in statuses"></td>
+						<td><select class="form-control" ng-model="appointment.status" ng-options="status.value as status.name for status in statuses"></td>
                         <td><button class="btn btn-warning btn-sm" ng-click="editAppointment(appointment)">Edit</button></td>
                         <td><button class="btn btn-danger btn-sm" ng-click="deleteAppointment(appointment)">X</button></td>
                     </tr>
