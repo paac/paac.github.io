@@ -1,6 +1,6 @@
 angular.module('estimator.controller', []).
-	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors'
-		function($scope, angularFire, 'Vendors') {
+	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
+		function($scope, angularFire, Vendors) {
 		var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
 		$scope.orders = [];
 		angularFire(ref, $scope, "orders");

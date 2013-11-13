@@ -2,9 +2,9 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/hub/', 
-          {	
-            templateUrl: '/hub/partials/dashboard.html',
-          }
+        {	
+          templateUrl: '/hub/partials/dashboard.html',
+        }
       );
     $routeProvider
       .when('/hub/estimator',
@@ -26,30 +26,17 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
           templateUrl: '/hub/partials/secretary.html'
         }
       );
-      $locationProvider.html5Mode(true);
-    }]);;angular.module('estimator.controller', []).
-	controller('EstimateCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
+      // $locationProvider.html5Mode(true);
+    }]);       ;angular.module('estimator.controller', []).
+	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
+		function($scope, angularFire, Vendors) {
 		var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
-		$scope.parts = [];
 		$scope.orders = [];
 		angularFire(ref, $scope, "orders");
+
+		$scope.parts = [];
 		$scope.predicate = "-date";
-		$scope.vendors = [
-			{name: 'Pep Boys'},
-			{name: 'Prime'},
-			{name: 'Quality'},
-			{name: 'Bap Geon'},
-			{name: 'API'},
-			{name: 'American Tire', tires: true},
-			{name: 'Atlantic Tire', tires: true},
-			{name: 'Checkered Flag', dealer: true},
-			{name: 'Colonial', dealer: true},
-			{name: 'Interstate Battery', manualSale: true},
-			{name: 'LKQ'},
-			{name: 'Perry', dealer: true},
-			{name: 'Priority', dealer: true},
-			{name: 'Southern', dealer: true}
-		];
+		$scope.vendors = Vendors;
 
 		function totalOrder() {
 			var total = 0,
@@ -181,7 +168,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 			{name: 'Southern', dealer: true}
 		];
 		return vendors;
-	});;angular.module('scheduler.controller', []).
+	});; angular.module('scheduler.controller', []).
 	controller('ScheduleCtrl', ['$scope', '$timeout', 'Statuses', 'Time', 'angularFire', function($scope, $timeout, Statuses, Time, angularFire) {
 		
 		//Get today's date and reset the time to midnight
@@ -191,24 +178,13 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 		//declare our sort order
 		$scope.predicate = "date";
 
-		//Get our list of statuses
 		$scope.statuses = Statuses;
-		//Get our list of valid time choices
-		//TODO: Refactor this so that already-chosen time options are removed
 		$scope.time = Time;
-
-		//If no appointments, create a new array. Else, load our appointments from localStorage
-		//TODO: move away from localStorage, get and store our data with a proper database
-		// $scope.appointments = (!localStorage.getItem('schedule')) ? [] : JSON.parse(localStorage.getItem('schedule'));
-		// This code is here in case our database gets corrupted and I need to reset it.
-		
-		// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		
 		var ref = new Firebase("https://hooptie.firebaseio.com/scheduler");
 		$scope.appointments = [];
 		angularFire(ref, $scope, "appointments");
 
-		//returns an object that populates our form with appropriate defaults
 		newAppointment = function() {
 			return {
 				index: $scope.appointments.length,
@@ -221,7 +197,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 			};
 		};
 
-		//Set up our first appointment object of the day.
 		$scope.appointment = newAppointment();
 		
 		$scope.incDate = function() {
@@ -256,28 +231,17 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 				appointment.date = new Date(appointment.date);
 				appointment.date.setHours(hour, minute,0,0);
 			}
-			//Add it to the schedule
 
-	
 			$scope.appointments.push(appointment);
-			
-			//Set up our next appointment
 			$scope.appointment = newAppointment();
-			//store our appointment in localStorage & reload
-			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-			// $scope.appointments = JSON.parse(localStorage.getItem('schedule'));
 		};
 
 		//edit an existing appointment
 		$scope.editAppointment = function(appointment) {
 			
-			//Get the apppriate appointment
 			$scope.appointment = $scope.appointments[appointment.index];
-			//storing our object as JSON casts our Date object to a string.
-			//Make it an object again.
 			$scope.appointment.date = new Date($scope.appointment.date);
 
-			//Yank it our of array
 			$scope.appointments.splice(appointment.index, 1);
 
 			//recalculate our index
@@ -285,20 +249,11 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 			for (var i=0; i < $scope.appointments.length; i++) {
 				$scope.appointments[i].index = i;
 			}
-			//store it in localStorage.
-			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		};
 
-		//Probably should call this "updateStatus", since it's not as used as generically as this would imply.
-		//Then again, it may prove useful for "quick-edits" of other fields.
-		$scope.updateAppointment = function(appointment) {
-			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
-		};
 
-		//Yank an appointment out of our array and update our schedue in localStorage
 		$scope.deleteAppointment = function(appointment) {
 			$scope.appointments.splice(appointment.index, 1);
-			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		};
 
 		//Check to see if any existing appointments are late and update their status accordingly.
@@ -311,7 +266,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
 					$scope.appointments[i].status = 'warning';
 				}
 			}
-			// localStorage.setItem('schedule', JSON.stringify($scope.appointments));
 		};
 
 		//Run our updateStatus every five minutes
