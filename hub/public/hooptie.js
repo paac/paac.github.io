@@ -26,7 +26,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
           templateUrl: '/hub/partials/secretary.html'
         }
       );
-      // $locationProvider.html5Mode(true);
     }]);       ;angular.module('estimator.controller', []).
 	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
 		function($scope, angularFire, Vendors) {
