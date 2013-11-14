@@ -4,6 +4,7 @@
     }
 }
 @media screen {
+<<<<<<< HEAD
 	.success {
 		display:none;
 	}
@@ -24,3 +25,10 @@
         pointer-events: none;
     }
 }
+=======
+	.partial {
+		height:200px;
+		overflow-y: scroll;
+	}
+}
+>>>>>>> parent of 9e53f87... Added overlay to fade out directory
