@@ -3,7 +3,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'secretary.control
     $routeProvider
       .when('/hub/', 
         {	
-          templateUrl: '/hub/partials/dashboard.html',
+          templateUrl: 'partials/dashboard.html',
         }
       );
     $routeProvider
