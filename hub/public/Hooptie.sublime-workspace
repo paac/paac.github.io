@@ -1,0 +1,587 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"template",
+				"templateUrl"
+			],
+			[
+				"veh",
+				"vehicles"
+			],
+			[
+				"set",
+				"localStorage.setItem"
+			],
+			[
+				"appo",
+				"appointments"
+			],
+			[
+				"filter",
+				"filtered_list"
+			],
+			[
+				"par",
+				"parentNode"
+			],
+			[
+				"order",
+				"order_table"
+			],
+			[
+				"parse",
+				"parseFloat"
+			],
+			[
+				"tot",
+				"totalOrder"
+			],
+			[
+				"price",
+				"totalPrice"
+			],
+			[
+				"cost",
+				"costPrice"
+			],
+			[
+				"get",
+				"getDay"
+			],
+			[
+				"Modal",
+				"modalInstanceCtrl"
+			],
+			[
+				"modal",
+				"modalInstance"
+			],
+			[
+				"up",
+				"updateList"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"index",
+				"indexRoutes"
+			],
+			[
+				"app",
+				"appointment"
+			],
+			[
+				"fil",
+				"fill_in"
+			],
+			[
+				"signup",
+				"signup_path"
+			],
+			[
+				"gra",
+				"gravatar_url"
+			],
+			[
+				"have",
+				"have_content"
+			],
+			[
+				"user",
+				"user_for_invalid_password"
+			],
+			[
+				"passwor",
+				"password_confirmation"
+			],
+			[
+				"valid",
+				"valid_address"
+			],
+			[
+				"should",
+				"should_not"
+			],
+			[
+				"cont",
+				"Contact"
+			],
+			[
+				"Rej",
+				"RejectionReasons"
+			],
+			[
+				"Inspectio",
+				"InspectionNumber"
+			],
+			[
+				"IfWin",
+				"IfWinNotActive"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"border-bottom",
+				"border-bottom-color"
+			],
+			[
+				"backgro",
+				"background-position"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"dropdow",
+				"dropdown-toggle"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Git: Stat",
+				"Git: Status"
+			],
+			[
+				"Git: Status",
+				"Git: Status"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"wr",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 410.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Richard/Sites/paac/hub/Gruntfile.js",
+		"/C/Users/Richard/Sites/paac/hub/js/estimator/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/estimator.html",
+		"/C/Users/Richard/Sites/paac/hub/partials/scheduler.html",
+		"/C/Users/Richard/Sites/paac/hub/assets/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/assets/js/estimator/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/css/style.css",
+		"/C/Users/Richard/Sites/paac/hub/partials/dashboard.html",
+		"/C/Users/Richard/Sites/paac/hub/assets/js/scheduler/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/assets/jquery/.gitignore",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Alignment/readme.creole",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/AlignTab/AlignTab.sublime-settings",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Alignment/Default (Windows).sublime-keymap",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/Richard/Sites/paac/hub/public/hooptie.js",
+		"/C/Users/Richard/Sites/paac/hub/js/secretary/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/services.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/secretary.html",
+		"/C/Users/Richard/Sites/paac/hub/js/estimator/services.js",
+		"/C/Users/Richard/Sites/paac/hub/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/index.html",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/controller.js",
+		"/C/Users/Richard/Sites/paac/hub/package.json",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/service.js",
+		"/C/Users/Richard/Sites/paac/hub/npm-debug.log",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/secretary/index.html",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/index.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Richard/Sites/hooptie-five-oh/api/controllers/OrderController.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/views/layout.jade",
+		"/C/Users/Richard/Sites/hooptie-five-oh/.bowerrc",
+		"/C/Users/Richard/Sites/hooptie-five-oh/config/adapters.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/assets/estimator/js/controllers.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/views/home/index.jade",
+		"/C/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/debug.log",
+		"/C/Users/Richard/Documents/phone-list.html",
+		"/C/Users/Richard/Sites/hooptie/public/views/index.html",
+		"/C/Users/Richard/Sites/hooptie/app/views/includes/head.jade",
+		"/C/Users/Richard/Sites/hooptie/app/controllers/users.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/index.html",
+		"/C/Users/Richard/Sites/paac/hub/templates/main.html",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/css/style.css",
+		"/C/Users/Richard/Sites/paac/hub/js/routes.js",
+		"/C/Users/Richard/Sites/paac/hub/js/directives.js",
+		"/C/Users/Richard/Sites/paac/hub/js/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/test.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/app.js",
+		"/C/Users/Richard/Sites/quiz/app.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/wolf3d.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/css/print.css",
+		"/C/Users/Richard/Sites/paac/hub/estimator/partials/estimator.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/index2.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/partials/scheduler.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/routes.js",
+		"/c/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/debug.log",
+		"/C/Users/Richard/Sites/front-desk-hub/views/layout.jade",
+		"/C/Users/Richard/Sites/front-desk-hub/public/modules/appModule.js",
+		"/C/Users/Richard/Sites/scheduler/package.json",
+		"/C/Users/Richard/Sites/paac/fall/index.md",
+		"/C/Users/Richard/Sites/paac/thanks/index.md",
+		"/C/Users/Richard/Sites/paac/js/scripts.js",
+		"/C/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/uploadr.ini",
+		"/C/Users/Richard/Sites/service-center/app/views/admin/index.html.erb",
+		"/C/Users/Richard/Sites/service-center/Gemfile",
+		"/C/Users/Richard/Sites/service-center/app/assets/stylesheets/admin.css.scss",
+		"/C/Users/Richard/Sites/service-center/README.md",
+		"/C/Users/Richard/Sites/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/C/Users/Richard/Sites/sample_app/app/assets/stylesheets/application.css",
+		"/C/Users/Richard/Sites/service-center/db/migrate/20130826155200_create_vehicles.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/users/show.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/helpers/users_helper.rb",
+		"/c/Users/Richard/Sites/sample_app/config/environments/test.rb",
+		"/C/Users/Richard/Sites/sample_app/spec/factories.rb",
+		"/c/Users/Richard/Sites/sample_app/config/routes.rb",
+		"/c/Users/Richard/Sites/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/c/Users/Richard/Sites/sample_app/app/views/users/new.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/controllers/users_controller.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/requests/users_pages_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/Gemfile",
+		"/c/Users/Richard/Sites/sample_app/db/schema.rb",
+		"/c/Users/Richard/Sites/sample_app/db/migrate/20130822190156_add_index_to_users_email.rb",
+		"/c/Users/Richard/Sites/sample_app/app/controllers/static_pages_controller.rb",
+		"/c/Users/Richard/Sites/sample_app/app/helpers/application_helper.rb",
+		"/C/Users/Richard/Sites/sample_app/app/views/static_pages/contact.html.erb",
+		"/C/Users/Richard/Sites/sample_app/spec/support/utilities.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/requests/static_pages_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/models/user_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/app/models/user.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_header.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/application.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/home.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_footer.html.erb",
+		"/c/Users/Richard/Sites/sample_app/config/initializers/secret_token.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/about.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/help.html.erb",
+		"/c/Users/Richard/Sites/sample_app/spec/spec_helper.rb",
+		"/c/Users/Richard/Sites/sample_app/config/application.rb",
+		"/c/Users/Richard/Sites/sample_app/.gitignore",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_shim.html.erb",
+		"/C/Users/Richard/Sites/sample_app/app/views/layouts/home.html.erb",
+		"/C/Users/Richard/Sites/service-center/.gitignore",
+		"/c/Users/Richard/Sites/service-center/.git/COMMIT_EDITMSG",
+		"/c/Users/Richard/Sites/service-center/Gemfile",
+		"/C/Users/Richard/Sites/experiment/test.html",
+		"/C/Users/Richard/Sites/experiment/scripts/main.js",
+		"/C/Users/Richard/AppData/Roaming/VanDyke/Config/Global.ini",
+		"/C/Users/Richard/Sites/paac/images/logo.svg",
+		"/C/Users/Richard/Documents/AutoHotkey.ahk",
+		"/c/Users/Richard/Sites/angularjs-test/index.html",
+		"/c/Users/Richard/Sites/angularjs-test/app.js",
+		"/C/Users/Richard/Downloads/gzmj@sexinsex@RICK LEE（合集）/22P2P.url.!ut",
+		"/C/Users/Richard/Sites/angularjs-test/index.html",
+		"/C/Users/Richard/Sites/angularjs-test/main-controller.js",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/README.md",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/emmet/snippets.json"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	\",",
+			" \",",
+			"  ",
+			"           ",
+			"				   ",
+			"\n\"}, ",
+			"\n\"},",
+			"\n\n\"},",
+			"\n\"",
+			"}, { name",
+			"name",
+			"</b>",
+			"<p><b>",
+			">",
+			"<p><b",
+			"</b>",
+			"</p>",
+			"todo",
+			"$scope.hour",
+			"(!",
+			"\nvar counter = 0,\n	score = 0,\n	d = document,\n	questions = [\n		{\n			question: \"Who is Prime Minister of the United Kingdom?\",\n			choices: [\"David Cameron\", \"Gordon Brown\", \"Winston Churchill\", \"Tony Blair\"],\n			correctAnswer:0\n		},\n		{	\n			question: \"In which year did Apple release their first personal computer?\",\n			choices: [\"1984\", \"1991\", \"1976\", \"1968\"],\n			correctAnswer:2\n		}\n	],\n	question = d.getElementById('question'),\n	button = d.getElementById('next');\n\nbutton.addEventListener('click', next);\n\nfunction gradeAnswer() {\n	var answer = d.querySelector('input[name = \"answer\"]:checked').value;\n	if ((answer == questions[counter-1].correctAnswer) && (!(questions[counter-1].answered))){ score++ }\n	questions[counter-1].answered = true;\n}\n\nfunction buildForm() {\n	var choices = questions[counter].choices;\n	var form = d.createElement('form');\n\n	for(var i=0; i < choices.length; i++) {\n		var input = d.createElement('input'),\n			label = d.createElement('label'),\n			br = d.createElement('br');\n		label.innerText = choices[i];\n		input.setAttribute('type', 'radio');\n		input.setAttribute('value', i);\n		input.setAttribute('name', 'answer');\n		input.addEventListener('click', gradeAnswer);\n		form.appendChild(input);\n		form.appendChild(label);\n		form.appendChild(br);\n	}\n	question.appendChild(form);\n}\n\nfunction next() {\n	question.innerHTML = null;\n	if (counter < questions.length) {\n		currentQuestion = questions[counter];\n		question.innerHTML= '<h1>' + currentQuestion.question + '</h1>';\n		buildForm();\n		counter++;\n	} else {\n		var parent = button.parentNode;\n		question.innerHTML= '<h1>Congrats!</h1><br><h2>Your Score is: ' + score + '</h2>';\n		parent.removeChild(button);\n	}\n}\n",
+			"cons",
+			"E",
+			"part.labor",
+			"part",
+			"appModule",
+			"modal",
+			"timepick",
+			"end",
+			"5",
+			"}]);",
+			"sni",
+			"html",
+			"tab",
+			"5",
+			"!",
+			"inpu",
+			"gfx",
+			"image",
+			"path",
+			"hero",
+			"<!--/.",
+			"<!--",
+			"6PM",
+			".info",
+			"dc4",
+			">\n",
+			"icon-chevron-right",
+			"dropdown",
+			"drop",
+			"id",
+			"recalc",
+			"gs",
+			"el",
+			"reca",
+			"setmidpoint",
+			"setMidPoint",
+			"topfa"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\",",
+			"",
+			"	{ name: \"GREGORY MACHINE    \", number: \"490-1606\n\"}, ",
+			"	{ name: \"GREGORY MACHINE    \", number: \"490-1606\n\"",
+			"\"",
+			"\"}, { name",
+			"}, { name",
+			"\", number: \"",
+			"name: \"",
+			"",
+			"</p>",
+			"5PM",
+			"icon-chevron-right icon-white",
+			"icon-chevron-right icons-white",
+			"icon-chevron-right",
+			"gradientStop"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.740760885939,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				".git",
+				"assets/jquery/.gitignore"
+			],
+			[
+				"",
+				"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc"
+			],
+			[
+				"da",
+				"partials/dashboard.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 283.0,
+	"status_bar_visible": true
+}
