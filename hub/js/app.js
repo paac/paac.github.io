@@ -5,22 +5,22 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         {
           templateUrl: 'partials/dashboard.html'
         })
-      .when('/estimator', 
+      .when('./estimator', 
         {
           templateUrl: 'partials/estimator.html',
           controller: 'EstimateCtrl'
         })
-      .when('/scheduler',
+      .when('./scheduler',
         {
           templateUrl: 'partials/scheduler.html',
           controller: 'ScheduleCtrl'
         })
-      .when('/secretary',
+      .when('./secretary',
         {
           templateUrl: 'partials/secretary.html'
         })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/hub'
       });
   }]);
   // .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
