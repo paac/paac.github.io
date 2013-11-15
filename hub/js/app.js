@@ -18,8 +18,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       .when('./secretary',
         {
           templateUrl: 'partials/secretary.html'
-        });
-
+        })
+      .otherwise({
+        redirectTo: '/hub'
+      });
      $locationProvider.html5Mode(true);
   }]);
   // .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
