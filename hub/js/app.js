@@ -5,17 +5,17 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         {
           templateUrl: 'partials/dashboard.html'
         })
-      .when('./estimator', 
+      .when('/hub/estimator', 
         {
           templateUrl: 'partials/estimator.html',
           controller: 'EstimateCtrl'
         })
-      .when('./scheduler',
+      .when('/hub/scheduler',
         {
           templateUrl: 'partials/scheduler.html',
           controller: 'ScheduleCtrl'
         })
-      .when('./secretary',
+      .when('/hub/secretary',
         {
           templateUrl: 'partials/secretary.html'
         })
