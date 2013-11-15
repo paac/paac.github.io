@@ -57,7 +57,7 @@ angular.module('estimator.controller', []).
 
                 $scope.edit = function (idx) {
                         $scope.item = $scope.parts[idx];
-                        $scope.parts.splice(idx, 1);
+                        // $scope.parts.splice(idx, 1);
                         totalOrder();
                 };
                 
