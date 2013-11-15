@@ -1,7 +1,7 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('./',
+      .when('/',
         {
           templateUrl: 'partials/dashboard.html'
         })
