@@ -1,5 +1,5 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/',
         {
@@ -22,6 +22,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       .otherwise({
         redirectTo: '/hub'
       });
+     $locationProvider.html5Mode(true);
   }]);
   // .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   //   $routeProvider
