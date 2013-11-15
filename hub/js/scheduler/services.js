@@ -6,7 +6,7 @@ angular.module('scheduler.service', [])
 			{ name: 'Arrived', value: 'arrived' },
 			{ name: 'Late', value: 'warning' },
 			{ name: 'No Show', value: 'danger' },
-			{ name: 'Complete', value: 'no-show' },
+			{ name: 'Complete', value: 'success' },
 			{ name: 'In Progress', value: 'active' }
 		];
 	})
