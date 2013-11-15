@@ -1,23 +1,23 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/hub',
+      .when('/hub/',
         {
-          templateUrl: 'partials/dashboard.html'
+          templateUrl: '/hub/partials/dashboard.html'
         })
       .when('/hub/estimator', 
         {
-          templateUrl: 'partials/estimator.html',
+          templateUrl: '/hub/partials/estimator.html',
           controller: 'EstimateCtrl'
         })
       .when('/hub/scheduler',
         {
-          templateUrl: 'partials/scheduler.html',
+          templateUrl: '/hub/partials/scheduler.html',
           controller: 'ScheduleCtrl'
         })
       .when('/hub/secretary',
         {
-          templateUrl: 'partials/secretary.html'
+          templateUrl: '/hub/partials/secretary.html'
         })
       .otherwise({
         redirectTo: '/hub'
