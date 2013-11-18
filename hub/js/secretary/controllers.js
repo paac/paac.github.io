@@ -1,6 +1,6 @@
 angular.module('secretary.controller', [])
     .controller('PhoneCtrl', ['$scope', 'PhoneDirectory', 'angularFire'
-        function($scope, PhoneDirectory) {
+        function($scope, angularFire, PhoneDirectory) {
             
             var ref = new Firebase("https://hooptie.firebaseio.com/phoneList");
             angularFire(ref, $scope, "phoneDirectory");
