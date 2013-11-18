@@ -5,7 +5,10 @@ angular.module('secretary.controller', [])
             var ref = new Firebase("https://hooptie.firebaseio.com/phoneList");
             $scope.phoneDirectory = [];
             angularFire(ref, $scope, "phoneDirectory");
-            
+         
+            $scope.delPhone = function(index) {
+                $scope.phoneDirectory.splice(index,1);
+            }   
         }
     ])
     .controller('TodoCtrl', ['$scope', 'angularFire',
