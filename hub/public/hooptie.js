@@ -1,154 +1,154 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    //Don't try to do anything smart with this. Angular routes are fucking stupid and this will all break without any hint of an error.
     $routeProvider
-      .when('/hub/', 
-        {	
-          templateUrl: 'partials/dashboard.html',
-        }
-      );
-    $routeProvider
-      .when('/hub/estimator',
-        {	
+      .when('/hub/',
+        {
+          templateUrl: '/hub/partials/dashboard.html'
+        })
+      .when('/hub/estimator', 
+        {
           templateUrl: '/hub/partials/estimator.html',
-          controller: 'EstimateCtrl'		
-        }
-      );
-    $routeProvider
+          controller: 'EstimateCtrl'
+        })
       .when('/hub/scheduler',
-        {	
+        {
           templateUrl: '/hub/partials/scheduler.html',
           controller: 'ScheduleCtrl'
-        }
-      );
-    $routeProvider
+        })
       .when('/hub/secretary',
         {
           templateUrl: '/hub/partials/secretary.html'
-        }
-      );
-    }]);       ;angular.module('estimator.controller', []).
-	controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
-		function($scope, angularFire, Vendors) {
-		var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
-		$scope.orders = [];
-		angularFire(ref, $scope, "orders");
+        })
+      .otherwise({
+        redirectTo: '/hub'
+      });
+     $locationProvider.html5Mode(true);
+  }]);;angular.module('estimator.controller', []).
+        controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
+                function($scope, angularFire, Vendors) {
+                var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
+                $scope.orders = [];
+                angularFire(ref, $scope, "orders");
 
-		$scope.parts = [];
-		$scope.predicate = "-date";
-		$scope.vendors = Vendors;
+                $scope.parts = [];
+                $scope.predicate = "-date";
+                $scope.vendors = Vendors;
 
-		function totalOrder() {
-			var total = 0,
-				length = $scope.parts.length,
-				parts = $scope.parts;
-			for (var i = 0; i < length; i++) {
-				total += parts[i].totalPrice;
-			}
-			$scope.parts.total = total;
-		}
-			
-		function calcPrice(cost, quantity, dealer) {
-			var markup;
-			markup = (function() {
-				switch (false) {
-					case !(cost <= 5 && !dealer):
-						return '3.25';
-					case !(cost > 5 && cost <= 10 && !dealer):
-						return '2.5';
-					case !(cost > 10 && cost <= 75 && !dealer):
-						return '2.25';
-					case !(cost > 75 && cost <= 150 && !dealer):
-						return '2';
-					case !(cost > 150 && cost <= 750 && !dealer):
-						return '1.85';
-					case !(cost <= 1 && dealer):
-						return '3.5';
-					case !(cost > 1 && cost <= 5 && dealer):
-						return '3.25';
-					case !(cost > 5 && cost <= 50 && dealer):
-						return '2.25';
-					case !(cost > 50 && cost <= 100 && dealer):
-						return '1.82';
-					case !(cost > 100 && cost <= 175 && dealer):
-						return '1.67';
-					default:
-				return '1.54';
-			}
-		})();
-			return markup * cost * quantity;
-		}
+                function totalOrder() {
+                        var total = 0,
+                                length = $scope.parts.length,
+                                parts = $scope.parts;
+                        for (var i = 0; i < length; i++) {
+                                total += parts[i].totalPrice;
+                        }
+                        $scope.parts.total = total;
+                }
+                        
+                function calcPrice(cost, quantity, dealer) {
+                        var markup;
+                        markup = (function() {
+                                switch (false) {
+                                        case !(cost <= 5 && !dealer):
+                                                return '3.25';
+                                        case !(cost > 5 && cost <= 10 && !dealer):
+                                                return '2.5';
+                                        case !(cost > 10 && cost <= 75 && !dealer):
+                                                return '2.25';
+                                        case !(cost > 75 && cost <= 150 && !dealer):
+                                                return '2';
+                                        case !(cost > 150 && cost <= 750 && !dealer):
+                                                return '1.85';
+                                        case !(cost <= 1 && dealer):
+                                                return '3.5';
+                                        case !(cost > 1 && cost <= 5 && dealer):
+                                                return '3.25';
+                                        case !(cost > 5 && cost <= 50 && dealer):
+                                                return '2.25';
+                                        case !(cost > 50 && cost <= 100 && dealer):
+                                                return '1.82';
+                                        case !(cost > 100 && cost <= 175 && dealer):
+                                                return '1.67';
+                                        default:
+                                return '1.54';
+                        }
+                })();
+                        return markup * cost * quantity;
+                }
 
-		$scope.deletePart = function ( idx ) {
-			$scope.parts.splice(idx, 1);
-			totalOrder();
-		};
+                $scope.deletePart = function ( idx ) {
+                        $scope.parts.splice(idx, 1);
+                        totalOrder();
+                };
 
-		$scope.edit = function (idx) {
-			$scope.item = $scope.parts[idx];
-			$scope.parts.splice(idx, 1);
-			totalOrder();
-		};
-		
-		$scope.optionSelected = function(item) {
-			item.dealer = item.vendor.dealer;
-			item.manualSale = item.vendor.manualSale;
-			item.tires = item.vendor.tires;
-		};
+                $scope.edit = function (idx) {
+                        $scope.item = $scope.parts[idx];
+                        // $scope.parts.splice(idx, 1);
+                        totalOrder();
+                };
+                
+                $scope.optionSelected = function(item) {
+                        item.dealer = item.vendor.dealer;
+                        item.manualSale = item.vendor.manualSale;
+                        item.tires = item.vendor.tires;
+                };
 
-		$scope.addToParts = function(item) {
-			part = {};
-			part = item;
+                $scope.addToParts = function(item) {
+                        // part = {};
+                        part = item;
 
-			part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
-			part.quantity = (!item.quantity) ? 1 : item.quantity;
-			if (!part.manualLabor) {
-				part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
-			} else {
-				part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
-				part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
-			}
-			if (part.manualSale) {
-				part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
-			} else if (part.dealer) {
-				part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
-			} else if (part.tires) {
-				part.salePrice = part.costPrice * 1.25;
-				part.salePriceTotal = part.salePrice * part.quantity;
-			} else { 
-				part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
-			}
-			part.totalPrice = part.salePriceTotal + part.laborPrice;
-			$scope.parts.push(part);
-			$scope.item = {};
-			totalOrder();
-		};
-		$scope.deleteOrder = function(idx) {
-			$scope.orders.splice($scope.orders.length - idx - 1, 1);
-		};
-		$scope.editOrder = function(idx) {
-			orders = $scope.orders;
-			reversedIndex = orders.length - idx - 1;
-			$scope.reversedIndex = reversedIndex;
-			$scope.parts = orders[reversedIndex].parts;
-			$scope.parts.name = orders[reversedIndex].name;
-			
-			// localStorage.setItem('history', JSON.stringify($scope.orders));
-			totalOrder();
-		};
+                        part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
+                        part.quantity = (!item.quantity) ? 1 : item.quantity;
+                        if (!part.manualLabor) {
+                                part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
+                        } else {
+                                part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
+                                part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
+                        }
+                        if (part.manualSale) {
+                                part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
+                        } else if (part.dealer) {
+                                part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
+                        } else if (part.tires) {
+                                part.salePrice = part.costPrice * 1.25;
+                                part.salePriceTotal = part.salePrice * part.quantity;
+                        } else { 
+                                part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
+                        }
+                        part.totalPrice = part.salePriceTotal + part.laborPrice;
+                        $scope.parts.push(part);
+                        $scope.item = {};
+                        totalOrder();
+                };
+                $scope.deleteOrder = function(idx) {
+                        $scope.orders.splice($scope.orders.length - idx - 1, 1);
+                };
+                $scope.editOrder = function(idx) {
+                        orders = $scope.orders;
+                        reversedIndex = orders.length - idx - 1;
+                        $scope.reversedIndex = reversedIndex;
+                        $scope.parts = orders[reversedIndex].parts;
+                        $scope.parts.name = orders[reversedIndex].name;
+                        totalOrder();
+                };
 
-		$scope.addToHistory = function(parts) {
-			if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
-			$scope.reversedIndex = undefined;
-			order = {};
-			order.name = parts.name;
-			order.date = Date.now();
-			order.total = parts.total;
-			order.parts = parts;
-			$scope.orders.push(order);
-			$scope.parts = [];
-			// localStorage.setItem('history', JSON.stringify($scope.orders));
-		};
-	}]);;angular.module('estimator.service', []).
+                $scope.addToHistory = function(parts) {
+                        if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
+                        $scope.reversedIndex = undefined;
+                        order = {
+                                name: parts.name,
+                                date: Date.now(),
+                                total: parts.total,
+                                parts: parts
+                        };
+                        // order.name = parts.name;
+                        // order.date = Date.now();
+                        // order.total = parts.total;
+                        // order.parts = parts;
+                        $scope.orders.push(order);
+                        $scope.parts = [];
+                };
+        }]);;angular.module('estimator.service', []).
 	factory('Vendors', function() {
 		vendors = [
 			{name: 'Pep Boys'},
@@ -300,7 +300,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 			{ name: 'Arrived', value: 'arrived' },
 			{ name: 'Late', value: 'warning' },
 			{ name: 'No Show', value: 'danger' },
-			{ name: 'Complete', value: 'no-show' },
+			{ name: 'Complete', value: 'success' },
 			{ name: 'In Progress', value: 'active' }
 		];
 	})
@@ -346,16 +346,16 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 		];
 	})
 ;;angular.module('secretary.controller', [])
-//Phone List
     .controller('PhoneCtrl', ['$scope', 'PhoneDirectory',
         function($scope, PhoneDirectory) {
             $scope.phoneDirectory = PhoneDirectory;
+            var ref = new Firebase("https://hooptie.firebaseio.com/phoneList");
+            angularFire(ref, $scope, "phoneDirectory");
         }
     ])
-//To-do list
     .controller('TodoCtrl', ['$scope', 'angularFire',
         function($scope, angularFire) {
-            var ref = new Firebase("https://hooptie.firebaseio.com/secretary");
+            var ref = new Firebase("https://hooptie.firebaseio.com/todoList");
             $scope.todos = [];
             angularFire(ref, $scope, "todos");
             
@@ -364,14 +364,11 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                 task.complete = false;
                 $scope.todos.push(todo);
                 $scope.newTodo = {};
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
             $scope.updateTodo = function(index) {
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
             $scope.delTodo = function(index) {
                 $scope.todos.splice(index, 1);
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
         }
     ]);;angular.module('secretary.service', [])

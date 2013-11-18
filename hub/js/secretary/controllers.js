@@ -1,14 +1,14 @@
 angular.module('secretary.controller', [])
-//Phone List
     .controller('PhoneCtrl', ['$scope', 'PhoneDirectory',
         function($scope, PhoneDirectory) {
             $scope.phoneDirectory = PhoneDirectory;
+            var ref = new Firebase("https://hooptie.firebaseio.com/phoneList");
+            angularFire(ref, $scope, "phoneDirectory");
         }
     ])
-//To-do list
     .controller('TodoCtrl', ['$scope', 'angularFire',
         function($scope, angularFire) {
-            var ref = new Firebase("https://hooptie.firebaseio.com/secretary");
+            var ref = new Firebase("https://hooptie.firebaseio.com/todoList");
             $scope.todos = [];
             angularFire(ref, $scope, "todos");
             
@@ -17,14 +17,11 @@ angular.module('secretary.controller', [])
                 task.complete = false;
                 $scope.todos.push(todo);
                 $scope.newTodo = {};
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
             $scope.updateTodo = function(index) {
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
             $scope.delTodo = function(index) {
                 $scope.todos.splice(index, 1);
-                localStorage.setItem('todos', JSON.stringify($scope.todos));
             };
         }
     ]);
