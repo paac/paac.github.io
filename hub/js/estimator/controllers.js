@@ -141,6 +141,6 @@ angular.module('estimator.controller', []).
                         restrict: 'AE',
                         scope: { localModel: '=pageModel', localOffset: '=offset'},
                         controller: 'EstimateCtrl',
-                        templateUrl: "partials/pagination.html"
+                        templateUrl: "partials/paginator.html"
                 };
         }]);
