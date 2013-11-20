@@ -8,7 +8,7 @@ angular.module('estimator.controller', []).
                 $scope.parts = [];
                 $scope.predicate = "-date";
                 $scope.vendors = Vendors;
-                $scope.pager {
+                $scope.pager = {
                         offset: 0,
                         count: 15
                 }
@@ -133,7 +133,7 @@ angular.module('estimator.controller', []).
                 $scope.nextPage = function() {
                         if (($scope.pager.offset + $scope.pager.count) < $scope.localModel.length) $scope.pager.offset += $scope.pager.count;
                 }
-                
+
         }])
         .directive('paginate', ['$filter', function($filter) {
  
