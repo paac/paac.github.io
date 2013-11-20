@@ -122,4 +122,13 @@ angular.module('estimator.controller', []).
                         $scope.orders.push(order);
                         $scope.parts = [];
                 };
+        }])
+        .directive('paginate', ['$filter', function($filter) {
+ 
+                return {
+                        restrict: 'AE',
+                        scope: { localModel: '=pageModel', localOffset: '=offset'},
+                        controller: 'EstimateCtrl',
+                        templateUrl: "partials/pagination.html"
+                };
         }]);
