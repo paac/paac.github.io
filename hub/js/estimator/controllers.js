@@ -8,7 +8,10 @@ angular.module('estimator.controller', []).
                 $scope.parts = [];
                 $scope.predicate = "-date";
                 $scope.vendors = Vendors;
-
+                $scope.pager {
+                        offset: 0,
+                        count: 15
+                }
                 function totalOrder() {
                         var total = 0,
                                 length = $scope.parts.length,
@@ -122,6 +125,15 @@ angular.module('estimator.controller', []).
                         $scope.orders.push(order);
                         $scope.parts = [];
                 };
+
+                $scope.prevPage = function() {
+                        if ($scope.pager.offset > 0) $scope.pager.offset -= $scope.pager.count;
+                }
+
+                $scope.nextPage = function() {
+                        if (($scope.pager.offset + $scope.pager.count) < $scope.localModel.length) $scope.pager.offset += $scope.pager.count;
+                }
+                
         }])
         .directive('paginate', ['$filter', function($filter) {
  
