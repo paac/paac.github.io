@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="order in localModel | orderBy:predicate | pagination:this">
+        <tr ng-repeat="order in localModel | orderBy:predicate | pagination:this track by $index">
             <td>{{order.name}}</td>
             <td>{{order.date | date:'hh:mma' }}</td>
             <td>{{order.date | date:'shortDate'}}
