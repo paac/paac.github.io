@@ -61,7 +61,7 @@ angular.module('estimator.controller', []).
                 $scope.edit = function (idx) {
                         $scope.item = $scope.parts[idx];
                         // $scope.parts.splice(idx, 1);
-                        totalOrder();
+                        // totalOrder();
                 };
                 
                 $scope.optionSelected = function(item) {
@@ -101,7 +101,8 @@ angular.module('estimator.controller', []).
                         $scope.orders.splice($scope.orders.length - idx - 1, 1);
                 };
                 $scope.editOrder = function(idx) {
-                        orders = $scope.orders;
+                        // orders = $scope.orders;
+                        orders = $scope.localModel;
                         reversedIndex = orders.length - idx - 1;
                         $scope.reversedIndex = reversedIndex;
                         $scope.parts = orders[reversedIndex].parts;
