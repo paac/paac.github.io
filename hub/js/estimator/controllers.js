@@ -101,8 +101,9 @@ angular.module('estimator.controller', []).
                         $scope.orders.splice($scope.orders.length - idx - 1, 1);
                 };
                 $scope.editOrder = function(idx) {
-                        console.log('test');
+                        console.log($scope.orders);
                         orders = $scope.orders;
+                        console.log(orders);
                         reversedIndex = orders.length - idx - 1;
                         $scope.reversedIndex = reversedIndex;
                         $scope.parts = orders[reversedIndex].parts;
