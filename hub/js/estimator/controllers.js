@@ -106,8 +106,11 @@ angular.module('estimator.controller', []).
                         
                         console.log(idx);
                         reversedIndex = orders.length - idx - 1;
+                        console.log(reversedIndex);
                         $scope.reversedIndex = reversedIndex;
+                        console.log(orders[reversedIndex].parts);
                         $scope.parts = orders[reversedIndex].parts;
+                        console.log($scope.parts);
                         $scope.parts.name = orders[reversedIndex].name;
                         totalOrder();
                 };
