@@ -1,4 +1,4 @@
-angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
+angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.filter', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     //Don't try to do anything smart with this. Angular routes are fucking stupid and this will all break without any hint of an error.
     $routeProvider
@@ -94,7 +94,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                 };
 
                 $scope.addToParts = function(item) {
-                        // part = {};
+                        part = {};
                         part = item;
 
                         part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
@@ -129,24 +129,22 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         $scope.reversedIndex = reversedIndex;
                         $scope.parts = orders[reversedIndex].parts;
                         $scope.parts.name = orders[reversedIndex].name;
+                        
+                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                         totalOrder();
                 };
 
                 $scope.addToHistory = function(parts) {
                         if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
                         $scope.reversedIndex = undefined;
-                        order = {
-                                name: parts.name,
-                                date: Date.now(),
-                                total: parts.total,
-                                parts: parts
-                        };
-                        // order.name = parts.name;
-                        // order.date = Date.now();
-                        // order.total = parts.total;
-                        // order.parts = parts;
+                        order = {};
+                        order.name = parts.name;
+                        order.date = Date.now();
+                        order.total = parts.total;
+                        order.parts = parts;
                         $scope.orders.push(order);
                         $scope.parts = [];
+                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                 };
         }]);;angular.module('estimator.service', []).
 	factory('Vendors', function() {
@@ -346,11 +344,16 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 		];
 	})
 ;;angular.module('secretary.controller', [])
-    .controller('PhoneCtrl', ['$scope', 'PhoneDirectory',
-        function($scope, PhoneDirectory) {
-            $scope.phoneDirectory = PhoneDirectory;
+    .controller('PhoneCtrl', ['$scope', 'PhoneDirectory', 'angularFire',
+        function($scope, PhoneDirectory, angularFire) {
+            
             var ref = new Firebase("https://hooptie.firebaseio.com/phoneList");
+            $scope.phoneDirectory = [];
             angularFire(ref, $scope, "phoneDirectory");
+         
+            $scope.delPhone = function(index) {
+                $scope.phoneDirectory.splice(index,1);
+            };  
         }
     ])
     .controller('TodoCtrl', ['$scope', 'angularFire',

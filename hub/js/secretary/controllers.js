@@ -8,7 +8,7 @@ angular.module('secretary.controller', [])
          
             $scope.delPhone = function(index) {
                 $scope.phoneDirectory.splice(index,1);
-            }   
+            };  
         }
     ])
     .controller('TodoCtrl', ['$scope', 'angularFire',
