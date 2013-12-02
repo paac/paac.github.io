@@ -8,10 +8,7 @@ angular.module('estimator.controller', []).
                 $scope.parts = [];
                 $scope.predicate = "-date";
                 $scope.vendors = Vendors;
-                $scope.pager = {
-                        offset: 0,
-                        count: 15
-                }
+
                 function totalOrder() {
                         var total = 0,
                                 length = $scope.parts.length,
@@ -61,7 +58,7 @@ angular.module('estimator.controller', []).
                 $scope.edit = function (idx) {
                         $scope.item = $scope.parts[idx];
                         // $scope.parts.splice(idx, 1);
-                        // totalOrder();
+                        totalOrder();
                 };
                 
                 $scope.optionSelected = function(item) {
@@ -71,7 +68,7 @@ angular.module('estimator.controller', []).
                 };
 
                 $scope.addToParts = function(item) {
-                        // part = {};
+                        part = {};
                         part = item;
 
                         part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
@@ -101,52 +98,26 @@ angular.module('estimator.controller', []).
                         $scope.orders.splice($scope.orders.length - idx - 1, 1);
                 };
                 $scope.editOrder = function(idx) {
-                        
                         orders = $scope.orders;
-                        
-                        console.log(idx);
                         reversedIndex = orders.length - idx - 1;
-                        console.log(reversedIndex);
                         $scope.reversedIndex = reversedIndex;
-                        console.log(orders[reversedIndex].parts);
                         $scope.parts = orders[reversedIndex].parts;
-                        console.log($scope.parts);
                         $scope.parts.name = orders[reversedIndex].name;
+                        
+                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                         totalOrder();
                 };
 
                 $scope.addToHistory = function(parts) {
                         if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
                         $scope.reversedIndex = undefined;
-                        order = {
-                                name: parts.name,
-                                date: Date.now(),
-                                total: parts.total,
-                                parts: parts
-                        };
-                        // order.name = parts.name;
-                        // order.date = Date.now();
-                        // order.total = parts.total;
-                        // order.parts = parts;
+                        order = {};
+                        order.name = parts.name;
+                        order.date = Date.now();
+                        order.total = parts.total;
+                        order.parts = parts;
                         $scope.orders.push(order);
                         $scope.parts = [];
-                };
-
-                $scope.prevPage = function() {
-                        if ($scope.pager.offset > 0) $scope.pager.offset -= $scope.pager.count;
-                }
-
-                $scope.nextPage = function() {
-                        if (($scope.pager.offset + $scope.pager.count) < $scope.localModel.length) $scope.pager.offset += $scope.pager.count;
-                }
-
-        }])
-        .directive('paginate', ['$filter', function($filter) {
- 
-                return {
-                        restrict: 'AE',
-                        scope: { localModel: '=pageModel', localOffset: '=offset'},
-                        controller: 'EstimateCtrl',
-                        templateUrl: "partials/paginator.html"
+                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                 };
         }]);

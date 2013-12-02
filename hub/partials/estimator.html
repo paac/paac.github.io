@@ -141,8 +141,28 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Order History</h3>
                 </div>
-                <paginate page-model="orders" offset="pager.offset">
-                </paginate>
+                <table class="table table-bordered table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Time</td>
+                            <td>Date</td>
+                            <td>Total</td>
+                            <td>Edit</td>
+                            <td>Remove</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'15'">
+                            <td>{{order.name}}</td>
+                            <td>{{order.date | date:'hh:mma' }}</td>
+                            <td>{{order.date | date:'shortDate'}}
+                            <td>{{order.total | currency}}</td>
+                            <td><a ng-click="editOrder($index)">Edit</a></td>
+                            <td><a ng-click="deleteOrder($index)">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
