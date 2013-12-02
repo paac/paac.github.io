@@ -111,11 +111,16 @@ angular.module('estimator.controller', []).
                 $scope.addToHistory = function(parts) {
                         if ($scope.reversedIndex) $scope.orders.splice($scope.reversedIndex, 1);
                         $scope.reversedIndex = undefined;
-                        order = {};
-                        order.name = parts.name;
-                        order.date = Date.now();
-                        order.total = parts.total;
-                        order.parts = parts;
+                        order = {
+                                name: parts.name,
+                                date: Date.now(),
+                                total: parts.total,
+                                parts: parts
+                        };
+                        // order.name = parts.name;
+                        // order.date = Date.now();
+                        // order.total = parts.total;
+                        // order.parts = parts;
                         $scope.orders.push(order);
                         $scope.parts = [];
                         // localStorage.setItem('history', JSON.stringify($scope.orders));
