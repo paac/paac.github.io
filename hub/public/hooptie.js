@@ -117,7 +117,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         }
                         part.totalPrice = part.salePriceTotal + part.laborPrice;
                         console.log(part.originalCopy);
-                        if (part.originalCopy ) $scope.parts.splice(part.originalCopy, 1);
+                        if (typeof part.originalCopy !== undefined) $scope.parts.splice(part.originalCopy, 1);
                         $scope.parts.push(part);
                         $scope.item = {};
                         totalOrder();
