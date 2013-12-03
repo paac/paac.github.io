@@ -124,6 +124,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                 };
                 $scope.editOrder = function(idx) {
                         orders = angular.copy($scope.orders);
+                        $scope.orders.splice($scope.orders.length - idx - 1, 1);
                         reversedIndex = orders.length - idx - 1;
                         $scope.reversedIndex = reversedIndex;
                         $scope.parts = orders[reversedIndex].parts;
