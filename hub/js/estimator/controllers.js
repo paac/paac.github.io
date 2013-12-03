@@ -90,8 +90,10 @@ angular.module('estimator.controller', []).
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
                         }
                         part.totalPrice = part.salePriceTotal + part.laborPrice;
-                        console.log(part.originalCopy);
-                        // if (typeof part.originalCopy !== undefined) $scope.parts.splice(part.originalCopy, 1);
+                        if (typeof part.originalCopy !== undefined) {
+                                console.log(part.originalCopy);
+                                $scope.parts.splice(part.originalCopy, 1);
+                        }
                         $scope.parts.push(part);
                         $scope.item = {};
                         totalOrder();
