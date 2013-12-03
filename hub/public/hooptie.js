@@ -83,7 +83,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
                 $scope.edit = function (idx) {
                         $scope.item = $scope.parts[idx];
-                        // $scope.parts.splice(idx, 1);
                         totalOrder();
                 };
                 
@@ -124,13 +123,11 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         $scope.orders.splice($scope.orders.length - idx - 1, 1);
                 };
                 $scope.editOrder = function(idx) {
-                        orders = $scope.orders;
+                        orders = angular.copy($scope.orders);
                         reversedIndex = orders.length - idx - 1;
                         $scope.reversedIndex = reversedIndex;
                         $scope.parts = orders[reversedIndex].parts;
                         $scope.parts.name = orders[reversedIndex].name;
-                        
-                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                         totalOrder();
                 };
 
@@ -143,13 +140,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                                 total: parts.total,
                                 parts: parts
                         };
-                        // order.name = parts.name;
-                        // order.date = Date.now();
-                        // order.total = parts.total;
-                        // order.parts = parts;
                         $scope.orders.push(order);
                         $scope.parts = [];
-                        // localStorage.setItem('history', JSON.stringify($scope.orders));
                 };
         }]);;angular.module('estimator.service', []).
 	factory('Vendors', function() {
