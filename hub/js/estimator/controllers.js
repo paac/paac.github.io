@@ -56,7 +56,7 @@ angular.module('estimator.controller', []).
                 };
 
                 $scope.edit = function (idx) {
-                        $scope.item = $scope.parts[idx];
+                        $scope.item = angular.copy($scope.parts[idx]);
                         totalOrder();
                 };
                 
@@ -97,12 +97,18 @@ angular.module('estimator.controller', []).
                         $scope.orders.splice($scope.orders.length - idx - 1, 1);
                 };
                 $scope.editOrder = function(idx) {
-                        orders = angular.copy($scope.orders);
-                        $scope.orders.splice($scope.orders.length - idx - 1, 1);
+                        //copy our entire work order history...gotta be a better way?
+                        orders = $scope.orders;
+                        //get total number of orders and subtract our index
                         reversedIndex = orders.length - idx - 1;
+                        //copy our reversed index to $scope...?
                         $scope.reversedIndex = reversedIndex;
+                        //assign the selected order to our parts model
                         $scope.parts = orders[reversedIndex].parts;
+                        //assign customer name to order
                         $scope.parts.name = orders[reversedIndex].name;
+
+                        //recalculate total
                         totalOrder();
                 };
 
