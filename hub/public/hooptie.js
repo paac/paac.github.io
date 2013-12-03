@@ -83,6 +83,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
                 $scope.edit = function (idx) {
                         $scope.item = angular.copy($scope.parts[idx]);
+                        $scope.item.originalCopy = idx;
                         totalOrder();
                 };
                 
@@ -115,6 +116,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
                         }
                         part.totalPrice = part.salePriceTotal + part.laborPrice;
+                        if (part.originalCopy) $scope.parts.splice(part.originalCopy, 1);
                         $scope.parts.push(part);
                         $scope.item = {};
                         totalOrder();
