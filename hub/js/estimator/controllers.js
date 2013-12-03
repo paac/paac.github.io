@@ -57,6 +57,7 @@ angular.module('estimator.controller', []).
 
                 $scope.edit = function (idx) {
                         $scope.item = angular.copy($scope.parts[idx]);
+                        $scope.item.originalCopy = idx;
                         totalOrder();
                 };
                 
@@ -89,6 +90,7 @@ angular.module('estimator.controller', []).
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
                         }
                         part.totalPrice = part.salePriceTotal + part.laborPrice;
+                        if (part.originalCopy) $scope.parts.splice(part.originalCopy, 1)
                         $scope.parts.push(part);
                         $scope.item = {};
                         totalOrder();
