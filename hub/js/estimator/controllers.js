@@ -9,7 +9,7 @@ angular.module('estimator.controller', []).
                 $scope.predicate = "-date";
                 $scope.vendors = Vendors;
                 $scope.item = {matrix: 'normal'};
-                
+
                 function totalOrder() {
                         var total = 0,
                                 length = $scope.parts.length,
@@ -63,9 +63,8 @@ angular.module('estimator.controller', []).
                 };
                 
                 $scope.optionSelected = function(item) {
-                        item.dealer = item.vendor.dealer;
+                        item.matrix = item.vendor.matrix;
                         item.manualSale = item.vendor.manualSale;
-                        item.tires = item.vendor.tires;
                 };
 
                 $scope.addToParts = function(item) {
