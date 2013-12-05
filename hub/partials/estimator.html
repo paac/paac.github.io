@@ -38,24 +38,6 @@
                                     
                                 </div>
                             </div>
-                            <div class="control-group">
-                                
-                                <div class="row controls">
-                                    <div class="input-group col-lg-12">
-                                        <span class="input-group-addon">$</span>
-                                        <input placeholder="Part cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
-                                        <span class="input-group-addon">
-                                            <input type="radio" checked value="normal" ng-model="item.matrix"> Normal
-                                            <input type="radio" value="dealer" ng-model="item.matrix"> Dealer
-                                            <input type="radio" value="tire" ng-model="item.matrix"> Tire
-                                        </span>
-                                        <span class="input-group-addon">
-                                            <input type="checkbox" ng-model="item.manualSale"> Override Matrix
-                                        </span>
-                                    </div>
-
-                                </div>
-                            </div>
                             <div ng-show="item.manualSale" class="control-group">
                                 <label class="control-label">Sale Price</label>
                                 <div class="input-group">
