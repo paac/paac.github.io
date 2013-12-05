@@ -14,6 +14,31 @@
                             </div>
                             <hr>
                             <div class="control-group">
+                                <div class="row controls">
+                                    <div class="input-group col-lg-5">
+                                        <span class="input-group-addon">$</span>
+                                        <input placeholder="Part cost" type="text" ng-model="item.costPrice" class="form-control input-lg ng-valid ng-dirty">
+                                    </div>
+                                    <div class="btn-group col-lg-7" data-toggle="buttons">
+                                        <label class="btn btn-lg btn-primary active">
+                                            <input type="radio" checked="" value="normal" ng-model="item.matrix" name="matrix"> Normal
+                                        </label>
+                                        <label class="btn btn-lg btn-primary">
+                                            <input type="radio" value="dealer" ng-model="item.matrix" class="ng-pristine ng-valid" name="matrix"> Dealer
+                                        </label>
+                                        <label class="btn btn-lg btn-primary">
+                                            <input type="radio" value="tire" ng-model="item.matrix" class="ng-pristine ng-valid" name="matrix"> Tire
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row controls">
+                                    <div class="col-lg-12">
+                                        <input type="checkbox" ng-model="item.manualSale"> Manual Sale Price Entry
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="control-group">
                                 
                                 <div class="row controls">
                                     <div class="input-group col-lg-12">
