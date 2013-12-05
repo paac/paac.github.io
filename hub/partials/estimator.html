@@ -20,7 +20,10 @@
                                         <input placeholder="Part cost" type="text" ng-model="item.costPrice" class="form-control input-lg">
                                     </div>
                                     <div class="btn-group col-lg-7" data-toggle="buttons">
-                                        <label class="btn btn-lg btn-primary">
+                                        <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'normal'">
+                                        <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'dealer'">
+                                        <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'tire'">
+                                        <!--<label class="btn btn-lg btn-primary">
                                             <input type="radio" value="normal" ng-model="item.matrix" name="matrix"> Normal
                                         </label>
                                         <label class="btn btn-lg btn-primary">
@@ -28,7 +31,7 @@
                                         </label>
                                         <label class="btn btn-lg btn-primary">
                                             <input type="radio" value="tire" ng-model="item.matrix" name="matrix"> Tire
-                                        </label>
+                                        </label>-->
                                     </div>
                                 </div>
                                 <div class="row controls">
