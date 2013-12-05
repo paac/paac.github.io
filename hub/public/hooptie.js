@@ -1,4 +1,4 @@
-angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date'])
+angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date', 'ui.bootstrap.buttons'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     //Don't try to do anything smart with this. Angular routes are fucking stupid and this will all break without any hint of an error.
     $routeProvider
@@ -24,7 +24,73 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         redirectTo: '/hub'
       });
      $locationProvider.html5Mode(true);
-  }]);;angular.module('estimator.controller', []).
+  }]);;angular.module('ui.bootstrap.buttons', [])
+
+.constant('buttonConfig', {
+  activeClass: 'active',
+  toggleEvent: 'click'
+})
+
+.directive('btnRadio', ['buttonConfig', function (buttonConfig) {
+  var activeClass = buttonConfig.activeClass || 'active';
+  var toggleEvent = buttonConfig.toggleEvent || 'click';
+
+  return {
+    require: 'ngModel',
+    link: function (scope, element, attrs, ngModelCtrl) {
+
+      //model -> UI
+      ngModelCtrl.$render = function () {
+        element.toggleClass(activeClass, angular.equals(ngModelCtrl.$modelValue, scope.$eval(attrs.btnRadio)));
+      };
+
+      //ui->model
+      element.bind(toggleEvent, function () {
+        if (!element.hasClass(activeClass)) {
+          scope.$apply(function () {
+            ngModelCtrl.$setViewValue(scope.$eval(attrs.btnRadio));
+            ngModelCtrl.$render();
+          });
+        }
+      });
+    }
+  };
+}])
+
+.directive('btnCheckbox', ['buttonConfig', function (buttonConfig) {
+  var activeClass = buttonConfig.activeClass || 'active';
+  var toggleEvent = buttonConfig.toggleEvent || 'click';
+
+  return {
+    require: 'ngModel',
+    link: function (scope, element, attrs, ngModelCtrl) {
+
+      function getTrueValue() {
+        var trueValue = scope.$eval(attrs.btnCheckboxTrue);
+        return angular.isDefined(trueValue) ? trueValue : true;
+      }
+
+      function getFalseValue() {
+        var falseValue = scope.$eval(attrs.btnCheckboxFalse);
+        return angular.isDefined(falseValue) ? falseValue : false;
+      }
+
+      //model -> UI
+      ngModelCtrl.$render = function () {
+        element.toggleClass(activeClass, angular.equals(ngModelCtrl.$modelValue, getTrueValue()));
+      };
+
+      //ui->model
+      element.bind(toggleEvent, function () {
+        scope.$apply(function () {
+          ngModelCtrl.$setViewValue(element.hasClass(activeClass) ? getFalseValue() : getTrueValue());
+          ngModelCtrl.$render();
+        });
+      });
+    }
+  };
+}]);
+;angular.module('estimator.controller', []).
         controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
                 function($scope, angularFire, Vendors) {
                 var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
