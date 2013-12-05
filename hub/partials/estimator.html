@@ -79,8 +79,7 @@
                                 <td>Item</td>
                                 <td class="no_print">Cost</td>
                                 <td class="no_print">Vendor</td>
-                                <td class="no_print">Dealer?</td>
-                                <td class="no_print">Tire?</td>
+                                <td class="no_print">Matrix</td>
                                 <td>Price</td>
                                 <td>Labor Hours</td>
                                 <td>Labor Price</td>
@@ -100,10 +99,7 @@
                                 </td>
                                 <td class="no_print">{{part.vendor.name}}</td>
                                 <td class="no_print text-center">
-                                    <span ng-show="part.dealer" class="glyphicon glyphicon-ok"></span>
-                                </td>
-                                <td class="no_print text-center">
-                                    <span ng-show="part.tires" class="glyphicon glyphicon-ok"></span>
+                                    {{part.matrix}}
                                 </td>
                                 <td>{{part.salePriceTotal | currency}}</td>
                                 <td>{{part.laborHours | number:2 }}
