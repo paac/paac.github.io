@@ -114,9 +114,9 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                                 part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
                         } 
                         //If 
-                        else if ((part.matrix === dealer) || (part.dealer)) {
+                        else if ((part.matrix === 'dealer') || (part.dealer)) {
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
-                        } else if ((part.matrix === tire) || (part.tire)) {
+                        } else if ((part.matrix === 'tire') || (part.tire)) {
                                 part.salePrice = part.costPrice * 1.25;
                                 part.salePriceTotal = part.salePrice * part.quantity;
                         } else { 
