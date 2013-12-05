@@ -34,7 +34,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                 $scope.parts = [];
                 $scope.predicate = "-date";
                 $scope.vendors = Vendors;
-
+                $scope.item = {matrix: 'normal'};
+                
                 function totalOrder() {
                         var total = 0,
                                 length = $scope.parts.length,
@@ -96,9 +97,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                 $scope.addToParts = function(item) {
                         part = {};
                         part = item;
-                        //if item cost is not entered, default to 0
+                        
                         part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
-                        //if quantity is not entered, default to 1
                         part.quantity = (!item.quantity) ? 1 : item.quantity;
                         
 
@@ -119,7 +119,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         } else if ((part.matrix === 'tire') || (part.tire)) {
                                 part.salePrice = part.costPrice * 1.25;
                                 part.salePriceTotal = part.salePrice * part.quantity;
-                        } else { 
+                        } else {
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
                         }
                         part.totalPrice = part.salePriceTotal + part.laborPrice;
@@ -128,7 +128,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                                 $scope.parts.splice(part.originalCopy, 1);
                         }
                         $scope.parts.push(part);
-                        $scope.item = {};
+                        $scope.item = { matrix: 'normal'};
                         totalOrder();
                 };
                 $scope.deleteOrder = function(idx) {
