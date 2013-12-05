@@ -6,15 +6,15 @@ angular.module('estimator.service', []).
 			{name: 'Quality'},
 			{name: 'Bap Geon'},
 			{name: 'API'},
-			{name: 'American Tire', tires: true},
-			{name: 'Atlantic Tire', tires: true},
-			{name: 'Checkered Flag', dealer: true},
-			{name: 'Colonial', dealer: true},
+			{name: 'American Tire', matrix: 'tire'},
+			{name: 'Atlantic Tire', matrix: 'tire'},
+			{name: 'Checkered Flag', matrix: 'dealer'},
+			{name: 'Colonial', matrix: 'dealer'},
 			{name: 'Interstate Battery', manualSale: true},
 			{name: 'LKQ'},
-			{name: 'Perry', dealer: true},
-			{name: 'Priority', dealer: true},
-			{name: 'Southern', dealer: true}
+			{name: 'Perry', matrix: 'dealer'},
+			{name: 'Priority', matrix: 'dealer'},
+			{name: 'Southern', matrix: 'dealer'}
 		];
 		return vendors;
 	});

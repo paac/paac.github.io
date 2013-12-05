@@ -18,7 +18,7 @@ angular.module('estimator.controller', []).
                         }
                         $scope.parts.total = total;
                 }
-                        
+                //there has got to be a better way to do this!!
                 function calcPrice(cost, quantity, dealer) {
                         var markup;
                         markup = (function() {
@@ -70,20 +70,27 @@ angular.module('estimator.controller', []).
                 $scope.addToParts = function(item) {
                         part = {};
                         part = item;
-
+                        //if item cost is not entered, default to 0
                         part.costPrice =  (!item.costPrice) ? 0 : item.costPrice;
+                        //if quantity is not entered, default to 1
                         part.quantity = (!item.quantity) ? 1 : item.quantity;
+                        
+
                         if (!part.manualLabor) {
                                 part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
                         } else {
                                 part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
                                 part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
                         }
+                        //***This really needs to be refactored
+                        //If manual sale is checked, multiply entered price by quantity
                         if (part.manualSale) {
                                 part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
-                        } else if (part.dealer) {
+                        } 
+                        //If 
+                        else if ((part.matrix === dealer) || (part.dealer)) {
                                 part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
-                        } else if (part.tires) {
+                        } else if ((part.matrix === tire) || (part.tire)) {
                                 part.salePrice = part.costPrice * 1.25;
                                 part.salePriceTotal = part.salePrice * part.quantity;
                         } else { 
