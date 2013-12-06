@@ -70,7 +70,9 @@
             <div class="col-lg-7">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Work Order</h3>
+                        <h3 class="panel-title">Work Order
+                            <a href="javascript:window.print()" class="btn btn-success">Print <i class="glyphicon glyphicon-print"></i></a>
+                        </h3>
                     </div>
                     <table ng-show="parts.total != undefined" class="table table-hover table-bordered">
                         <thead>
@@ -127,10 +129,7 @@
                         <div class="input-group">
                             <input type="text" placeholder="Order Name" required ng-model="parts.name" class="form-control">
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-success pull-right">Save Order <i class="glyphicon glyphicon-save"></i></button>
-                            </span>
-                            <span class="input-group-btn">
-                                <a href="javascript:window.print()" class="btn btn-success pull-right">Print <i class="glyphicon glyphicon-glyphicon-print"></i></a>
+                                <button type="submit" class="btn btn-success">Save Order <i class="glyphicon glyphicon-save"></i></button>
                             </span>
                         </div>
                     </form>
