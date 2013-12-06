@@ -7,7 +7,6 @@
                         <fieldset>
                             <legend>Job</legend>
                             <div class="control-group">
-                                
                                 <div class="controls">
                                     <input type="text" placeholder="Job name" required ng-model="item.name" class="form-control input-lg">
                                 </div>
@@ -23,15 +22,6 @@
                                         <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'normal'">Normal</button>
                                         <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'dealer'">Dealer</button>
                                         <button type="button" class="btn btn-lg btn-primary" ng-model="item.matrix" btn-radio="'tire'">Tire</button>
-                                        <!--<label class="btn btn-lg btn-primary">
-                                            <input type="radio" value="normal" ng-model="item.matrix" name="matrix"> Normal
-                                        </label>
-                                        <label class="btn btn-lg btn-primary">
-                                            <input type="radio" value="dealer" ng-model="item.matrix" name="matrix"> Dealer
-                                        </label>
-                                        <label class="btn btn-lg btn-primary">
-                                            <input type="radio" value="tire" ng-model="item.matrix" name="matrix"> Tire
-                                        </label>-->
                                     </div>
                                 </div>
                                 <div class="row controls">
@@ -137,7 +127,10 @@
                         <div class="input-group">
                             <input type="text" placeholder="Order Name" required ng-model="parts.name" class="form-control">
                             <span class="input-group-btn">
-                                <button type="submit" class="btn btn-success pull-right">Save Order</button>
+                                <button type="submit" class="btn btn-success pull-right">Save Order <i class="glyphicon glyphicon-save"></i></button>
+                            </span>
+                            <span class="input-group-btn">
+                                <a href="javascript:window.print()" class="btn btn-success pull-right">Print <i class="glyphicon glyphicon-glyphicon-print"></i></button>
                             </span>
                         </div>
                     </form>
