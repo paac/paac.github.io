@@ -26,7 +26,8 @@ angular.module('estimator.controller', []).
                                 hazardMaterials += parts[i].salePriceTotal * 0.06;
                                 shopSupplies += parts[i].laborPrice * 0.06;
                                 salePriceTotal += parts[i].totalPrice;
-                                laborPriceTotal += parts[i].laborPrice; 
+                                laborPriceTotal += parts[i].laborPrice;
+                                console.log(parts[i].laborPrice + " " + laborPriceTotal);
                         }
                         if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap;
                         if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap;
