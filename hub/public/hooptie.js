@@ -125,6 +125,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         taxableAmount = salePriceTotal + hazardMaterials + shopSupplies;
                         $scope.parts.subTotal = salePriceTotal + laborPriceTotal;
                         $scope.parts.total = (taxableAmount * 1.06) + laborPriceTotal;
+                        $scope.parts.hazardMaterials = hazardMaterials;
+                        $scope.parts.shopSupplies = shopSupplies;
                         console.log("shopSupplies: " + shopSupplies);
                         console.log("hazardMaterials: " + hazardMaterials);
                         console.log("subTotal: " + $scope.parts.subTotal);
