@@ -24,11 +24,11 @@ angular.module('estimator.controller', []).
                         for (var i = 0; i < length; i++) {
                                 hazardMaterials += parts[i].salesPrice * 0.06;
                                 shopSupplies += parts[i].laborPrice * 0.06;
-                                total += parts[i].totalPrice;
+                                salePricetotal += parts[i].totalPrice;
                         }
                         if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap;
                         if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap;
-                        taxableAmount = salePriceTotal + hazardMaterials + shopSupplies;
+                        taxableAmount = salePricetotal + hazardMaterials + shopSupplies;
                         $scope.parts.subTotal = taxableAmount + laborPrice;
                         $scope.parts.total = (taxableAmount * 1.06) + laborPrice;
                         console.log("shopSupplies: " + shopSupplies);
