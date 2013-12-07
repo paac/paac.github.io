@@ -11,13 +11,30 @@ angular.module('estimator.controller', []).
                 $scope.item = {matrix: 'normal'};
 
                 function totalOrder() {
+
+
+
                         var total = 0,
+                                shopSupplies = 0,
+                                hazardMaterials = 0,
+                                shopSuppliesCap = 19.73,
+                                hazardMaterialsCap = 19.73,
                                 length = $scope.parts.length,
                                 parts = $scope.parts;
                         for (var i = 0; i < length; i++) {
+                                hazardMaterials += parts[i].salesPrice * 0.06;
+                                shopSupplies += parts[i].laborPrice * 0.06;
                                 total += parts[i].totalPrice;
                         }
-                        $scope.parts.total = total;
+                        if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap;
+                        if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap;
+                        taxableAmount = salesPriceTotal + hazardMaterials + shopSupplies;
+                        $scope.parts.subTotal = taxableAmount + laborPrice;
+                        $scope.parts.total = (taxableAmount * 1.06) + laborPrice;
+                        console.log("shopSupplies: " + shopSupplies);
+                        console.log("hazardMaterials: " + hazardMaterials);
+                        console.log("subTotal: " + subTotal);
+                        console.log("total: " + total);
                 }
                 //there has got to be a better way to do this!!
                 function calcPrice(cost, quantity, dealer) {
