@@ -14,7 +14,7 @@ angular.module('estimator.controller', []).
 
 
 
-                        var salePricetotal = 0,
+                        var salePriceTotal = 0,
                                 laborPriceTotal =0,
                                 shopSupplies = 0,
                                 hazardMaterials = 0,
