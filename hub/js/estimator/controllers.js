@@ -28,7 +28,7 @@ angular.module('estimator.controller', []).
                         }
                         if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap;
                         if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap;
-                        taxableAmount = salesPriceTotal + hazardMaterials + shopSupplies;
+                        taxableAmount = salePriceTotal + hazardMaterials + shopSupplies;
                         $scope.parts.subTotal = taxableAmount + laborPrice;
                         $scope.parts.total = (taxableAmount * 1.06) + laborPrice;
                         console.log("shopSupplies: " + shopSupplies);
