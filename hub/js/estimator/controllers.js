@@ -25,7 +25,7 @@ angular.module('estimator.controller', []).
                         for (var i = 0; i < length; i++) {
                                 hazardMaterials += parts[i].salePriceTotal * 0.06;
                                 shopSupplies += parts[i].laborPrice * 0.06;
-                                salePriceTotal += parts[i].totalPrice;
+                                salePriceTotal += parts[i].salePriceTotal;
                                 laborPriceTotal += parts[i].laborPrice;
                                 console.log(parts[i].laborPrice + " " + laborPriceTotal);
                         }
