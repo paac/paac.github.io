@@ -123,7 +123,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
                         if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap;
                         if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap;
                         taxableAmount = salePriceTotal + hazardMaterials + shopSupplies;
-                        $scope.parts.subTotal = taxableAmount + laborPriceTotal;
+                        $scope.parts.subTotal = salePriceTotal + laborPriceTotal;
                         $scope.parts.total = (taxableAmount * 1.06) + laborPriceTotal;
                         console.log("shopSupplies: " + shopSupplies);
                         console.log("hazardMaterials: " + hazardMaterials);
