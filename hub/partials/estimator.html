@@ -116,7 +116,7 @@
                                 </td>
                             </tr>
                         </tbody>
-                        <tfooter>
+                        <!--<tfooter>
                             <tr>
                                 <td colspan="8" class="text-right">Subtotal</td>
                                 <td colspan="2" class="text-right">{{parts.subTotal | currency}}</td>
@@ -137,8 +137,15 @@
                                 <td colspan="8" class="text-right">Total</td>
                                 <td colspan="2" class="text-right">{{parts.total | currency}}</td>
                             </tr>
-                        </tfooter>
+                        </tfooter>-->
                     </table>
+                    <ul>
+                        <li><b>Subtotal:</b> {{parts.subTotal</li>
+                        <li><b>Shop Supplies:</b> {{parts.shopSupplies</li>
+                        <li><b>Hazardous Materials:</b> {{parts.hazardMaterials</li>
+                        <li><b>Tax:</b> {{parts.tax</li>
+                        <li><b>Total:</b> {{parts.total</li>
+                    </ul>
                 </div>
                 <div class="order_form">
                     <form ng-submit="addToHistory(parts)">
