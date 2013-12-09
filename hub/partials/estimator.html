@@ -139,7 +139,7 @@
                             </tr>
                         </tfooter>-->
                     </table>
-                    <ul ng-show="parts.subtotal" class="list-unstyled text-right">
+                    <ul ng-show="parts.subtotal != undefined" class="list-unstyled text-right">
                         <li><b>Subtotal:</b> {{parts.subTotal | currency}}</li>
                         <li><b>Shop Supplies:</b> {{parts.shopSupplies | currency}}</li>
                         <li><b>Hazardous Materials:</b> {{parts.hazardMaterials | currency}}</li>
