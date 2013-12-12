@@ -2,7 +2,7 @@ To-do
 ======
 
 1. Alternate estimates
-2. Calculate taxes/shop supplies
+<!-- 2. Calculate taxes/shop supplies
 	1. 6% on parts, pre-tax
 		- hazardMaterials = (parts * .06)
 		- if (hazardMaterials > hazardMaterialsCap) hazardMaterials = hazardMaterialsCap
@@ -11,5 +11,5 @@ To-do
 		- if (shopSupplies > shopSuppliesCap) shopSupplies = shopSuppliesCap
 	3. taxableAmount = salesPriceTotal + hazardMaterials + shopSupplies
 	4. subTotal = taxableAmount + laborPrice
-	5. total = (taxableAmount * 1.06) + laborPrice
+	5. total = (taxableAmount * 1.06) + laborPrice -->
 
