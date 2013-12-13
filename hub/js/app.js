@@ -1,12 +1,12 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date', 'ui.bootstrap.buttons'])
-  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     //Don't try to do anything smart with this. Angular routes are fucking stupid and this will all break without any hint of an error.
     $routeProvider
       .when('/hub/',
         {
           templateUrl: '/hub/partials/dashboard.html'
         })
-      .when('/hub/estimator', 
+      .when('/hub/estimator',
         {
           templateUrl: '/hub/partials/estimator.html',
           controller: 'EstimateCtrl'
@@ -23,5 +23,5 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       .otherwise({
         redirectTo: '/hub'
       });
-     $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
   }]);

@@ -1,109 +1,105 @@
- angular.module('scheduler.controller', []).
-	controller('ScheduleCtrl', ['$scope', '$timeout', 'Statuses', 'Time', 'angularFire', function($scope, $timeout, Statuses, Time, angularFire) {
-		
-		//Get today's date and reset the time to midnight
-		$scope.date = new Date();
-		$scope.date.setHours(0,0,0,0);
+angular.module('scheduler.controller', []).
+  controller('ScheduleCtrl', ['$scope', '$timeout', 'Statuses', 'Time', 'angularFire', function ($scope, $timeout, Statuses, Time, angularFire) {
 
-		//declare our sort order
-		$scope.predicate = "date";
+    //Get today's date and reset the time to midnight
+    $scope.date = new Date();
+    $scope.date.setHours(0, 0, 0, 0);
 
-		$scope.statuses = Statuses;
-		$scope.time = Time;
-		
-		var ref = new Firebase("https://hooptie.firebaseio.com/scheduler");
-		$scope.appointments = [];
-		angularFire(ref, $scope, "appointments");
+    //declare our sort order
+    $scope.predicate = "date";
 
-		newAppointment = function() {
-			return {
-				index: $scope.appointments.length,
-				status: $scope.statuses[0].value,
-				date: new Date(),
-				time: {
-					hour: $scope.time.hours[0].hour,
-					minute: $scope.time.minutes[0].minute
-				}
-			};
-		};
+    $scope.statuses = Statuses;
+    $scope.time = Time;
 
-		$scope.appointment = newAppointment();
-		
-		$scope.incDate = function() {
-			today = $scope.date.getDate();
-			$scope.date.setDate(today + 1);
-		};
+    var ref = new Firebase("https://hooptie.firebaseio.com/scheduler");
+    $scope.appointments = [];
+    angularFire(ref, $scope, "appointments");
 
-		$scope.decDate = function() {
-			today = $scope.date.getDate();
-			$scope.date.setDate(today - 1);
-		};
+    var newAppointment = function () {
+      return {
+        index: $scope.appointments.length,
+        status: $scope.statuses[0].value,
+        date: new Date(),
+        time: {
+          hour: $scope.time.hours[0].hour,
+          minute: $scope.time.minutes[0].minute
+        }
+      };
+    };
 
-		$scope.getModels = function() {
-			$scope.models = $scope.appointment.vehicle.make.models;
-		};
+    $scope.appointment = newAppointment();
 
-		$scope.getYears = function() {
-			$scope.years = $scope.appointment.vehicle.model.years;
-		};
+    $scope.incDate = function () {
+      var today = $scope.date.getDate();
+      $scope.date.setDate(today + 1);
+    };
 
-		//Add appointment to schedule
-		$scope.addAppointment = function(appointment) {
-			appointment = $scope.appointment;
-			//Get our selected time values and make it a date object(if it isn't already)
-			hour = appointment.time.hour;
-			minute = appointment.time.minute;
-			if (appointment.date.setHours) {
-				console.log('if');
-				appointment.date.setHours(hour,minute,0,0);
-			} else {
-				console.log('else');
-				appointment.date = new Date(appointment.date);
-				appointment.date.setHours(hour, minute,0,0);
-			}
+    $scope.decDate = function () {
+      var today = $scope.date.getDate();
+      $scope.date.setDate(today - 1);
+    };
 
-			$scope.appointments.push(appointment);
-			$scope.appointment = newAppointment();
-		};
+    $scope.getModels = function () {
+      $scope.models = $scope.appointment.vehicle.make.models;
+    };
 
-		//edit an existing appointment
-		$scope.editAppointment = function(appointment) {
-			
-			$scope.appointment = $scope.appointments[appointment.index];
-			$scope.appointment.date = new Date($scope.appointment.date);
+    $scope.getYears = function () {
+      $scope.years = $scope.appointment.vehicle.model.years;
+    };
 
-			$scope.appointments.splice(appointment.index, 1);
+    //Add appointment to schedule
+    $scope.addAppointment = function (appointment) {
+      appointment = $scope.appointment;
+      //Get our selected time values and make it a date object(if it isn't already)
+      var hour = appointment.time.hour,
+        minute = appointment.time.minute;
+      if (appointment.date.setHours) {
+        appointment.date.setHours(hour, minute, 0, 0);
+      } else {
+        appointment.date = new Date(appointment.date);
+        appointment.date.setHours(hour, minute, 0, 0);
+      }
 
-			//recalculate our index
-			$scope.appointment.index = $scope.appointments.length;
-			for (var i=0; i < $scope.appointments.length; i++) {
-				$scope.appointments[i].index = i;
-			}
-		};
+      $scope.appointments.push(appointment);
+      $scope.appointment = newAppointment();
+    };
 
+    //edit an existing appointment
+    $scope.editAppointment = function (appointment) {
+      var i;
+      $scope.appointment = $scope.appointments[appointment.index];
+      $scope.appointment.date = new Date($scope.appointment.date);
+      $scope.appointments.splice(appointment.index, 1);
 
-		$scope.deleteAppointment = function(appointment) {
-			$scope.appointments.splice(appointment.index, 1);
-		};
+      //recalculate our index
+      $scope.appointment.index = $scope.appointments.length;
+      for (i = 0; i < $scope.appointments.length; i++) {
+        $scope.appointments[i].index = i;
+      }
+    };
 
-		//Check to see if any existing appointments are late and update their status accordingly.
-		$scope.updateStatus = function(){
-			d = new Date();
+    $scope.deleteAppointment = function (appointment) {
+      $scope.appointments.splice(appointment.index, 1);
+    };
 
-			for (var i = 0; i < $scope.appointments.length; i++) {
-				cd = new Date($scope.appointments[i].date);
-				if ((cd < d) && (($scope.appointments[i].status == 'dropoff') || ($scope.appointments[i].status == 'waiting'))) {
-					$scope.appointments[i].status = 'warning';
-				}
-			}
-		};
+    //Check to see if any existing appointments are late and update their status accordingly.
+    $scope.updateStatus = function () {
+      var date = new Date(),
+        i = 0;
+      for (i = 0; i < $scope.appointments.length; i++) {
+        var currentDate = new Date($scope.appointments[i].date);
+        if ((currentDate < date) && (($scope.appointments[i].status === 'dropoff') || ($scope.appointments[i].status === 'waiting'))) {
+          $scope.appointments[i].status = 'warning';
+        }
+      }
+    };
 
-		//Run our updateStatus every five minutes
-		$scope.intervalFunction = function(){
-			$timeout(function() {
-				$scope.updateStatus();
-				$scope.intervalFunction();
-			}, 1000 * 60 * 5);
-		};
-		$scope.intervalFunction();
-	}]);
+    //Run our updateStatus every five minutes
+    $scope.intervalFunction = function () {
+      $timeout(function () {
+        $scope.updateStatus();
+        $scope.intervalFunction();
+      }, 1000 * 60 * 5);
+    };
+    $scope.intervalFunction();
+  }]);
