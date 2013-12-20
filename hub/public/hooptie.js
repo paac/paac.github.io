@@ -313,7 +313,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
     $scope.getYears = function () {
       $scope.years = $scope.appointment.vehicle.model.years;
     };
-
     //Add appointment to schedule
     $scope.addAppointment = function (appointment) {
       appointment = $scope.appointment;
@@ -326,29 +325,24 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         appointment.date = new Date(appointment.date);
         appointment.date.setHours(hour, minute, 0, 0);
       }
-
       $scope.appointments.push(appointment);
       $scope.appointment = newAppointment();
     };
-
     //edit an existing appointment
     $scope.editAppointment = function (appointment) {
       var i;
       $scope.appointment = $scope.appointments[appointment.index];
       $scope.appointment.date = new Date($scope.appointment.date);
       $scope.appointments.splice(appointment.index, 1);
-
       //recalculate our index
       $scope.appointment.index = $scope.appointments.length;
       for (i = 0; i < $scope.appointments.length; i++) {
         $scope.appointments[i].index = i;
       }
     };
-
     $scope.deleteAppointment = function (appointment) {
       $scope.appointments.splice(appointment.index, 1);
     };
-
     //Check to see if any existing appointments are late and update their status accordingly.
     $scope.updateStatus = function () {
       var date = new Date(),
@@ -360,7 +354,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         }
       }
     };
-
     //Run our updateStatus every five minutes
     $scope.intervalFunction = function () {
       $timeout(function () {
@@ -374,10 +367,13 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
     return function (objects, date) {
       var filtered_list = [], i = 0;
       for (i = 0; i < objects.length; i++) {
-        var d = date.getDate(),
-          itemDate = new Date(objects[i].date);
+        var today = date.getDate(),
+          month = date.getMonth(),
+          itemDate = new Date(objects[i].date),
+          itemMonth;
+        itemMonth = itemDate.getMonth();
         itemDate = itemDate.getDate();
-        if (d === itemDate) {
+        if ((today === itemDate) && (month === itemMonth)) {
           filtered_list.push(objects[i]);
         }
       }

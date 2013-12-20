@@ -3,10 +3,13 @@ angular.module('scheduler.filter', [])
     return function (objects, date) {
       var filtered_list = [], i = 0;
       for (i = 0; i < objects.length; i++) {
-        var d = date.getDate(),
-          itemDate = new Date(objects[i].date);
+        var today = date.getDate(),
+          month = date.getMonth(),
+          itemDate = new Date(objects[i].date),
+          itemMonth;
+        itemMonth = itemDate.getMonth();
         itemDate = itemDate.getDate();
-        if (d === itemDate) {
+        if ((today === itemDate) && (month === itemMonth)) {
           filtered_list.push(objects[i]);
         }
       }

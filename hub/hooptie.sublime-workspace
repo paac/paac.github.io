@@ -1,0 +1,1259 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"labor",
+				"laborPriceTotal"
+			],
+			[
+				"s",
+				"shopSuppliesCap"
+			],
+			[
+				"sh",
+				"shopSuppliesCap"
+			],
+			[
+				"haz",
+				"hazardMaterialsCap"
+			],
+			[
+				"ha",
+				"hazardMaterials"
+			],
+			[
+				"angul",
+				"angularFire"
+			],
+			[
+				"ang",
+				"angularFire"
+			],
+			[
+				"template",
+				"templateUrl"
+			],
+			[
+				"veh",
+				"vehicles"
+			],
+			[
+				"set",
+				"localStorage.setItem"
+			],
+			[
+				"appo",
+				"appointments"
+			],
+			[
+				"filter",
+				"filtered_list"
+			],
+			[
+				"par",
+				"parentNode"
+			],
+			[
+				"order",
+				"order_table"
+			],
+			[
+				"parse",
+				"parseFloat"
+			],
+			[
+				"tot",
+				"totalOrder"
+			],
+			[
+				"price",
+				"totalPrice"
+			],
+			[
+				"cost",
+				"costPrice"
+			],
+			[
+				"get",
+				"getDay"
+			],
+			[
+				"Modal",
+				"modalInstanceCtrl"
+			],
+			[
+				"modal",
+				"modalInstance"
+			],
+			[
+				"up",
+				"updateList"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"index",
+				"indexRoutes"
+			],
+			[
+				"app",
+				"appointment"
+			],
+			[
+				"fil",
+				"fill_in"
+			],
+			[
+				"signup",
+				"signup_path"
+			],
+			[
+				"gra",
+				"gravatar_url"
+			],
+			[
+				"have",
+				"have_content"
+			],
+			[
+				"user",
+				"user_for_invalid_password"
+			],
+			[
+				"passwor",
+				"password_confirmation"
+			],
+			[
+				"valid",
+				"valid_address"
+			],
+			[
+				"should",
+				"should_not"
+			],
+			[
+				"cont",
+				"Contact"
+			],
+			[
+				"Rej",
+				"RejectionReasons"
+			],
+			[
+				"Inspectio",
+				"InspectionNumber"
+			],
+			[
+				"IfWin",
+				"IfWinNotActive"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"border-bottom",
+				"border-bottom-color"
+			],
+			[
+				"backgro",
+				"background-position"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"dropdow",
+				"dropdown-toggle"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1850,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/estimator/controllers.js",
+			"settings":
+			{
+				"buffer_size": 5563,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nAngularJS:\n---------\n\n  Bug Fixes\n  - Ensure there is an active view before grabbing settings, Fixes #39\n  \n  Updates\n  - Added $routeProvider.otherwise snippet\n\n\nSublimeGit:\n----------\n\n  SublimeGit 1.0.27\n  =================\n  \n  Bug Fixes:\n  ----------\n   - Fix issue with git status output not being commented by\n     default on git 1.8.5+ (Issues #83 and #87)\n  \n   - Fix issue with unicode and custom commands. (Issue #76)\n  \n",
+			"settings":
+			{
+				"buffer_size": 483,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		},
+		{
+			"file": "partials/estimator.html",
+			"settings":
+			{
+				"buffer_size": 10249,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/secretary/controllers.js",
+			"settings":
+			{
+				"buffer_size": 999,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 1094,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 970,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/estimator/services.js",
+			"settings":
+			{
+				"buffer_size": 640,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 512,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/print.css",
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/scheduler/controllers.js",
+			"settings":
+			{
+				"buffer_size": 3380,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/User/TernJS.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "// Trailing Spaces' default settings.\n//\n// In order to tweak the settings, you should NOT edit this file, but instead\n// the user-specific, empty-by-default version under \"Preferences / Package\n// Settings / Trailing Spaces / Settings - User\".\n//\n// See Trailing Spaces' README for detailled instructions.\n{\n    // By default, Trailing Spaces is \"live\". It means the trailing spaces\n    // regions will be matched in the background, and highlighted if a color\n    // scope is defined, when the document is opened and edited.\n    // Set to false to disable live matching and highlighting (the deletion\n    // command remains available, so-called \"lazy matching\").\n    \"trailing_spaces_enabled\" : true,\n\n    // Highlight color is specified as a scope. You may define and use a custom\n    // scope to better fit your colorscheme.\n    \"trailing_spaces_highlight_color\" : \"invalid\",\n\n    // By default, empty lines are cleared as well when calling the deletion\n    // command.\n    // Set to false to ignore empty lines upon deletion.\n    \"trailing_spaces_include_empty_lines\" : true,\n\n    // By default, the line being currently edited will have its trailing\n    // spaces highlighted.\n    // Set to false to ignore trailing spaces on the edited line.\n    \"trailing_spaces_include_current_line\" : true,\n\n    // By default, trailing spaces are deleted within the whole document.\n    // Set to true to affect only the lines you edited since last save.\n    // Trailing spaces will still be searched for and highlighted in the whole\n    // document.\n    \"trailing_spaces_modified_lines_only\": false,\n\n    // By default, nothing happens on save.\n    // Set to true to trim trailing spaces before saving, with respect to the\n    // other settings.\n    \"trailing_spaces_trim_on_save\": false,\n\n    // By default, deleting trailing spaces does not cause the document to be\n    // saved.\n    // Set to true to force saving after trailing spaces have been deleted.\n    // This setting is irrelevant and will be ignored if trim_on_save is true.\n    \"trailing_spaces_save_after_trim\": false,\n\n    // ---- NEXT SETTINGS ARE FOR POWER USERS ONLY! ----\n\n    // Highlighting will be disabled if the edited file's size is larger than\n    // this.\n    // Adjust the value (in number of chars) to whatever fits your performance.\n    \"trailing_spaces_file_max_size\" : 1048576,\n\n    // By default, only simple spaces and tabs are matched as \"trailing spaces\".\n    \"trailing_spaces_regexp\": \"[ \\t]+\"\n}\n",
+			"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+			"file_size": 2475,
+			"file_write_time": 130194066116112214,
+			"settings":
+			{
+				"buffer_size": 2475,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/scheduler/filters.js",
+			"settings":
+			{
+				"buffer_size": 447,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/scheduler/services.js",
+			"settings":
+			{
+				"buffer_size": 1497,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/secretary/services.js",
+			"settings":
+			{
+				"buffer_size": 10089,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+			"settings":
+			{
+				"buffer_size": 1118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/buttons.js",
+			"settings":
+			{
+				"buffer_size": 2051,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/JSLint/JSLint.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"pac re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa re",
+				"Package Control: Add Repository"
+			],
+			[
+				"pack re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"AngularJS: Rebuild Search Index"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Git: Stat",
+				"Git: Status"
+			],
+			[
+				"Git: Status",
+				"Git: Status"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"wr",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Richard/Downloads/cleanup.bat",
+		"/C/Users/Richard/Sites/paac/hub/fall.html",
+		"/C/Users/Richard/Sites/paac/hub/css/style.css",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Richard/Sites/paac_redesign/css/main.css",
+		"/C/Users/Richard/Sites/paac_redesign/index.html",
+		"/C/Users/Richard/Sites/paac_redesign/hub/index.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Richard/Sites/paac/hub/assets/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/estimator.html",
+		"/C/Users/Richard/Sites/paac/hub/assets/js/estimator/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/dashboard.html",
+		"/C/Users/Richard/Sites/paac/hub/index.html",
+		"/C/Users/Richard/Sites/paac/hub/public/hooptie.js",
+		"/C/Users/Richard/Sites/paac/hub/js/secretary/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/services.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/js/scheduler/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/js/estimator/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/secretary.html",
+		"/C/Users/Richard/Sites/paac/hub/js/estimator/services.js",
+		"/C/Users/Richard/Sites/paac/hub/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/Gruntfile.js",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/controller.js",
+		"/C/Users/Richard/Sites/paac/hub/package.json",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/service.js",
+		"/C/Users/Richard/Sites/paac/hub/npm-debug.log",
+		"/C/Users/Richard/Sites/paac/hub/secretary/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/secretary/index.html",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/index.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Richard/Sites/hooptie-five-oh/api/controllers/OrderController.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/views/layout.jade",
+		"/C/Users/Richard/Sites/hooptie-five-oh/.bowerrc",
+		"/C/Users/Richard/Sites/hooptie-five-oh/config/adapters.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/assets/estimator/js/controllers.js",
+		"/C/Users/Richard/Sites/hooptie-five-oh/views/home/index.jade",
+		"/C/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/debug.log",
+		"/C/Users/Richard/Documents/phone-list.html",
+		"/C/Users/Richard/Sites/hooptie/public/views/index.html",
+		"/C/Users/Richard/Sites/hooptie/app/views/includes/head.jade",
+		"/C/Users/Richard/Sites/hooptie/app/controllers/users.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/index.html",
+		"/C/Users/Richard/Sites/paac/hub/templates/main.html",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/app.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/js/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/css/style.css",
+		"/C/Users/Richard/Sites/paac/hub/js/routes.js",
+		"/C/Users/Richard/Sites/paac/hub/js/directives.js",
+		"/C/Users/Richard/Sites/paac/hub/js/filters.js",
+		"/C/Users/Richard/Sites/paac/hub/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/scheduler/test.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/app.js",
+		"/C/Users/Richard/Sites/quiz/app.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/wolf3d.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/services.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/estimator/css/print.css",
+		"/C/Users/Richard/Sites/paac/hub/estimator/partials/estimator.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/index2.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/partials/scheduler.html",
+		"/C/Users/Richard/Sites/paac/hub/estimator/js/routes.js",
+		"/c/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/debug.log",
+		"/C/Users/Richard/Sites/front-desk-hub/views/layout.jade",
+		"/C/Users/Richard/Sites/front-desk-hub/public/modules/appModule.js",
+		"/C/Users/Richard/Sites/scheduler/package.json",
+		"/C/Users/Richard/Sites/paac/fall/index.md",
+		"/C/Users/Richard/Sites/paac/thanks/index.md",
+		"/C/Users/Richard/Sites/paac/js/scripts.js",
+		"/C/Users/Richard/Downloads/Folders2Flickr Win EXE v1/Folders2Flickr Win EXE v1/uploadr.ini",
+		"/C/Users/Richard/Sites/service-center/app/views/admin/index.html.erb",
+		"/C/Users/Richard/Sites/service-center/Gemfile",
+		"/C/Users/Richard/Sites/service-center/app/assets/stylesheets/admin.css.scss",
+		"/C/Users/Richard/Sites/service-center/README.md",
+		"/C/Users/Richard/Sites/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/C/Users/Richard/Sites/sample_app/app/assets/stylesheets/application.css",
+		"/C/Users/Richard/Sites/service-center/db/migrate/20130826155200_create_vehicles.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/users/show.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/helpers/users_helper.rb",
+		"/c/Users/Richard/Sites/sample_app/config/environments/test.rb",
+		"/C/Users/Richard/Sites/sample_app/spec/factories.rb",
+		"/c/Users/Richard/Sites/sample_app/config/routes.rb",
+		"/c/Users/Richard/Sites/sample_app/app/assets/stylesheets/custom.css.scss",
+		"/c/Users/Richard/Sites/sample_app/app/views/users/new.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/controllers/users_controller.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/requests/users_pages_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/Gemfile",
+		"/c/Users/Richard/Sites/sample_app/db/schema.rb",
+		"/c/Users/Richard/Sites/sample_app/db/migrate/20130822190156_add_index_to_users_email.rb",
+		"/c/Users/Richard/Sites/sample_app/app/controllers/static_pages_controller.rb",
+		"/c/Users/Richard/Sites/sample_app/app/helpers/application_helper.rb",
+		"/C/Users/Richard/Sites/sample_app/app/views/static_pages/contact.html.erb",
+		"/C/Users/Richard/Sites/sample_app/spec/support/utilities.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/requests/static_pages_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/spec/models/user_spec.rb",
+		"/c/Users/Richard/Sites/sample_app/app/models/user.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_header.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/application.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/home.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_footer.html.erb",
+		"/c/Users/Richard/Sites/sample_app/config/initializers/secret_token.rb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/about.html.erb",
+		"/c/Users/Richard/Sites/sample_app/app/views/static_pages/help.html.erb",
+		"/c/Users/Richard/Sites/sample_app/spec/spec_helper.rb",
+		"/c/Users/Richard/Sites/sample_app/config/application.rb",
+		"/c/Users/Richard/Sites/sample_app/.gitignore",
+		"/c/Users/Richard/Sites/sample_app/app/views/layouts/_shim.html.erb",
+		"/C/Users/Richard/Sites/sample_app/app/views/layouts/home.html.erb",
+		"/C/Users/Richard/Sites/service-center/.gitignore",
+		"/c/Users/Richard/Sites/service-center/.git/COMMIT_EDITMSG",
+		"/c/Users/Richard/Sites/service-center/Gemfile",
+		"/C/Users/Richard/Sites/experiment/test.html",
+		"/C/Users/Richard/Sites/experiment/scripts/main.js",
+		"/C/Users/Richard/AppData/Roaming/VanDyke/Config/Global.ini",
+		"/C/Users/Richard/Sites/paac/images/logo.svg",
+		"/C/Users/Richard/Documents/AutoHotkey.ahk",
+		"/c/Users/Richard/Sites/angularjs-test/index.html",
+		"/c/Users/Richard/Sites/angularjs-test/app.js",
+		"/C/Users/Richard/Downloads/gzmj@sexinsex@RICK LEE（合集）/22P2P.url.!ut",
+		"/C/Users/Richard/Sites/angularjs-test/index.html",
+		"/C/Users/Richard/Sites/angularjs-test/main-controller.js",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/README.md",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/emmet/snippets.json",
+		"/C/Users/Richard/Sites/angularjs-tutorial/app.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"        numbers",
+			"        name:",
+			"	\",",
+			" \",",
+			"  ",
+			"           ",
+			"				   ",
+			"\n\"}, ",
+			"\n\"},",
+			"\n\n\"},",
+			"\n\"",
+			"}, { name",
+			"name",
+			"</b>",
+			"<p><b>",
+			">",
+			"<p><b",
+			"</b>",
+			"</p>",
+			"todo",
+			"$scope.hour",
+			"(!",
+			"\nvar counter = 0,\n	score = 0,\n	d = document,\n	questions = [\n		{\n			question: \"Who is Prime Minister of the United Kingdom?\",\n			choices: [\"David Cameron\", \"Gordon Brown\", \"Winston Churchill\", \"Tony Blair\"],\n			correctAnswer:0\n		},\n		{	\n			question: \"In which year did Apple release their first personal computer?\",\n			choices: [\"1984\", \"1991\", \"1976\", \"1968\"],\n			correctAnswer:2\n		}\n	],\n	question = d.getElementById('question'),\n	button = d.getElementById('next');\n\nbutton.addEventListener('click', next);\n\nfunction gradeAnswer() {\n	var answer = d.querySelector('input[name = \"answer\"]:checked').value;\n	if ((answer == questions[counter-1].correctAnswer) && (!(questions[counter-1].answered))){ score++ }\n	questions[counter-1].answered = true;\n}\n\nfunction buildForm() {\n	var choices = questions[counter].choices;\n	var form = d.createElement('form');\n\n	for(var i=0; i < choices.length; i++) {\n		var input = d.createElement('input'),\n			label = d.createElement('label'),\n			br = d.createElement('br');\n		label.innerText = choices[i];\n		input.setAttribute('type', 'radio');\n		input.setAttribute('value', i);\n		input.setAttribute('name', 'answer');\n		input.addEventListener('click', gradeAnswer);\n		form.appendChild(input);\n		form.appendChild(label);\n		form.appendChild(br);\n	}\n	question.appendChild(form);\n}\n\nfunction next() {\n	question.innerHTML = null;\n	if (counter < questions.length) {\n		currentQuestion = questions[counter];\n		question.innerHTML= '<h1>' + currentQuestion.question + '</h1>';\n		buildForm();\n		counter++;\n	} else {\n		var parent = button.parentNode;\n		question.innerHTML= '<h1>Congrats!</h1><br><h2>Your Score is: ' + score + '</h2>';\n		parent.removeChild(button);\n	}\n}\n",
+			"cons",
+			"E",
+			"part.labor",
+			"part",
+			"appModule",
+			"modal",
+			"timepick",
+			"end",
+			"5",
+			"}]);",
+			"sni",
+			"html",
+			"tab",
+			"5",
+			"!",
+			"inpu",
+			"gfx",
+			"image",
+			"path",
+			"hero",
+			"<!--/.",
+			"<!--",
+			"6PM",
+			".info",
+			"dc4",
+			">\n",
+			"icon-chevron-right",
+			"dropdown",
+			"drop",
+			"id",
+			"recalc",
+			"gs",
+			"el",
+			"reca",
+			"setmidpoint",
+			"setMidPoint",
+			"topfa"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"      numbers",
+			"      name:",
+			"        name:",
+			"\",",
+			"",
+			"	{ name: \"GREGORY MACHINE    \", number: \"490-1606\n\"}, ",
+			"	{ name: \"GREGORY MACHINE    \", number: \"490-1606\n\"",
+			"\"",
+			"\"}, { name",
+			"}, { name",
+			"\", number: \"",
+			"name: \"",
+			"",
+			"</p>",
+			"5PM",
+			"icon-chevron-right icon-white",
+			"icon-chevron-right icons-white",
+			"icon-chevron-right",
+			"gradientStop"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 12,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1263,
+								1263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/estimator/controllers.js",
+					"settings":
+					{
+						"buffer_size": 5563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								551,
+								551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								483,
+								483
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "partials/estimator.html",
+					"settings":
+					{
+						"buffer_size": 10249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5411,
+								5411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/secretary/controllers.js",
+					"settings":
+					{
+						"buffer_size": 999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								431,
+								431
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/app.js",
+					"settings":
+					{
+						"buffer_size": 1094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 28.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Gruntfile.js",
+					"settings":
+					{
+						"buffer_size": 970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								172
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/estimator/services.js",
+					"settings":
+					{
+						"buffer_size": 640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 512,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "css/print.css",
+					"settings":
+					{
+						"buffer_size": 93,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/scheduler/controllers.js",
+					"settings":
+					{
+						"buffer_size": 3380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3380,
+								3380
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 966.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/User/TernJS.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 2475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1299,
+								1299
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/scheduler/filters.js",
+					"settings":
+					{
+						"buffer_size": 447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "js/scheduler/services.js",
+					"settings":
+					{
+						"buffer_size": 1497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1451,
+								1451
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "js/secretary/services.js",
+					"settings":
+					{
+						"buffer_size": 10089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10085,
+								10085
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5880.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+					"settings":
+					{
+						"buffer_size": 1118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								610,
+								610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "js/buttons.js",
+					"settings":
+					{
+						"buffer_size": 2051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								358,
+								358
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 96.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 283.0,
+	"status_bar_visible": true
+}
