@@ -375,9 +375,12 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       var filtered_list = [], i = 0;
       for (i = 0; i < objects.length; i++) {
         var d = date.getDate(),
-          itemDate = new Date(objects[i].date);
+          m = date.getMonth(),
+          itemDate = new Date(objects[i].date),
+          itemMonth;
+        itemMonth = itemDate.getMonth();
         itemDate = itemDate.getDate();
-        if (d === itemDate) {
+        if ((d === itemDate) && (m === itemMonth)) {
           filtered_list.push(objects[i]);
         }
       }
