@@ -183,7 +183,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1850,
+				"buffer_size": 1847,
 				"line_ending": "Windows"
 			}
 		},
@@ -203,22 +203,6 @@
 				"line_ending": "Windows",
 				"name": "Package Control Messages",
 				"scratch": true
-			}
-		},
-		{
-			"file": "partials/estimator.html",
-			"settings":
-			{
-				"buffer_size": 10249,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/secretary/controllers.js",
-			"settings":
-			{
-				"buffer_size": 999,
-				"line_ending": "Windows"
 			}
 		},
 		{
@@ -265,7 +249,7 @@
 			"file": "js/scheduler/controllers.js",
 			"settings":
 			{
-				"buffer_size": 3380,
+				"buffer_size": 3387,
 				"line_ending": "Windows"
 			}
 		},
@@ -278,21 +262,10 @@
 			}
 		},
 		{
-			"contents": "// Trailing Spaces' default settings.\n//\n// In order to tweak the settings, you should NOT edit this file, but instead\n// the user-specific, empty-by-default version under \"Preferences / Package\n// Settings / Trailing Spaces / Settings - User\".\n//\n// See Trailing Spaces' README for detailled instructions.\n{\n    // By default, Trailing Spaces is \"live\". It means the trailing spaces\n    // regions will be matched in the background, and highlighted if a color\n    // scope is defined, when the document is opened and edited.\n    // Set to false to disable live matching and highlighting (the deletion\n    // command remains available, so-called \"lazy matching\").\n    \"trailing_spaces_enabled\" : true,\n\n    // Highlight color is specified as a scope. You may define and use a custom\n    // scope to better fit your colorscheme.\n    \"trailing_spaces_highlight_color\" : \"invalid\",\n\n    // By default, empty lines are cleared as well when calling the deletion\n    // command.\n    // Set to false to ignore empty lines upon deletion.\n    \"trailing_spaces_include_empty_lines\" : true,\n\n    // By default, the line being currently edited will have its trailing\n    // spaces highlighted.\n    // Set to false to ignore trailing spaces on the edited line.\n    \"trailing_spaces_include_current_line\" : true,\n\n    // By default, trailing spaces are deleted within the whole document.\n    // Set to true to affect only the lines you edited since last save.\n    // Trailing spaces will still be searched for and highlighted in the whole\n    // document.\n    \"trailing_spaces_modified_lines_only\": false,\n\n    // By default, nothing happens on save.\n    // Set to true to trim trailing spaces before saving, with respect to the\n    // other settings.\n    \"trailing_spaces_trim_on_save\": false,\n\n    // By default, deleting trailing spaces does not cause the document to be\n    // saved.\n    // Set to true to force saving after trailing spaces have been deleted.\n    // This setting is irrelevant and will be ignored if trim_on_save is true.\n    \"trailing_spaces_save_after_trim\": false,\n\n    // ---- NEXT SETTINGS ARE FOR POWER USERS ONLY! ----\n\n    // Highlighting will be disabled if the edited file's size is larger than\n    // this.\n    // Adjust the value (in number of chars) to whatever fits your performance.\n    \"trailing_spaces_file_max_size\" : 1048576,\n\n    // By default, only simple spaces and tabs are matched as \"trailing spaces\".\n    \"trailing_spaces_regexp\": \"[ \\t]+\"\n}\n",
-			"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
-			"file_size": 2475,
-			"file_write_time": 130194066116112214,
-			"settings":
-			{
-				"buffer_size": 2475,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "js/scheduler/filters.js",
 			"settings":
 			{
-				"buffer_size": 447,
+				"buffer_size": 563,
 				"line_ending": "Windows"
 			}
 		},
@@ -336,6 +309,14 @@
 		"selected_items":
 		[
 			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
 				"pac re",
 				"Package Control: Remove Package"
 			],
@@ -368,10 +349,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"pack",
-				"Package Control: Remove Package"
-			],
-			[
 				"install pack",
 				"Package Control: Install Package"
 			],
@@ -390,10 +367,6 @@
 			[
 				"Snippet: ",
 				"Snippet: Lorem ipsum"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"in",
@@ -445,6 +418,9 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Richard/Sites/paac/hub/js/secretary/controllers.js",
+		"/C/Users/Richard/Sites/paac/hub/partials/estimator.html",
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
 		"/C/Users/Richard/Downloads/cleanup.bat",
 		"/C/Users/Richard/Sites/paac/hub/fall.html",
 		"/C/Users/Richard/Sites/paac/hub/css/style.css",
@@ -454,12 +430,10 @@
 		"/C/Users/Richard/Sites/paac_redesign/hub/index.html",
 		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Richard/Sites/paac/hub/assets/js/app.js",
-		"/C/Users/Richard/Sites/paac/hub/partials/estimator.html",
 		"/C/Users/Richard/Sites/paac/hub/assets/js/estimator/controllers.js",
 		"/C/Users/Richard/Sites/paac/hub/partials/dashboard.html",
 		"/C/Users/Richard/Sites/paac/hub/index.html",
 		"/C/Users/Richard/Sites/paac/hub/public/hooptie.js",
-		"/C/Users/Richard/Sites/paac/hub/js/secretary/controllers.js",
 		"/C/Users/Richard/Sites/paac/hub/js/scheduler/services.js",
 		"/C/Users/Richard/Sites/paac/hub/js/scheduler/filters.js",
 		"/C/Users/Richard/Sites/paac/hub/js/scheduler/controllers.js",
@@ -571,8 +545,7 @@
 		"/C/Users/Richard/Sites/angularjs-test/main-controller.js",
 		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/README.md",
 		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
-		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/emmet/snippets.json",
-		"/C/Users/Richard/Sites/angularjs-tutorial/app.js"
+		"/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/Emmet/emmet/snippets.json"
 	],
 	"find":
 	{
@@ -695,20 +668,20 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1850,
+						"buffer_size": 1847,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1263,
-								1263
+								49,
+								49
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
@@ -766,6 +739,8 @@
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
@@ -776,62 +751,6 @@
 				},
 				{
 					"buffer": 3,
-					"file": "partials/estimator.html",
-					"settings":
-					{
-						"buffer_size": 10249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5411,
-								5411
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/secretary/controllers.js",
-					"settings":
-					{
-						"buffer_size": 999,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								431,
-								431
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "js/app.js",
 					"settings":
 					{
@@ -859,7 +778,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "Gruntfile.js",
 					"settings":
 					{
@@ -887,7 +806,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 5,
 					"file": "js/estimator/services.js",
 					"settings":
 					{
@@ -915,7 +834,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 6,
 					"file": "README.md",
 					"settings":
 					{
@@ -941,7 +860,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "css/print.css",
 					"settings":
 					{
@@ -967,19 +886,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "js/scheduler/controllers.js",
 					"settings":
 					{
-						"buffer_size": 3380,
+						"buffer_size": 3387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3380,
-								3380
+								3387,
+								3387
 							]
 						],
 						"settings":
@@ -990,13 +909,13 @@
 							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 966.0,
+						"translation.y": 672.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 9,
 					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/User/TernJS.sublime-settings",
 					"settings":
 					{
@@ -1022,47 +941,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 2475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1299,
-								1299
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 10,
 					"file": "js/scheduler/filters.js",
 					"settings":
 					{
-						"buffer_size": 447,
+						"buffer_size": 563,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								239,
-								239
+								460,
+								460
 							]
 						],
 						"settings":
@@ -1079,7 +970,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 11,
 					"file": "js/scheduler/services.js",
 					"settings":
 					{
@@ -1101,13 +992,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 84.0,
+						"translation.y": 42.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 12,
 					"file": "js/secretary/services.js",
 					"settings":
 					{
@@ -1135,7 +1026,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 13,
 					"file": "/C/Users/Richard/AppData/Roaming/Sublime Text 2/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 					"settings":
 					{
@@ -1163,7 +1054,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 14,
 					"file": "js/buttons.js",
 					"settings":
 					{

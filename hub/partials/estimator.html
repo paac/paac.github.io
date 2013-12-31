@@ -140,6 +140,7 @@
             <div class="panel panel-default order_table">
                 <div class="panel-heading">
                     <h3 class="panel-title">Order History</h3>
+                    <input type="text" placeholder="search" class="form-control" ng-model="searchTxt">
                 </div>
                 <table class="table table-bordered table-condensed table-hover">
                     <thead>
@@ -153,7 +154,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'15'">
+                        <tr ng-repeat="order in orders | orderBy:predicate | limitTo:'15' | filter: searchTxt">
                             <td>{{order.name}}</td>
                             <td>{{order.date | date:'hh:mma' }}</td>
                             <td>{{order.date | date:'shortDate'}}
