@@ -154,7 +154,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="order in orders | filter:searchTxt | orderBy:predicate | limitTo:'15' | ">
+                        <tr ng-repeat="order in orders | filter:searchTxt | orderBy:predicate | limitTo:'15' ">
                             <td>{{order.name}}</td>
                             <td>{{order.date | date:'hh:mma' }}</td>
                             <td>{{order.date | date:'shortDate'}}
