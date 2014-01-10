@@ -5,7 +5,6 @@ angular.module('estimator.controller', []).
       $scope.orders = [];
       angularFire(ref, $scope, "orders");
 
-      for (var i =0; i < $scope.orders.length;i++) { console.log($scope.orders.length +":"+i);}
       $scope.parts = [];
       $scope.predicate = "-date";
       $scope.vendors = Vendors;
@@ -154,4 +153,15 @@ angular.module('estimator.controller', []).
         $scope.orders.push(order);
         $scope.parts = [];
       };
+
+      $scope.intervalFunction = function () {
+        $timeout(function () {
+          var i;
+          for (i = 0; i < $scope.orders.length; i++) {
+            console.log(i);
+          }
+          $scope.intervalFunction();
+        }, 1000 * 60 * 5);
+      };
+      $scope.intervalFunction();
     }]);
