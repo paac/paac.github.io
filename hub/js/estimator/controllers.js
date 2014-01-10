@@ -5,6 +5,7 @@ angular.module('estimator.controller', []).
       $scope.orders = [];
       angularFire(ref, $scope, "orders");
 
+      for (var i =0; i < $scope.orders.length;i++) { console.log($scope.orders.length +":"+i);}
       $scope.parts = [];
       $scope.predicate = "-date";
       $scope.vendors = Vendors;
