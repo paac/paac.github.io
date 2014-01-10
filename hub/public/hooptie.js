@@ -97,6 +97,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       $scope.orders = [];
       angularFire(ref, $scope, "orders");
 
+      for (var i =0; i < $scope.orders.length;i++) { console.log($scope.orders.length +":"+i);}
       $scope.parts = [];
       $scope.predicate = "-date";
       $scope.vendors = Vendors;
@@ -119,7 +120,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           shopSupplies += parts[i].laborPrice * 0.06;
           salePriceTotal += parts[i].salePriceTotal;
           laborPriceTotal += parts[i].laborPrice;
-          console.log(parts[i].laborPrice + " " + laborPriceTotal);
         }
 
         if (hazardMaterials > hazardMaterialsCap) {
