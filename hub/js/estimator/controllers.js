@@ -156,12 +156,16 @@ angular.module('estimator.controller', []).
 
       $scope.intervalFunction = function () {
         $timeout(function () {
-          var i;
-          for (i = 0; i < $scope.orders.length; i++) {
-            console.log(i);
-          }
-          $scope.intervalFunction();
+          // var i;
+          // for (i = 0; i < $scope.orders.length; i++) {
+          //   console.log(i);
+          // }
+          // $scope.intervalFunction();
+          console.log("blip");
         }, 1000 * 60 * 5);
       };
+
       $scope.intervalFunction();
+
+
     }]);

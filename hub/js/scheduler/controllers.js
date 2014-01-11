@@ -100,6 +100,6 @@ angular.module('scheduler.controller', []).
         $scope.updateStatus();
         $scope.intervalFunction();
       }, 1000 * 60 * 5);
-    };
+    };  
     $scope.intervalFunction();
   }]);

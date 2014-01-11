@@ -248,14 +248,18 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
       $scope.intervalFunction = function () {
         $timeout(function () {
-          var i;
-          for (i = 0; i < $scope.orders.length; i++) {
-            console.log(i);
-          }
-          $scope.intervalFunction();
+          // var i;
+          // for (i = 0; i < $scope.orders.length; i++) {
+          //   console.log(i);
+          // }
+          // $scope.intervalFunction();
+          console.log("blip");
         }, 1000 * 60 * 5);
       };
+
       $scope.intervalFunction();
+
+
     }]);;angular.module('estimator.service', []).
   factory('Vendors', function () {
     var vendors = [
@@ -377,7 +381,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.updateStatus();
         $scope.intervalFunction();
       }, 1000 * 60 * 5);
-    };
+    };  
     $scope.intervalFunction();
   }]);;angular.module('scheduler.filter', [])
   .filter('listByDate', function () {
