@@ -91,8 +91,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
     };
   }]);
 ;angular.module('estimator.controller', []).
-  controller('EstimateCtrl', ['$scope', 'angularFire', '$timeout', 'Vendors',
-    function ($scope, $timeout, angularFire, Vendors) {
+  controller('EstimateCtrl', ['$scope', 'angularFire', 'Vendors',
+    function ($scope, angularFire, Vendors) {
       var ref = new Firebase("https://hooptie.firebaseio.com/estimator");
       $scope.orders = [];
       angularFire(ref, $scope, "orders");
@@ -119,6 +119,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           shopSupplies += parts[i].laborPrice * 0.06;
           salePriceTotal += parts[i].salePriceTotal;
           laborPriceTotal += parts[i].laborPrice;
+          console.log(parts[i].laborPrice + " " + laborPriceTotal);
         }
 
         if (hazardMaterials > hazardMaterialsCap) {
@@ -245,7 +246,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.orders.push(order);
         $scope.parts = [];
       };
-
     }]);;angular.module('estimator.service', []).
   factory('Vendors', function () {
     var vendors = [
