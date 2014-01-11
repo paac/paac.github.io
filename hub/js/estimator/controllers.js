@@ -131,7 +131,7 @@ angular.module('estimator.controller', []).
 
       $scope.editOrder = function (order) {
         var i;
-        console.log(order.index);
+        console.log(order);
         $scope.parts = $scope.orders[order.index].parts;
         $scope.parts.name = $scope.orders[order.index].name;
         $scope.editPart = order.index;
