@@ -127,12 +127,12 @@ angular.module('estimator.controller', []).
       };
 
       $scope.deleteOrder = function (order) {
-        $scope.orders.splice($scope.order.index -1, 1);
+        $scope.orders.splice(order.index, 1);
       };
 
       $scope.editOrder = function (order) {
         var i;
-        console.log(order);
+        
         $scope.parts = $scope.orders[order.index].parts;
         $scope.parts.name = $scope.orders[order.index].name;
         $scope.editPart = order.index;
