@@ -226,9 +226,12 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         var orders = $scope.orders;
         var reversedIndex = orders.length - idx - 1;
         $scope.reversedIndex = reversedIndex;
+        console.log(reversedIndex + ":" + orders[reversedIndex].index);
         $scope.parts = orders[reversedIndex].parts;
         $scope.parts.name = orders[reversedIndex].name;
         totalOrder();
+        $scope.parts.index = $scope.orders.length;
+
       };
 
       $scope.addToHistory = function (parts) {
