@@ -6,6 +6,7 @@ angular.module('estimator.controller', []).
       angularFire(ref, $scope, "orders");
 
       $scope.parts = [];
+      $scope.parts.index = $scope.orders.length;
       $scope.predicate = "-date";
       $scope.vendors = Vendors;
       $scope.item = {matrix: 'normal'};
@@ -166,6 +167,7 @@ angular.module('estimator.controller', []).
         }
         $scope.editPart = undefined;
         order = {
+          index: $scope.orders.length,
           name: parts.name,
           date: Date.now(),
           total: parts.total,

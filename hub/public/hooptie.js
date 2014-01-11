@@ -98,6 +98,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       angularFire(ref, $scope, "orders");
 
       $scope.parts = [];
+      $scope.parts.index = $scope.orders.length;
       $scope.predicate = "-date";
       $scope.vendors = Vendors;
       $scope.item = {matrix: 'normal'};
@@ -258,6 +259,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         }
         $scope.editPart = undefined;
         order = {
+          index: $scope.orders.length,
           name: parts.name,
           date: Date.now(),
           total: parts.total,
