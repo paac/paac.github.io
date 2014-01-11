@@ -219,7 +219,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       };
 
       $scope.deleteOrder = function (order) {
-        $scope.orders.splice($scope.order.index, 1);
+        $scope.orders.splice($scope.order.index -1, 1);
       };
 
       $scope.editOrder = function (order) {
