@@ -119,7 +119,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           shopSupplies += parts[i].laborPrice * 0.06;
           salePriceTotal += parts[i].salePriceTotal;
           laborPriceTotal += parts[i].laborPrice;
-          console.log(parts[i].laborPrice + " " + laborPriceTotal);
         }
 
         if (hazardMaterials > hazardMaterialsCap) {
@@ -210,7 +209,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         }
         part.totalPrice = part.salePriceTotal + part.laborPrice;
         if (part.originalCopy !== undefined) {
-          console.log(part.originalCopy);
+          
           $scope.parts.splice(part.originalCopy, 1);
         }
         $scope.parts.push(part);
@@ -218,28 +217,45 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         totalOrder();
       };
 
-      $scope.deleteOrder = function (idx) {
-        $scope.orders.splice($scope.orders.length - idx - 1, 1);
+      $scope.deleteOrder = function (order) {
+        $scope.orders.splice($scope.order.index, 1);
       };
 
-      $scope.editOrder = function (idx) {
-        var orders = $scope.orders;
-        var reversedIndex = orders.length - idx - 1;
-        $scope.reversedIndex = reversedIndex;
-        console.log(reversedIndex + ":" + orders[reversedIndex].index);
-        $scope.parts = orders[reversedIndex].parts;
-        $scope.parts.name = orders[reversedIndex].name;
+      $scope.editOrder = function (order) {
+        var i;
+        $scope.parts = $scope.orders[order.index].parts;
+        $scope.parts.name = $scope.orders[order.index].name;
+        $scope.editPart = order.index;
+        //copy our array of orders.
+        // var orders = $scope.orders;
+        //calculate index based on position in list.
+        //Instead, we should just use the object's defined index,
+        //since they are the same, anyway(in theory, at least).
+        // var reversedIndex = orders.length - idx - 1;
+        //Put this value on the global scope. why?
+        //We are trying to indicate whether or not the order is being
+        //edited, but there has got to be a better way
+        // $scope.reversedIndex = reversedIndex;
+        //debug
+        // console.log(reversedIndex + ":" + orders[reversedIndex].index);
+        //get the order from our array, using the index.
+        // $scope.parts = orders[reversedIndex].parts;
+        //get the name off the order from our array and assign it 
+        // $scope.parts.name = orders[reversedIndex].name;
+        //calc our total
         totalOrder();
         $scope.parts.index = $scope.orders.length;
-
+        for (i = 0; i < $scope.orders.length; i++) {
+          $scope.orders[i].index = i;
+        }
       };
 
       $scope.addToHistory = function (parts) {
         var order;
-        if ($scope.reversedIndex) {
-          $scope.orders.splice($scope.reversedIndex, 1);
+        if ($scope.editPart) {
+          $scope.orders.splice($scope.editPart, 1);
         }
-        $scope.reversedIndex = undefined;
+        $scope.editPart = undefined;
         order = {
           name: parts.name,
           date: Date.now(),
