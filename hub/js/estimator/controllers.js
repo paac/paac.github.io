@@ -127,7 +127,12 @@ angular.module('estimator.controller', []).
       };
 
       $scope.deleteOrder = function (order) {
+        var i;
         $scope.orders.splice(order.index, 1);
+        for (i = 0; i < $scope.orders.length; i++) {
+          $scope.orders[i].index = i;
+        }
+
       };
 
       $scope.editOrder = function (order) {
