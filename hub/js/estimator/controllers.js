@@ -76,39 +76,43 @@ angular.module('estimator.controller', []).
       // }
 
       function calcPrice(part) {
-        var markup;
+        var markup,
+          cost = part.costPrice,
+          quantity = part.quantity,
+          matrix = part.matrix;
+
         console.log(part);
-        if (part.matrix === 'dealer') {
-          if (part.cost <= 1) {
+        if (matrix === 'dealer') {
+          if (cost <= 1) {
             console.log(3.5);
             markup = 3.5;
-          } else if (part.cost > 1 && part.cost <= 5) {
+          } else if (cost > 1 && cost <= 5) {
             markup = 3.25;
-          } else if (part.cost > 5 && part.cost < 50) {
+          } else if (cost > 5 && cost < 50) {
             markup = 2.25;
-          } else if (part.cost > 50 && part.cost <= 100) {
+          } else if (cost > 50 && cost <= 100) {
             markup = 1.82;
-          } else if (part.cost > 100 && part.cost <= 175) {
+          } else if (cost > 100 && cost <= 175) {
             markup = 1.67;
           } else {
             markup = 1.54;
           }
         } else {
-          if (part.cost <= 5) {
+          if (cost <= 5) {
             markup = 3.25;
-          } else if (part.cost > 5 && part.cost <= 10) {
+          } else if (cost > 5 && cost <= 10) {
             markup = 2.5;
-          } else if (part.cost > 10 && part.cost <= 75) {
+          } else if (cost > 10 && cost <= 75) {
             markup = 2.25;
-          } else if (part.cost > 75 && part.cost <= 150) {
+          } else if (cost > 75 && cost <= 150) {
             markup = 2;
-          } else if (part.cost > 150 && part.cost <= 750) {
+          } else if (cost > 150 && cost <= 750) {
             markup = 1.85;
           } else {
             markup = 1.54;
           }
         }
-        return markup * part.cost * part.quantity;
+        return markup * cost * quantity;
       }
 
       $scope.deletePart = function (idx) {
