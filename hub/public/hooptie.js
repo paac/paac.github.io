@@ -169,6 +169,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
       function calcPrice(part) {
         var markup;
+        console.log(part);
         if (part.dealer) {
           if (part.cost <= 1) {
             markup = 3.5;
