@@ -29,7 +29,6 @@ angular.module('estimator.controller', []).
           salePriceTotal += parts[i].salePriceTotal;
           laborPriceTotal += parts[i].laborPrice;
         }
-
         if (hazardMaterials > hazardMaterialsCap) {
           hazardMaterials = hazardMaterialsCap;
         }
@@ -112,13 +111,15 @@ angular.module('estimator.controller', []).
           part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
           part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
         }
-        //***This really needs to be refactored
+
         if (part.manualSale) {
           part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
         } else {
           part.salePriceTotal = calcPrice(part);
         }
+
         part.totalPrice = part.salePriceTotal + part.laborPrice;
+
         if (part.originalCopy !== undefined) {
           $scope.parts.splice(part.originalCopy, 1);
         }
@@ -127,24 +128,31 @@ angular.module('estimator.controller', []).
         totalOrder();
       };
 
-      $scope.deleteOrder = function (order) {
+      function updateIndex() {
         var i;
-        $scope.orders.splice(order.index, 1);
         for (i = 0; i < $scope.orders.length; i++) {
           $scope.orders[i].index = i;
         }
+      }
+
+      $scope.duplicateOrder = function (order) {
+        order.index = $scope.orders.length;
+        $scope.orders.push(order);
+        updateIndex();
+      };
+
+      $scope.deleteOrder = function (order) {
+        $scope.orders.splice(order.index, 1);
+        updateIndex();
       };
 
       $scope.editOrder = function (order) {
-        var i;
         $scope.parts = $scope.orders[order.index].parts;
         $scope.parts.name = $scope.orders[order.index].name;
         $scope.editPart = order.index;
         totalOrder();
         $scope.parts.index = $scope.orders.length;
-        for (i = 0; i < $scope.orders.length; i++) {
-          $scope.orders[i].index = i;
-        }
+        updateIndex();
       };
 
       $scope.addToHistory = function (parts) {
