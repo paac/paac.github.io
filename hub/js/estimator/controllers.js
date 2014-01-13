@@ -80,6 +80,7 @@ angular.module('estimator.controller', []).
         console.log(part);
         if (part.matrix === 'dealer') {
           if (part.cost <= 1) {
+            console.log(3.5);
             markup = 3.5;
           } else if (part.cost > 1 && part.cost <= 5) {
             markup = 3.25;
