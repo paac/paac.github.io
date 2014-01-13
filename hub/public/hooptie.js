@@ -136,35 +136,69 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.parts.shopSupplies = shopSupplies;
       }
 
-      function calcPrice(cost, quantity, dealer) {
+      // function calcPrice(cost, quantity, dealer) {
+      //   var markup;
+      //   markup = (function () {
+      //     switch (false) {
+      //     case !(cost <= 5 && !dealer):
+      //       return '3.25';
+      //     case !(cost > 5 && cost <= 10 && !dealer):
+      //       return '2.5';
+      //     case !(cost > 10 && cost <= 75 && !dealer):
+      //       return '2.25';
+      //     case !(cost > 75 && cost <= 150 && !dealer):
+      //       return '2';
+      //     case !(cost > 150 && cost <= 750 && !dealer):
+      //       return '1.85';
+      //     case !(cost <= 1 && dealer):
+      //       return '3.5';
+      //     case !(cost > 1 && cost <= 5 && dealer):
+      //       return '3.25';
+      //     case !(cost > 5 && cost <= 50 && dealer):
+      //       return '2.25';
+      //     case !(cost > 50 && cost <= 100 && dealer):
+      //       return '1.82';
+      //     case !(cost > 100 && cost <= 175 && dealer):
+      //       return '1.67';
+      //     default:
+      //       return '1.54';
+      //     }
+      //   }());
+      //   return markup * cost * quantity;
+      // }
+
+      function calcPrice(part) {
         var markup;
-        markup = (function () {
-          switch (false) {
-          case !(cost <= 5 && !dealer):
-            return '3.25';
-          case !(cost > 5 && cost <= 10 && !dealer):
-            return '2.5';
-          case !(cost > 10 && cost <= 75 && !dealer):
-            return '2.25';
-          case !(cost > 75 && cost <= 150 && !dealer):
-            return '2';
-          case !(cost > 150 && cost <= 750 && !dealer):
-            return '1.85';
-          case !(cost <= 1 && dealer):
-            return '3.5';
-          case !(cost > 1 && cost <= 5 && dealer):
-            return '3.25';
-          case !(cost > 5 && cost <= 50 && dealer):
-            return '2.25';
-          case !(cost > 50 && cost <= 100 && dealer):
-            return '1.82';
-          case !(cost > 100 && cost <= 175 && dealer):
-            return '1.67';
-          default:
-            return '1.54';
+        if (part.dealer) {
+          if (part.cost <= 1) {
+            markup = 3.5;
+          } else if (part.cost > 1 && part.cost <= 5) {
+            markup = 3.25;
+          } else if (part.cost > 5 && part.cost < 50) {
+            markup = 2.25;
+          } else if (part.cost > 50 && part.cost <= 100) {
+            markup = 1.82;
+          } else if (part.cost > 100 && part.cost <= 175) {
+            markup = 1.67;
+          } else {
+            markup = 1.54;
           }
-        }());
-        return markup * cost * quantity;
+        } else {
+          if (part.cost <= 5) {
+            markup = 3.25;
+          } else if (part.cost > 5 && part.cost <= 10) {
+            markup = 2.5;
+          } else if (part.cost > 10 && part.cost <= 75) {
+            markup = 2.25;
+          } else if (part.cost > 75 && part.cost <= 150) {
+            markup = 2;
+          } else if (part.cost > 150 && part.cost <= 750) {
+            markup = 1.85;
+          } else {
+            markup = 1.54;
+          }
+        }
+        return markup * part.cost * part.quantity;
       }
 
       $scope.deletePart = function (idx) {
@@ -196,21 +230,20 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
           part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
         }
-                    //***This really needs to be refactored
-                    //If manual sale is checked, multiply entered price by quantity
+        //***This really needs to be refactored
+        //If manual sale is checked, multiply entered price by quantity
         if (part.manualSale) {
           part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
         } else if ((part.matrix === 'dealer') || (part.dealer)) {
-          part.salePriceTotal = calcPrice(part.costPrice, part.quantity, true);
+          part.salePriceTotal = calcPrice(part);
         } else if ((part.matrix === 'tire') || (part.tire)) {
           part.salePrice = part.costPrice * 1.25;
           part.salePriceTotal = part.salePrice * part.quantity;
         } else {
-          part.salePriceTotal = calcPrice(part.costPrice, part.quantity);
+          part.salePriceTotal = calcPrice(part);
         }
         part.totalPrice = part.salePriceTotal + part.laborPrice;
         if (part.originalCopy !== undefined) {
-          
           $scope.parts.splice(part.originalCopy, 1);
         }
         $scope.parts.push(part);
@@ -224,32 +257,13 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         for (i = 0; i < $scope.orders.length; i++) {
           $scope.orders[i].index = i;
         }
-
       };
 
       $scope.editOrder = function (order) {
         var i;
-        
         $scope.parts = $scope.orders[order.index].parts;
         $scope.parts.name = $scope.orders[order.index].name;
         $scope.editPart = order.index;
-        //copy our array of orders.
-        // var orders = $scope.orders;
-        //calculate index based on position in list.
-        //Instead, we should just use the object's defined index,
-        //since they are the same, anyway(in theory, at least).
-        // var reversedIndex = orders.length - idx - 1;
-        //Put this value on the global scope. why?
-        //We are trying to indicate whether or not the order is being
-        //edited, but there has got to be a better way
-        // $scope.reversedIndex = reversedIndex;
-        //debug
-        // console.log(reversedIndex + ":" + orders[reversedIndex].index);
-        //get the order from our array, using the index.
-        // $scope.parts = orders[reversedIndex].parts;
-        //get the name off the order from our array and assign it 
-        // $scope.parts.name = orders[reversedIndex].name;
-        //calc our total
         totalOrder();
         $scope.parts.index = $scope.orders.length;
         for (i = 0; i < $scope.orders.length; i++) {
