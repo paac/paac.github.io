@@ -228,9 +228,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       }
 
       $scope.duplicateOrder = function (order) {
-        order.index = $scope.orders.length;
-        order.name = order.name + "(clone)";
-        $scope.orders.push(order);
+        orderCopy = angular.copy(order);
+        orderCopy.index = $scope.orders.length;
+        orderCopy.name = order.name + "(clone)";
+        $scope.orders.push(orderCopy);
         updateIndex();
       };
 
