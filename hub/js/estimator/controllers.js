@@ -137,6 +137,7 @@ angular.module('estimator.controller', []).
 
       $scope.duplicateOrder = function (order) {
         order.index = $scope.orders.length;
+        order.name = order.name + "(clone)";
         $scope.orders.push(order);
         updateIndex();
       };

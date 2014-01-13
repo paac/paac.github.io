@@ -150,6 +150,7 @@
                             <td>Date</td>
                             <td>Total</td>
                             <td>Edit</td>
+                            <td>Clone</td>
                             <td>Remove</td>
                         </tr>
                     </thead>
@@ -160,6 +161,7 @@
                             <td>{{order.date | date:'shortDate'}}
                             <td>{{order.total | currency}}</td>
                             <td><a ng-click="editOrder(order)">Edit</a></td>
+                            <td><a ng-click="duplicateOrder(order)">Clone</a></td>
                             <td><a ng-click="deleteOrder(order)">Remove</a></td>
                         </tr>
                     </tbody>
