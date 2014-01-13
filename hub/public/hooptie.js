@@ -136,47 +136,15 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.parts.shopSupplies = shopSupplies;
       }
 
-      // function calcPrice(cost, quantity, dealer) {
-      //   var markup;
-      //   markup = (function () {
-      //     switch (false) {
-      //     case !(cost <= 5 && !dealer):
-      //       return '3.25';
-      //     case !(cost > 5 && cost <= 10 && !dealer):
-      //       return '2.5';
-      //     case !(cost > 10 && cost <= 75 && !dealer):
-      //       return '2.25';
-      //     case !(cost > 75 && cost <= 150 && !dealer):
-      //       return '2';
-      //     case !(cost > 150 && cost <= 750 && !dealer):
-      //       return '1.85';
-      //     case !(cost <= 1 && dealer):
-      //       return '3.5';
-      //     case !(cost > 1 && cost <= 5 && dealer):
-      //       return '3.25';
-      //     case !(cost > 5 && cost <= 50 && dealer):
-      //       return '2.25';
-      //     case !(cost > 50 && cost <= 100 && dealer):
-      //       return '1.82';
-      //     case !(cost > 100 && cost <= 175 && dealer):
-      //       return '1.67';
-      //     default:
-      //       return '1.54';
-      //     }
-      //   }());
-      //   return markup * cost * quantity;
-      // }
-
       function calcPrice(part) {
         var markup,
           cost = part.costPrice,
           quantity = part.quantity,
           matrix = part.matrix;
-
-        console.log(part);
-        if (matrix === 'dealer') {
+        if (matrix === 'tire' || part.tire) {
+          markup = 1.25;
+        } else if (matrix === 'dealer' || part.dealer) {
           if (cost <= 1) {
-            console.log(3.5);
             markup = 3.5;
           } else if (cost > 1 && cost <= 5) {
             markup = 3.25;
@@ -237,14 +205,8 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
         }
         //***This really needs to be refactored
-        //If manual sale is checked, multiply entered price by quantity
         if (part.manualSale) {
           part.salePriceTotal = parseFloat(item.salePrice) * part.quantity;
-        } else if ((part.matrix === 'dealer') || (part.dealer)) {
-          part.salePriceTotal = calcPrice(part);
-        } else if ((part.matrix === 'tire') || (part.tire)) {
-          part.salePrice = part.costPrice * 1.25;
-          part.salePriceTotal = part.salePrice * part.quantity;
         } else {
           part.salePriceTotal = calcPrice(part);
         }
