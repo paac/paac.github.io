@@ -262,7 +262,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           total: parts.total,
           parts: parts
         };
-        updateIndex();
         $scope.orders.push(order);
         $scope.parts = [];
       };
