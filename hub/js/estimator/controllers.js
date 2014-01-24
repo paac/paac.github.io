@@ -170,6 +170,7 @@ angular.module('estimator.controller', []).
           total: parts.total,
           parts: parts
         };
+        updateIndex();
         $scope.orders.push(order);
         $scope.parts = [];
       };
