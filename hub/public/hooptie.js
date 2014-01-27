@@ -245,7 +245,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.parts.name = $scope.orders[order.index].name;
         $scope.editPart = order.index;
         totalOrder();
-        $scope.parts.index = $scope.orders.length;
+        // $scope.parts.index = $scope.orders.length;
         updateIndex();
       };
 
