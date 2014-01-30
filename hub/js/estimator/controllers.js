@@ -85,6 +85,7 @@ angular.module('estimator.controller', []).
       function updateIndex() {
         var i;
         for (i = 0; i < $scope.orders.length; i++) {
+          console.log(i+":"+$scope.orders[i].index);
           $scope.orders[i].index = i;
         }
       }
