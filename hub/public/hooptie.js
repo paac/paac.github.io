@@ -237,7 +237,6 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
       $scope.deleteOrder = function (order) {
         $scope.orders.splice(order.index, 1);
-        console.log($scope.orders.indexOf(order));
         updateIndex();
       };
 
@@ -265,6 +264,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         };
         $scope.orders.push(order);
         $scope.parts = [];
+        updateIndex();
       };
     }]);;angular.module('estimator.service', []).
   factory('Vendors', function () {

@@ -145,7 +145,6 @@ angular.module('estimator.controller', []).
 
       $scope.deleteOrder = function (order) {
         $scope.orders.splice(order.index, 1);
-        console.log($scope.orders.indexOf(order));
         updateIndex();
       };
 
@@ -173,5 +172,6 @@ angular.module('estimator.controller', []).
         };
         $scope.orders.push(order);
         $scope.parts = [];
+        updateIndex();
       };
     }]);
