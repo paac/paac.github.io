@@ -82,12 +82,19 @@ angular.module('estimator.controller', []).
         return markup * cost * quantity;
       }
 
+      function updateIndex() {
+        var i;
+        for (i = 0; i < $scope.orders.length; i++) {
+          $scope.orders[i].index = i;
+        }
+      }
+
       $scope.deletePart = function (idx) {
         $scope.parts.splice(idx, 1);
         totalOrder();
       };
 
-      $scope.edit = function (idx) {
+      $scope.editPart = function (idx) {
         $scope.item = angular.copy($scope.parts[idx]);
         $scope.item.originalCopy = idx;
         totalOrder();
@@ -128,13 +135,6 @@ angular.module('estimator.controller', []).
         totalOrder();
       };
 
-      function updateIndex() {
-        var i;
-        for (i = 0; i < $scope.orders.length; i++) {
-          $scope.orders[i].index = i;
-        }
-      }
-
       $scope.duplicateOrder = function (order) {
         orderCopy = angular.copy(order);
         orderCopy.index = $scope.orders.length;
@@ -145,6 +145,7 @@ angular.module('estimator.controller', []).
 
       $scope.deleteOrder = function (order) {
         $scope.orders.splice(order.index, 1);
+        console.log($scope.orders.indexOf(order));
         updateIndex();
       };
 
