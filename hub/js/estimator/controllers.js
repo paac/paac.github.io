@@ -97,10 +97,15 @@ angular.module('estimator.controller', []).
         totalOrder();
       };
 
-      $scope.editPart = function (idx) {
+      //No idea how there could possibly be a bug in this function.
+      $scope.edit = function (idx) {
+        //Populate our form by copying an item from parts array,
+        //using passed in index
         $scope.item = angular.copy($scope.parts[idx]);
         console.log($scope.item);
+        //Mark item as a copy of the original
         $scope.item.originalCopy = idx;
+        //Recalculate total;
         totalOrder();
       };
 
