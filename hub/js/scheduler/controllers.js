@@ -72,9 +72,10 @@ angular.module('scheduler.controller', []).
       $scope.appointments.splice(appointment.index, 1);
 
       //recalculate our index
-      $scope.appointment.index = $scope.appointments.length;
+      // $scope.appointment.index = $scope.appointments.length;
       for (i = 0; i < $scope.appointments.length; i++) {
         $scope.appointments[i].index = i;
+        console.log(i+":"+$scope.appointments[i].index);
       }
     };
 

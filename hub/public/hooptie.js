@@ -175,11 +175,13 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       }
 
       function updateIndex() {
+        //this function shouldn't even be necessary, but firebase likes to fuck my shit up every so often
         var i;
-        for (i = 0; i < $scope.orders.length; i++) {
-          console.log(i+":"+$scope.orders[i].index);
-          $scope.orders[i].index = i;
+        var orders = $scope.orders.filter(function (n) { return n; });
+        for (i = 0; i < orders.length; i++) {
+          orders[i].index = i;
         }
+        $scope.orders = orders;
       }
 
       $scope.deletePart = function (idx) {
@@ -189,6 +191,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
 
       $scope.editPart = function (idx) {
         $scope.item = angular.copy($scope.parts[idx]);
+        console.log($scope.item);
         $scope.item.originalCopy = idx;
         totalOrder();
       };
@@ -229,7 +232,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       };
 
       $scope.duplicateOrder = function (order) {
-        orderCopy = angular.copy(order);
+        var orderCopy = angular.copy(order);
         orderCopy.index = $scope.orders.length;
         orderCopy.name = order.name + "(clone)";
         $scope.orders.push(orderCopy);
@@ -360,9 +363,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
       $scope.appointments.splice(appointment.index, 1);
 
       //recalculate our index
-      $scope.appointment.index = $scope.appointments.length;
+      // $scope.appointment.index = $scope.appointments.length;
       for (i = 0; i < $scope.appointments.length; i++) {
         $scope.appointments[i].index = i;
+        console.log(i+":"+$scope.appointments[i].index);
       }
     };
 
