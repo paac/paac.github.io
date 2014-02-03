@@ -98,7 +98,7 @@ angular.module('estimator.controller', []).
       };
 
       //No idea how there could possibly be a bug in this function.
-      $scope.edit = function (idx) {
+      $scope.editPart = function (idx) {
         //Populate our form by copying an item from parts array,
         //using passed in index
         $scope.item = angular.copy($scope.parts[idx]);
@@ -160,7 +160,7 @@ angular.module('estimator.controller', []).
       $scope.editOrder = function (order) {
         $scope.parts = $scope.orders[order.index].parts;
         $scope.parts.name = $scope.orders[order.index].name;
-        $scope.editPart = order.index;
+        $scope.editedPart = order.index;
         totalOrder();
         // $scope.parts.index = $scope.orders.length;
         updateIndex();
@@ -168,10 +168,10 @@ angular.module('estimator.controller', []).
 
       $scope.addToHistory = function (parts) {
         var order;
-        if ($scope.editPart) {
-          $scope.orders.splice($scope.editPart, 1);
+        if ($scope.editedPart) {
+          $scope.orders.splice($scope.editedPart, 1);
         }
-        $scope.editPart = undefined;
+        $scope.editedPart = undefined;
         order = {
           index: $scope.orders.length,
           name: parts.name,
