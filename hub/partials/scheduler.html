@@ -2,18 +2,18 @@
     <div class="content">
         <div class="row">
         	<div class="row">
-                <div class="col-sm-8">
+                <div class="col-lg-8">
                     <div class="row">
                         <h1>{{date | date:'shortDate'}}</h1>
                     </div>
                     <div class="row">
-                        <ul class="pull-left pager">
+                        <ul class="pull-left pager no_print">
                             <li><a ng-click="decDate()">Previous Day</a></li>
                             <li><a ng-click="incDate()">Next Day</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="no_print col-sm-4">
                     <label>Change Date</label>
                     <input ui-date ng-model="date">
                 </div>
@@ -46,7 +46,7 @@
                     </tr>
                 </tbody>
             </table>
-            <form id="appointmentForm" name="appointmentForm" ng-submit="addAppointment(appointment)">
+            <form class="no_print" id="appointmentForm" name="appointmentForm" ng-submit="addAppointment(appointment)">
                 <div class="row">
                     <div class="col-sm-3">
                         <h3>Date & Time</h3>
