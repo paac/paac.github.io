@@ -298,6 +298,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         updateIndex();
       };
 
+      $scope.clearParts = function() {
+        $scope.item = { matrix: 'normal'};
+      };
+      
       $scope.clearOrder = function () {
         $scope.item = { matrix: 'normal'};
         $scope.parts = [];
