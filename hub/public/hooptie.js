@@ -297,6 +297,11 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         $scope.parts = [];
         updateIndex();
       };
+
+      $scope.clearOrder = function () {
+        $scope.item = { matrix: 'normal'};
+        $scope.parts = [];
+      };
     }]);;angular.module('estimator.service', []).
   factory('Vendors', function () {
     var vendors = [
