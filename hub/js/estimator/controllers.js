@@ -206,6 +206,10 @@ angular.module('estimator.controller', []).
         updateIndex();
       };
 
+      $scope.clearParts = function() {
+        $scope.item = { matrix: 'normal'};
+      };
+      
       $scope.clearOrder = function () {
         $scope.item = { matrix: 'normal'};
         $scope.parts = [];
