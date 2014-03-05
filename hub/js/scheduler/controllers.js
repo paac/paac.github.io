@@ -29,6 +29,17 @@ angular.module('scheduler.controller', []).
 
     $scope.appointment = newAppointment();
 
+    function updateIndex() {
+      var i,
+        appointments = $scope.appointments.filter(function (n) { return n; }),
+        max = appointments.length;
+        
+      for (i = 0; i < max; i++) {
+        appointments[i].index = i;
+      }
+      $scope.appointments = appointments;
+    }
+
     $scope.incDate = function () {
       var today = $scope.date.getDate();
       $scope.date.setDate(today + 1);
@@ -61,6 +72,7 @@ angular.module('scheduler.controller', []).
       }
 
       $scope.appointments.push(appointment);
+      updateIndex();
       $scope.appointment = newAppointment();
     };
 
@@ -73,14 +85,16 @@ angular.module('scheduler.controller', []).
 
       //recalculate our index
       // $scope.appointment.index = $scope.appointments.length;
-      for (i = 0; i < $scope.appointments.length; i++) {
-        $scope.appointments[i].index = i;
-        console.log(i+":"+$scope.appointments[i].index);
-      }
+      // for (i = 0; i < $scope.appointments.length; i++) {
+      //   $scope.appointments[i].index = i;
+      //   console.log(i+":"+$scope.appointments[i].index);
+      // }
+      updateIndex();
     };
 
     $scope.deleteAppointment = function (appointment) {
       $scope.appointments.splice(appointment.index, 1);
+      updateIndex();
     };
 
     //Check to see if any existing appointments are late and update their status accordingly.
