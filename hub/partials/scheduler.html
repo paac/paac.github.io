@@ -14,11 +14,16 @@
                     </div>
                 </div>
                 <div class="no_print col-sm-4">
-                    <label>Change Date</label>
-                    <input ui-date ng-model="date">
+                    <div class="row">
+                        <label>Change Date</label>
+                        <input ui-date ng-model="date">
+                    </div>
+                    <div class="row">
+                        <a href="javascript:window.print()" class="btn-lg btn-primary no_print">Print <i class="glyphicon glyphicon-print"></i></a>
+                    </div>
                 </div>
             </div>
-            <a href="javascript:window.print()" class="btn-lg btn-primary no_print">Print <i class="glyphicon glyphicon-print"></i></a>
+
             <table class="row table table-hover table-bordered">
                 <thead>
                     <tr>
