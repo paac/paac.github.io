@@ -20,6 +20,7 @@ angular.module('estimator.controller', []).
           shopSupplies         = 0,
           hazardMaterials      = 0,
           taxableAmount        = 0,
+          extras               = 0,
           SHOP_SUPPLIES_CAP    = 19.73,
           HAZARD_MATERIALS_CAP = 19.73,
           length               = $scope.parts.length,
@@ -38,7 +39,10 @@ angular.module('estimator.controller', []).
         if (shopSupplies > SHOP_SUPPLIES_CAP) {
           shopSupplies = SHOP_SUPPLIES_CAP;
         }
-        taxableAmount                = salePriceTotal + hazardMaterials + shopSupplies;
+        if (!$scope.parts.noExtras) {
+          extras = hazardMaterials + shopSupplies;
+        }
+        taxableAmount                = salePriceTotal + extras;
         $scope.parts.subTotal        = salePriceTotal + laborPriceTotal;
         $scope.parts.tax             = taxableAmount * 0.06;
         $scope.parts.total           = (taxableAmount * 1.06) + laborPriceTotal;
