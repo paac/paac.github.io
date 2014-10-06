@@ -24,11 +24,13 @@ description: Princess Anne Automotive Center understands that automotive repairs
 			</ul>
 			<p>Regularly priced at $29.95, now just $19.95 with this coupon.</p>
 			<p><b>Coupon Code:</b>WEBOIL</p>
+			<small>Offer cannot be combined with other promotions</small>
 	</li>
 	<li id="state_inspection" class="coupon span6">
 		<h1>State Inspection Special</h1>
 		<img src="/css/state_inspection_coupon.jpg" alt=""/>
 		<p>Get $5 off of State Inspection(regularly $16) when you bring in this coupon.</p> 
+		<small>Offer cannot be combined with other promotions</small>
 	</li>
 	</div>
 	<div class="row">
@@ -36,11 +38,13 @@ description: Princess Anne Automotive Center understands that automotive repairs
 		<h1>Wheel Alignment Special</h1>
 		<img src="/css/wheel_alignment_coupon.jpg" alt=""/>
 		<p>Get $10 off wheel alignment when you bring in this coupon.</p>
+		<small>Offer cannot be combined with other promotions</small>
 	</li>
 	<li id="maintenance" class="coupon span6">
 		<h1>Factory Scheduled Maintenance Special</h1>
 		<img src="/css/maintenance_coupon.jpg" alt=""/>
 		<p>Get 15% off of factory scheduled maintenance with this coupon!</p>
+		<small>Offer cannot be combined with other promotions</small>
 	</li>
 	</div>
 </ul>

@@ -1,20 +1,40 @@
----
-layout: page
----
-  <div class="hero-unit">
-   <h1 class="page-header">Not found <span class="frown">:(</span></h1>
-   <div>
-       <p class="lead">Sorry, but the page you were trying to view does not exist.</p>
-       <p class="lead">It looks like this was the result of either:</p>
-       <ul>
-           <li>a mistyped address</li>
-           <li>an out-of-date link</li>
-       </ul>
-   </div>
-
-    <script>
-    var GOOG_FIXURL_LANG = (navigator.language || "").slice(0,2),
-        GOOG_FIXURL_SITE = location.host;
-    </script>
-    <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
-</div>
+<!DOCTYPE html>
+<html lang="en" ng-app="hooptie">
+<head>
+    <meta charset="UTF-8">
+    <title>Hooptie</title>
+    <link rel="stylesheet" href="./assets/jquery-ui/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="./assets/bootstrap-css/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/print.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-static-top no_print">
+        <div class="container">
+            <div class="navbar-header">
+                <h1 class="text-muted"><a href="/hub/">Hooptie</a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified">
+            <li><a href="/hub/estimator">Estimator</a></li>
+            <li><a href="/hub/scheduler">Scheduler</a></li>
+            <li><a href="/hub/secretary">Secretary</a></li>
+        </ul>
+    </div>
+    <div class="row"></div>
+    <div ng-view>
+    </div>
+    <script type="text/javascript" src="./assets/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap-css/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./assets/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="./assets/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./assets/angular-ui-date/src/date.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js'></script>
+    <script src="./public/hooptie.js"></script>
+</body>
+</html>
