@@ -112,6 +112,7 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
           shopSupplies         = 0,
           hazardMaterials      = 0,
           taxableAmount        = 0,
+          extras               = 0,
           SHOP_SUPPLIES_CAP    = 19.73,
           HAZARD_MATERIALS_CAP = 19.73,
           length               = $scope.parts.length,
@@ -130,7 +131,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         if (shopSupplies > SHOP_SUPPLIES_CAP) {
           shopSupplies = SHOP_SUPPLIES_CAP;
         }
-        taxableAmount                = salePriceTotal + hazardMaterials + shopSupplies;
+        if (!$scope.parts.noExtras) {
+          extras = hazardMaterials + shopSupplies;
+        }
+        taxableAmount                = salePriceTotal + extras;
         $scope.parts.subTotal        = salePriceTotal + laborPriceTotal;
         $scope.parts.tax             = taxableAmount * 0.06;
         $scope.parts.total           = (taxableAmount * 1.06) + laborPriceTotal;
@@ -228,10 +232,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         part.quantity  = (!item.quantity)  ? 1 : item.quantity;
 
         if (!part.manualLabor) {
-          part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 89;
+          part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 93;
         } else {
           part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
-          part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 89 : 0;
+          part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 93 : 0;
         }
 
         if (part.manualSale) {
