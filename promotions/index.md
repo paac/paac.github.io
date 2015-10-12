@@ -22,7 +22,7 @@ description: Princess Anne Automotive Center understands that automotive repairs
 				<li>Check your fluids</li>
 				<li>Perform a safety check on your vehicle</li>
 			</ul>
-			<p>Regularly priced at $29.95, now just $19.95 with this coupon.</p>
+			<p>Regularly priced at $32.95, now just $22.95 with this coupon.</p>
 			<p><b>Coupon Code:</b>WEBOIL</p>
 			<small>Offer cannot be combined with other promotions</small>
 	</li>
