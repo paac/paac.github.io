@@ -1,5 +1,2 @@
 name: Princess Anne Automotive Center
 pygments: false
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
