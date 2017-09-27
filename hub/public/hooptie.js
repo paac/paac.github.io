@@ -1,6 +1,5 @@
 angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service', 'secretary.controller', 'scheduler.controller', 'secretary.service', 'scheduler.service', 'scheduler.filter', 'firebase', 'ngAnimate', 'ui.date', 'ui.bootstrap.buttons'])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    //Don't try to do anything smart with this. Angular routes are fucking stupid and this will all break without any hint of an error.
     $routeProvider
       .when('/hub/',
         {
@@ -232,10 +231,10 @@ angular.module('hooptie', ['ngRoute', 'estimator.controller', 'estimator.service
         part.quantity  = (!item.quantity)  ? 1 : item.quantity;
 
         if (!part.manualLabor) {
-          part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 93;
+          part.laborPrice = (!part.laborHours) ? 0 : parseFloat(part.laborHours) * 95;
         } else {
           part.laborPrice = ((part.laborPrice) && (part.laborPrice !== 0)) ? parseFloat(part.laborPrice) : 0;
-          part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 93 : 0;
+          part.laborHours = (part.laborPrice !== 0) ? part.laborPrice / 95 : 0;
         }
 
         if (part.manualSale) {
